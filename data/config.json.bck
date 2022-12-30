@@ -1,0 +1,54 @@
+{
+    "tipo-de-campana":{
+        "promocional":"Promocional",
+        "comunicación":"Comunicación",
+        "corporativa":"Corporativa",
+        "comercial":"Comercial",
+        "rrss":"Redes Sociales"
+    },
+    "fuentes-offline":{
+        "cartelería":"Cartelería",
+        "auditorio":"Auditorio",
+        "flyers":"Flyers"
+    },
+    "fuentes-online":{
+        "intranet":"My Repsolnet",
+        "repsol.com":"Web repsol.com",
+        "abc":"ABC",
+        "20minutos":"20 Minutos",
+        "el-mundo":"El Mundo"
+    },
+    "agencia":{
+        "Havas":"Havas",
+        "T2O":"T2O",
+        "Tinkle":"Tinkle",
+        "Repsol":"Repsol"
+    },
+    "area-negocio":{
+        "ees":{
+            "nombre":"Estaciones de Servicio",
+            "segmento":{
+                "lav":"Lavado",
+                "tie":"Tienda"
+            }
+        },
+        "eyg":{
+            "nombre":"Electricidad y Gas",
+            "segmento":{
+                "luz":"Luz",
+                "gas":"Gas"
+            }
+        },
+        "corp":{
+            "nombre":"Corporación",
+            "segmento":{
+                "mar":"Marca",
+                "res":"Resultados"
+            }
+        },
+        "acc":{
+            "nombre":"Accionistas",
+            "segmento":{}
+            }
+    }
+}
