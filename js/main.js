@@ -73,6 +73,7 @@ const generar_url = function(){
     $.each(urls, function(id_url,url){
         const linea = {
             userid: currentUser.uid,
+            user: currentUser.displayName + ' <' + currentUser.email + '>',
             fecha: url.fecha,
             nombre: url.nombre,
             descripcion: url.descripcion,
@@ -82,7 +83,7 @@ const generar_url = function(){
             utm_content: url.utm_content,
             url:url.url,
         };
-        put_campaign(linea, currentUser.email);
+        put_campaign(linea);
     });
     get_campaigns();
 
@@ -96,7 +97,7 @@ window.copiar = function() {
 const get_shortURL = function(url){
     let enc_url = encodeURIComponent(url)
     var shortURL = $.ajax({
-        url: 'https://herramientas.repsol.com/cgi-bin/short/short.min.py?destino=' + enc_url,
+        url: 'https://herramientas.repsol.com/cgi-bin/short/short.py?destino=' + enc_url,
         cache: false,
         async: false,
         dataType: 'text',

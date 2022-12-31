@@ -1,47 +1,78 @@
-import { signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
 
 export var currentUser;
 
-const signInForm = document.querySelector("#login-form");
-
-signInForm.addEventListener("submit", async (e) => {
+$("#login-form").on("submit", async (e) => {
   e.preventDefault();
-  const email = signInForm["login-email"].value;
-  const password = signInForm["login-password"].value;
+  const email = $("#login-form #login-email").val();
+  const password = $("#login-form #login-password").val();
 
   try {
-    const userCredentials = await signInWithEmailAndPassword(auth, email, password)
-    const modal = bootstrap.Modal.getInstance(signInForm.closest('.modal'));
-    modal.hide();
-    signInForm.reset();
-    $('#logged_email').html(`Bienvenido,&nbsp;${userCredentials.user.email}`);
+    const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+    $('#signinModal').modal('hide');
+    $('#signinModal').trigger('reset');
+    currentUser = userCredentials.user;
+    if (!userCredentials.user.displayName) {
+      $('#updateModal').modal('show');
+    }
   }
   catch (error) {
     if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
       alert("Usuario o contraseña incorrectos")
     } else {
-      alert("Algo salió mal...", "error")
+      alert("Algo salió mal...\n", error)
     }
   }
 });
 
+$('#update-form').on("submit", async (e) => {
+  e.preventDefault();
+  const nombre = $('#update-form #displayName').val();
+  const newPassword = $('#update-form #newPassword').val();
+  const NewPasswordCheck = $('#update-form #newPasswordCheck').val();
+
+  if (NewPasswordCheck != newPassword) {
+    alert("las contraseñas no coinciden");
+    return;
+  }
+
+  try {
+    await updatePassword(currentUser, newPassword);
+    await updateProfile(currentUser,{displayName: nombre});
+    $('#logged_name').html(`Hola, ${currentUser.displayName}`);
+    $('#updateModal').modal('hide');
+    $('#updateModal').trigger('reset');
+    }
+  catch (error) {
+    alert("Algo salió mal... \n" + error)
+    };
+});
+
 onAuthStateChanged(auth, async (user) => {
   if (user) {
-    currentUser = user;
-    $('#logged_email').html(`Bienvenido, ${user.email}`);
+    if (user.displayName) {
+      $('#logged_name').html(`Hola, ${user.displayName}`);
+    }
   } else {
+    $('#logged_name').html("");
     $('#signinModal').modal('show');
   }
+  currentUser = user;
 });
 
 $('#logout').on("click", async (e) => {
   e.preventDefault();
   try {
     await signOut(auth)
-    $('#logged_email').html("");
   } catch (error) {
     console.log(error)
+  }
+});
+
+$('#logged_name').on("click", (e) => {
+  if (e.ctrlKey) {
+    $('#updateModal').modal('show')
   }
 });

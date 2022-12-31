@@ -1,12 +1,11 @@
 import { db } from "./firebase.js";
-import { collection, addDoc, setDoc, doc, getDocs, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
+import { collection, addDoc, getDocs, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
 import { Autocomplete } from "./autocomplete.js";
 
-export const put_campaign = async function(data, email){
+export const put_campaign = async function(data){
     try {
         data.timestamp = serverTimestamp();
         await addDoc(collection(db,"campaigns"),data);
-        await setDoc(doc(db, "users", data.userid), {email: email});
     } catch (error) {
         throw new Error(error);
     }

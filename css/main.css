@@ -10,6 +10,9 @@ body {
     font: 1rem/1.5 Roboto;
     color:#757575
 }
+.container {
+    width: 100%;
+}
 .header {
     padding: 1rem 1rem 0.9375rem;
     width: 100%;
@@ -23,20 +26,20 @@ body {
     height: 24px;
 }
 
-.header__email {
+.header__name {
     text-align: center;
 }
 
-.header__email span{
+.header__name div>span{
     flex-shrink: 0;
 }
 
-.header__email div {
+.header__name div {
   display: inline-flex;
   align-items: center;
 }
 
-.header__email div>button{
+.header__name div>button{
     margin-left: 10px;
     text-align: center;
 }
@@ -135,7 +138,7 @@ h3 {
     .header__title h1 {
         font: 2.5rem/1 Repsol;
     }
-    .header__email {
+    .header__name {
         width: 50vw;
         text-align: right ;
     }
