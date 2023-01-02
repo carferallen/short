@@ -48,6 +48,11 @@ const init_events = function(){
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
     });
+    $('.header.wrap .header__logo').on("click", (e) => {
+        if (e.ctrlKey) {
+          alert('sas')
+        }
+    });
 };
 
 const get_segmentos = function(area_negocio) {
