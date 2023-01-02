@@ -51,7 +51,6 @@ const init_events = function(){
     });
     $('#logo').on("click", (e) => {
         if (e.ctrlKey) {
-            console.log('asdasdsd')
             e.preventDefault();
             try {
                 var response = $.ajax({
