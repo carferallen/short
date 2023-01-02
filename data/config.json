@@ -1,1 +1,687 @@
-﻿{"tipos-de-campanas":{"promocional":"Promocional","comunicacion":"Comunicación","corporativa":"Corporativa","comercial":"Comercial","rrss":"Redes Sociales"},"fuentes-online":{"accionistas":"Accionistas","app":"Aplicación móvil","box":"Box Repsol","corp":"Corporación","facebook":"Facebook","google":"Google","guiarepsol":"Guía Repsol","instagram":"Instagram","repsol":"Repsol","rrss":"Redes Sociales","twitter":"Twitter","vivit":"Vivit","waylet":"Waylet","wible":"Wible","youtube":"Youtube"},"fuentes-offline":{"prensa":"Prensa","radio":"Radio","mailing":"Mailing","folleto":"Folleto","enara":"Enara","cartel":"Cartel","formacion":"Formación"},"medios":{"google_disc":"Google_disc","native":"Native","cpc":"CPC","email":"Email","referral":"Referral","display":"Display","direct":"Direct","video":"Video","900":"900","sms":"SMS","mb":"mb","offline":"Offline","online":"Online","app":"App","push":"Push","social-paid":"Social Paid","social":"Social"},"secciones":{"ampn":"aompliación de noticias","aun":"audience network","bsq":"búsquedas","cse":"canal/sección estándar","csp":"canal/sección premium","feed":"feed","home":"homepage","iar":"instant articles","inst":"instream","men":"mensajes","post":"post","roc":"Roc (Run of Channel)","ron":"Ron (Run of Network)","ros":"Ros (Run of Site)","serv":"servicios","str":"stories"},"agencias":{"ddb":"DDB","hav":"Havas","mkc":"Equipo Marketing Cloud","rep":"Repsol","t2o":"T2O","tkl":"Tinkle","101":"101"},"devices":{"va":"Virtual assistant","pc":"pc","stv":"smart tv","multi":"multidispositivo","gcn":"game console","mob":"movil","dsk":"desktop","tbt":"tablet"},"formatos":{"adsense":"Adsense","ban":"banner","bnr":"banner havas","blb":"billboard","blbv":"billboard video","bad":"bing ads","btn":"boton","bdd":"brand day","beff":"brand effect","btko":"brand takeover","bdv":"brand voice","bdw":"brand week","bc":"branded content","callext":"call extension","callonly":"call only","callout":"call out","crt":"careta","carr":"carrusel","cnl":"cintillo","codbarra":"codigo de barras","qr":"código QR","col":"collection ad","comp":"Comparador","cad":"conversational ad","ctp":"cuenta patrocinada","cun":"cuña","cur":"cuña + reminder","cpr":"cuña pre roll","din":"dinamización","di":"discovery","dc":"display card","dobroba":"doble roba","eva":"event ad","extform":"extensión de formulario","extofer":"extensión de oferta","extprecio":"extensión de precio","fch":"ficha Google","fit":"first impression takeover","fvw":"first view","fll":"folleto","ser":"formato servicios","fad":"foto ad","est":"foto estática","flad":"foto link ad","gif":"GIF","gm":"gmail","gad":"google Ads","graf":"gráfica","hfp":"half page de 300","hcha":"hashtag challenge","hchap":"hashtag challenge club","hbbtv":"hbb tv","hph":"home page headliner","iapp":"image app card","itx":"imagen + text link","imd":"in image display","imv":"in image vídeo","ird":"in read","inapp":"InApp","ifv":"in-feed video","inmail":"InMail","iexp":"instant experience","ina":"integrated ad","int":"interstitial","intv":"interstitial video","lad":"lead ad","ltb":"lightbox","ltbv":"lightbox video","link":"link  ","linklanding":"link to landing","lid":"live ad","log":"logo","mdr":"medium rectangle","mail":"mail","mtd":"masthead","mtv":"masthead video","ldb":"megabanner","ldd":"megabanner desplegable","mco":"microsite","mid":"mid-roll","mix":"mix de formatos","mai":"mobile app install","mom":"moments","mp4":"MP4","nat":"native","new":"newsletter","popup":"Notificación PopUp","push":"notificación push","ovy":"overlay","pla":"page like ad","ppv":"page post ad video","pag":"pagina","plx":"parallax","ptr":"patrocinio","pdf":"PDF","per":"personalizacion","pod":"podcast","pos":"post-roll","pv":"premium video","pre":"pre-roll","prvw":"preview","pbl":"publireportaje"},"adsizes":{"link":"Link","boton":"Botón","all":"no aplica/no definido","1x1":"   1x1","360x270":" 360x270","520x867":" 520x867","1200x1200":"1200x1200","1000x600":"1000x600","1080x1920":"1080x1920","1080x1080":"1080x1080","1200x627":"1200x627","970x90":" 970x90","970x250":" 970x250","740x250":" 740x250","728x90":" 728x90","500x250":" 500x250","468x60":" 468x60","336x280":" 336x280","320x50":" 320x50","320x480":" 320x480","320x100":" 320x100","300x600":" 300x600","300x250":" 300x250","300x100":" 300x100","256x334":" 256x334","250x250":" 250x250","210x282":" 210x282","1900x2579":"1900x2579","160x600":" 160x600","120x600":" 120x600","1200x628":"1200x628"},"segmentos":{"pros":"Prospecting","all":"No aplica ninguna en concreto","lal":"Lookalike","rem":"Remarketing","fr":"Frecuencia","bt":"Behavioural","sd":"Socio-Demográfico","ip":"Geográfico","ct":"Contextual","rtg":"Retargeting","sma":"Social Media Audience","wl":"Whitelist","smi":"Social Media Interest"},"audiencias":{"alta":"","all":"","ap":"apps de carburante","bht":"behavioral retargeting","bprem":"base premium","clt":"clientes","compania":"compañia","comparar":"comparadores","contrata":"","conv":"conversores","customintentahorro":"","customintentcomp":"","customintentlyg":"","customintentmarca":"","dual1":"","dual2":"","dual3":"","dual4":"","dual5 ":"","dual6":"","empresa":"empresa","eyg":"","fact":"factura","inmarket":"","int":"intereses","kct":"keyword contextual","kw":"keyword","lalpag":"","lfs":"lifestyle retargeting","lifeevent":"","longtail":"","mail":"email","nrt":"not retargeted","open":"","oth":"other retargeting","pixreyg":"","pura":"","pxleyg":"","pxlnd":"","rtg":"retargeted ad","sim":"similar","slf":"remarketing solify","slm":"remarketing solmatch","sociodemo":"sociodemográfica","tarifa":"tarifa","tarifaplana":"tarifaplana"},"objetivos":{"all":"no aplica","brd":"Branding/Awareness","drs":"Direct Response/Sales","eng":"Engagements","fan":"Social fan driving","lds":"Leads","sub":"Subscriptions","trf":"Traffic driving","vrl":"Viral/WOM driving"},"modelos":{"all":"no aplica","ava":"Added Value (Sin Cargo)","cenv":"Coste por Envío","cf":"Coste Fijo","cpa":"Coste Por Actividad (adquisición, descarga pdf, botón callmeback…)","cpc":"Coste Por Click","cpd":"Coste Por Descarga","cpe":"Coste Por Engagement","cpf":"Coste Por Fan","cpl":"Coste Por Lead","cplc":"Coste Por Link Click (Facebook + Instagram)","cpm":"Coste Por Mil (impresiones)","cpmv":"Coste Por Mil Viewability","cpu":"Coste Por Usuario Único","cpv":"Coste Por View","cpvs":"Coste por Visita","cpvv":"Coste Por Views Viewability","cprv":"coste registro único verificado","dcenv":"dinamic Coste por Envío","dcpa":"dinamic Coste Por Actividad (adquisición, descarga pdf, botón callmeback…)","dcpc":"dinamic Coste Por Click","dcpd":"dinamic Coste Por Descarga","dcpe":"dinamic Coste Por Engagement","dcpf":"dinamic Coste Por Formulario","dcpl":"dinamic Coste Por Lead","dcpm":"dinamic Coste Por Mil (impresiones)","dcpv":"dinamic Coste Por View","dcre":"dinamic Coste Por Evento","rf":"Reach & Frecuency (Facebook + Instagram)"},"canal900":{"wible":"Wible","mb":"Marca Blanca","correg":"Corregistros","afil":"Afiliación","micro":"Microcolectivos","nurturing":"Nurturing","colectrep":"Colectivos Repsol","bosch":"Call Blending de Bosch","majorel":"Call Blending de Majorel","delio":"Call Blending de Delio","contesta":"Call Blending de Contesta","mgm":"MGM","glp":"GLP"},"codigoCC":{"01":"ICCS","02":"Contesta","04":"Bosch","03":"Majorel"},"trafico":{"std":"Standard (regular display banners)","ssv":"Site-served (no ad server tracking)","pix":"Pixel","cc":"Click command","pcc":"Pixel and Click Command","rmv":"Rich Media Video","rme":"Rich Media Expand","rmo":"Rich Media Other","vas":"VAST-type Video Serving","vpd":"VPAID-type Video Serving","redirect":"","1x1":""},"areas-negocios":{"accionistas":{"nombre":"Accionistas","segmentos":{"all":" - Genérico (all) * -"}},"asf":{"nombre":"Asfaltos","segmentos":{"all":" - Genérico (all) * -","col":"Colour","iso":"Isolate"}},"avi":{"nombre":"Aviación","segmentos":{"all":" - Genérico (all) * -"}},"box":{"nombre":"Box Repsol","segmentos":{"all":" - Genérico (all) * -"}},"cliente":{"nombre":"Cliente","segmentos":{"all":" - Genérico (all) * -"}},"comint":{"nombre":"Comunicación interna","segmentos":{"acr":"Auditoria, control y riesgos","all":" - Genérico (all) * -","ben":"Beneficios","bibl":"Biblioteca y documentación","comp":"Compras","compe":"Compensación","conc":"Conciliación","des":"Desempeño","digit":"Digitalización","diver":"Diversidad","ecofin":"Economia y finanzas","eyp":"E&P","form":"Formación y Aprendizaje","fund":"Fundación Repsol","hid":"Hidrogeno","ing":"Ingenieria","inst":"Comunicación y relaciones institucionales","lab":"Información Laboral","leg":"Legal","lid":"Liderazgo","nft":"Nuevas formas de trabajo","norm":"Normativa Interna","pyo":"Personas y Organización","ref":"Refino","ren":"Generación renovable","sal":"Salud y bienestar","seg":"Seguridad","segu":"Seguros","sel":"Selección y movilidad","sost":"Sostenibilidad","tal":"Talento","tec":"Tecnología","trad":"Trading","trans":"Estrategia y transición energética","via":"Viajes y gastos","wgt":"Wholesale and Gas trading"}},"coq":{"nombre":"Coque","segmentos":{"all":" - Genérico (all) * -"}},"corp":{"nombre":"Corporación","segmentos":{"all":" - Genérico (all) * -"}},"eess":{"nombre":"Estaciones de Servicio","segmentos":{"all":" - Genérico (all) * -","augas":"Autogas","blue":"Blue+","car":"Carburante","ele":"Eléctrico","lav":"Lavado","lock":"Amazon locker","msto":"Motostop","neo":"Neotech","secup":"Security parking","tarjetas ":"Ofertas","tie":"Tienda"}},"empleo":{"nombre":"Empleo","segmentos":{}},"esp":{"nombre":"Especialidades","segmentos":{"all":" - Genérico (all) * -","cabl":"Cable","cauch":"Caucho"}},"fund":{"nombre":"Fundación Repsol","segmentos":{"all":" - Genérico (all) * -"}},"glp":{"nombre":"GLP","segmentos":{"agro":"Agro","all":" - Genérico (all) * -","bom":"Bombona","but":"Butano","env":"Envasado","hog":"Hogar","horeca":"Hostelería","ind":"Industria","nat":"Natural","presc":"Prescriptores","prop":"Propano","ptb":"Pide tu Bombona","ptbre":"Pide tu Bombona (registro)","serv":"Sector Servicios","so":"Servicio Oficial"}},"guia":{"nombre":"Guía Repsol","segmentos":{"all":" - Genérico (all) * -"}},"inversores":{"nombre":"Inversores","segmentos":{"all":" - Genérico (all) * -"}},"lae":{"nombre":"Lubricantes, Asfaltos y Especialidades","segmentos":{"all":" - Genérico (all) * -","avi":"Aviación"}},"lub":{"nombre":"Lubricantes","segmentos":{"agro":"Agro","all":" - Genérico (all) * -","busc":"Buscador","cami":"Camión","coch":"Coche","dis":"Distribuidor","evfl":"EV fluid","flot":"Flotas","ggss":"Grandes Superficies","grasas":"Grasas","hyb":"Hybrid","ind":"Industria","mant":"Mantenimiento","marino":"Marino","moto":"Moto","naut":"Naútica","rec":"Recambistas","tall":"Talleres"}},"movelectrica":{"nombre":"Movilidad Eléctrica","segmentos":{"all":" - Genérico (all) * -"}},"multie":{"nombre":"Multienergia","segmentos":{"agro":"Agro","horeca":"Horeca"}},"prensa":{"nombre":"Prensa","segmentos":{"all":" - Genérico (all) * -"}},"quim":{"nombre":"Quimica","segmentos":{"agro":"Agro","all":" - Genérico (all) * -","aut":"Automoción","cons":"Construcción","env":"Envases","hog":"Hogar","pp3d":"Polipropileno 3D","sal":"Salud"}},"reyg":{"nombre":"Repsol Electricidad y Gas","segmentos":{"all":" - Genérico (all) * -","dual":"Dual","gas":"Gas","luz":"Luz"}},"rme":{"nombre":"Repsol más Energías","segmentos":{"all":" - Genérico (all) * -"}},"rmt":{"nombre":"Repsol más Travel","segmentos":{"all":" - Genérico (all) * -"}},"solify":{"nombre":"Solify","segmentos":{"all":" - Genérico (all) * -"}},"solmatch":{"nombre":"Solmatch","segmentos":{"all":" - Genérico (all) * -"}},"solred":{"nombre":"Solred","segmentos":{"all":" - Genérico (all) * -"}},"sost":{"nombre":"Sostenibilidad","segmentos":{"all":" - Genérico (all) * -"}},"vvdd":{"nombre":"Ventas Directas","segmentos":{"agro":"Agro","all":" - Genérico (all) * -","fuole":"Fuelóleos","gcal":"Gasóleos calefacción","hog":"Repsol Hogar","ind":"Industria","myp":"Marina y Pesca","naut":"Naútica","ptg":"Pide tu Gasóleo","tran":"Transporte"}},"waylet":{"nombre":"Waylet","segmentos":{"all":" - Genérico (all) * -"}}}}
+{
+  "tipos-de-campanas": {
+    "promocional": "Promocional",
+    "comunicacion": "Comunicación",
+    "corporativa": "Corporativa",
+    "comercial": "Comercial",
+    "rrss": "Redes Sociales"
+  },
+  "areas-negocios": {
+    "accionistas": {
+      "nombre": "Accionistas",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "asf": {
+      "nombre": "Asfaltos",
+      "segmentos": {
+        "all": "Genérico",
+        "col": "Colour",
+        "iso": "Isolate"
+      }
+    },
+    "avi": {
+      "nombre": "Aviación",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "box": {
+      "nombre": "Box Repsol",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "cliente": {
+      "nombre": "Cliente",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "comint": {
+      "nombre": "Comunicación interna",
+      "segmentos": {
+        "hid": "Hidrogeno",
+        "ing": "Ingenieria",
+        "inst": "Comunicación y relaciones institucionales",
+        "lab": "Información Laboral",
+        "leg": "Legal",
+        "lid": "Liderazgo",
+        "nft": "Nuevas formas de trabajo",
+        "norm": "Normativa Interna",
+        "pyo": "Personas y Organización",
+        "ref": "Refino",
+        "ren": "Generación renovable",
+        "sal": "Salud y bienestar",
+        "seg": "Seguridad",
+        "segu": "Seguros",
+        "sel": "Selección y movilidad",
+        "sost": "Sostenibilidad",
+        "tal": "Talento",
+        "tec": "Tecnología",
+        "trad": "Trading",
+        "trans": "Estrategia y transición energética",
+        "via": "Viajes y gastos",
+        "wgt": "Wholesale and Gas trading",
+        "acr": "Auditoria, control y riesgos",
+        "all": "Genérico",
+        "ben": "Beneficios",
+        "bibl": "Biblioteca y documentación",
+        "com": "Compensación",
+        "comp": "Compras",
+        "conc": "Conciliación",
+        "des": "Desempeño",
+        "digit": "Digitalización",
+        "diver": "Diversidad",
+        "ecofin": "Economia y finanzas",
+        "eyp": "E&P",
+        "form": "Formación y Aprendizaje",
+        "fund": "Fundación Repsol"
+      }
+    },
+    "coq": {
+      "nombre": "Coque",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "corp": {
+      "nombre": "Corporación",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "eess": {
+      "nombre": "Estaciones de Servicio",
+      "segmentos": {
+        "all": "Genérico",
+        "augas": "Autogas",
+        "blue": "Blue+",
+        "car": "Carburante",
+        "ele": "Eléctrico",
+        "lav": "Lavado",
+        "lock": "Amazon locker",
+        "msto": "Motostop",
+        "neo": "Neotech",
+        "secup": "Security parking",
+        "tarjetas ": "Ofertas",
+        "tie": "Tienda"
+      }
+    },
+    "empleo": {
+      "nombre": "Empleo",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "esp": {
+      "nombre": "Especialidades",
+      "segmentos": {
+        "all": "Genérico",
+        "cabl": "Cable",
+        "cauch": "Caucho"
+      }
+    },
+    "fund": {
+      "nombre": "Fundación Repsol",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "glp": {
+      "nombre": "GLP",
+      "segmentos": {
+        "agro": "Agro",
+        "all": "Genérico",
+        "bom": "Bombona",
+        "but": "Butano",
+        "env": "Envasado",
+        "hog": "Hogar",
+        "horeca": "Hostelería",
+        "ind": "Industria",
+        "nat": "Natural",
+        "presc": "Prescriptores",
+        "prop": "Propano",
+        "ptb": "Pide tu Bombona",
+        "ptbre": "Pide tu Bombona (registro)",
+        "serv": "Sector Servicios",
+        "so": "Servicio Oficial"
+      }
+    },
+    "guia": {
+      "nombre": "Guía Repsol",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "inversores": {
+      "nombre": "Inversores",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "lae": {
+      "nombre": "Lubricantes, Asfaltos y Especialidades",
+      "segmentos": {
+        "all": "Genérico",
+        "avi": "Aviación"
+      }
+    },
+    "lub": {
+      "nombre": "Lubricantes",
+      "segmentos": {
+        "agro": "Agro",
+        "all": "Genérico",
+        "busc": "Buscador",
+        "cami": "Camión",
+        "coch": "Coche",
+        "dis": "Distribuidor",
+        "evfl": "EV fluid",
+        "flot": "Flotas",
+        "ggss": "Grandes Superficies",
+        "grasas": "Grasas",
+        "hyb": "Hybrid",
+        "ind": "Industria",
+        "mant": "Mantenimiento",
+        "marino": "Marino",
+        "moto": "Moto",
+        "naut": "Naútica",
+        "rec": "Recambistas",
+        "tall": "Talleres"
+      }
+    },
+    "movelectrica": {
+      "nombre": "Movilidad Eléctrica",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "multie": {
+      "nombre": "Multienergia",
+      "segmentos": {
+        "agro": "Agro",
+        "horeca": "Horeca"
+      }
+    },
+    "prensa": {
+      "nombre": "Prensa",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "quim": {
+      "nombre": "Quimica",
+      "segmentos": {
+        "agro": "Agro",
+        "all": "Genérico",
+        "aut": "Automoción",
+        "cons": "Construcción",
+        "env": "Envases",
+        "hog": "Hogar",
+        "pp3d": "Polipropileno 3D",
+        "sal": "Salud"
+      }
+    },
+    "reyg": {
+      "nombre": "Repsol Electricidad y Gas",
+      "segmentos": {
+        "all": "Genérico",
+        "dual": "Dual",
+        "gas": "Gas",
+        "luz": "Luz"
+      }
+    },
+    "rme": {
+      "nombre": "Repsol más Energías",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "rmt": {
+      "nombre": "Repsol más Travel",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "solify": {
+      "nombre": "Solify",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "solmatch": {
+      "nombre": "Solmatch",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "solred": {
+      "nombre": "Solred",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "sost": {
+      "nombre": "Sostenibilidad",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
+    "vvdd": {
+      "nombre": "Ventas Directas",
+      "segmentos": {
+        "agro": "Agro",
+        "all": "Genérico",
+        "fuole": "Fuelóleos",
+        "gcal": "Gasóleos calefacción",
+        "hog": "Repsol Hogar",
+        "ind": "Industria",
+        "myp": "Marina y Pesca",
+        "naut": "Naútica",
+        "ptg": "Pide tu Gasóleo",
+        "tran": "Transporte"
+      }
+    },
+    "waylet": {
+      "nombre": "Waylet",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    }
+  },
+  "fuentes-online": {
+    "accionistas": "Accionistas",
+    "app": "Aplicación móvil",
+    "box": "Box Repsol",
+    "corp": "Corporación",
+    "facebook": "Facebook",
+    "google": "Google",
+    "guiarepsol": "Guía Repsol",
+    "instagram": "Instagram",
+    "repsol": "Repsol",
+    "rrss": "Redes Sociales",
+    "twitter": "Twitter",
+    "vivit": "Vivit",
+    "waylet": "Waylet",
+    "wible": "Wible",
+    "youtube": "Youtube"
+  },
+  "fuentes-offline": {
+    "prensa": "Prensa",
+    "radio": "Radio",
+    "mailing": "Mailing",
+    "folleto": "Folleto",
+    "enara": "Enara",
+    "cartel": "Cartel",
+    "formacion": "Formación"
+  },
+  "secciones": {
+    "ampn": "aompliación de noticias",
+    "aun": "audience network",
+    "bsq": "búsquedas",
+    "cse": "canal/sección estándar",
+    "csp": "canal/sección premium",
+    "feed": "feed",
+    "home": "homepage",
+    "iar": "instant articles",
+    "inst": "instream",
+    "men": "mensajes",
+    "post": "post",
+    "roc": "Roc (Run of Channel)",
+    "ron": "Ron (Run of Network)",
+    "ros": "Ros (Run of Site)",
+    "serv": "servicios",
+    "str": "stories"
+  },
+  "medios": {
+    "google_disc": "Google_disc",
+    "native": "Native",
+    "cpc": "CPC",
+    "email": "Email",
+    "referral": "Referral",
+    "display": "Display",
+    "direct": "Direct",
+    "video": "Video",
+    "900": "900",
+    "sms": "SMS",
+    "mb": "mb",
+    "offline": "Offline",
+    "online": "Online",
+    "app": "App",
+    "push": "Push",
+    "social-paid": "Social Paid",
+    "social": "Social"
+  },
+  "agencias": {
+    "ddb": "DDB",
+    "hav": "Havas",
+    "mkc": "Equipo Marketing Cloud",
+    "rep": "Repsol",
+    "t2o": "T2O",
+    "tkl": "Tinkle",
+    "101": "101"
+  },
+  "devices": {
+    "va": "Virtual assistant",
+    "pc": "pc",
+    "stv": "smart tv",
+    "multi": "multidispositivo",
+    "gcn": "game console",
+    "mob": "movil",
+    "dsk": "desktop",
+    "tbt": "tablet"
+  },
+  "formatos": {
+    "adsense": "Adsense",
+    "ban": "banner",
+    "bnr": "banner havas",
+    "blb": "billboard",
+    "blbv": "billboard video",
+    "bad": "bing ads",
+    "btn": "boton",
+    "bdd": "brand day",
+    "beff": "brand effect",
+    "btko": "brand takeover",
+    "bdv": "brand voice",
+    "bdw": "brand week",
+    "bc": "branded content",
+    "callext": "call extension",
+    "callonly": "call only",
+    "callout": "call out",
+    "crt": "careta",
+    "carr": "carrusel",
+    "cnl": "cintillo",
+    "codbarra": "codigo de barras",
+    "qr": "código QR",
+    "col": "collection ad",
+    "comp": "Comparador",
+    "cad": "conversational ad",
+    "ctp": "cuenta patrocinada",
+    "cun": "cuña",
+    "cur": "cuña + reminder",
+    "cpr": "cuña pre roll",
+    "din": "dinamización",
+    "di": "discovery",
+    "dc": "display card",
+    "dobroba": "doble roba",
+    "eva": "event ad",
+    "extform": "extensión de formulario",
+    "extofer": "extensión de oferta",
+    "extprecio": "extensión de precio",
+    "fch": "ficha Google",
+    "fit": "first impression takeover",
+    "fvw": "first view",
+    "fll": "folleto",
+    "ser": "formato servicios",
+    "fad": "foto ad",
+    "est": "foto estática",
+    "flad": "foto link ad",
+    "gif": "GIF",
+    "gm": "gmail",
+    "gad": "google Ads",
+    "graf": "gráfica",
+    "hfp": "robapaginas doble",
+    "hcha": "hashtag challenge",
+    "hchap": "hashtag challenge club",
+    "hbbtv": "hbb tv",
+    "hph": "home page headliner",
+    "iapp": "image app card",
+    "itx": "imagen + text link",
+    "imd": "in image display",
+    "imv": "in image vídeo",
+    "ird": "in read",
+    "inapp": "InApp",
+    "ifv": "in-feed video",
+    "inmail": "InMail",
+    "iexp": "instant experience",
+    "ina": "integrated ad",
+    "int": "interstitial",
+    "intv": "interstitial video",
+    "lad": "lead ad",
+    "ltb": "lightbox",
+    "ltbv": "lightbox video",
+    "link": "link  ",
+    "linklanding": "link to landing",
+    "lid": "live ad",
+    "log": "logo",
+    "mdr": "robapaginas",
+    "mail": "mail",
+    "mtd": "masthead",
+    "mtv": "masthead video",
+    "ldb": "megabanner",
+    "ldd": "megabanner desplegable",
+    "mco": "microsite",
+    "mid": "mid-roll",
+    "mix": "mix de formatos",
+    "mai": "mobile app install",
+    "mom": "moments",
+    "mp4": "MP4",
+    "nat": "native",
+    "new": "newsletter",
+    "popup": "Notificación PopUp",
+    "push": "notificación push",
+    "ovy": "overlay",
+    "pla": "page like ad",
+    "ppv": "page post ad video",
+    "pag": "pagina",
+    "plx": "parallax",
+    "ptr": "patrocinio",
+    "pdf": "PDF",
+    "per": "personalizacion",
+    "pod": "podcast",
+    "pos": "post-roll",
+    "pv": "premium video",
+    "pre": "pre-roll",
+    "prvw": "preview",
+    "pbl": "publireportaje",
+    "rsa": "responsive search ads",
+    "mrd": "robapaginas desplegable",
+    "mrv": "robapaginas video",
+    "sitelink": "sitelink",
+    "skn": "skin",
+    "sknv": "skin video",
+    "sky": "skyscraper",
+    "sms": "SMS",
+    "snpad": "snap ad",
+    "snpext": "Snipped Extension",
+    "spc": "sponsored content",
+    "spi": "sponsored inmail",
+    "slig": "spot light",
+    "strc": "stories carousel",
+    "stri": "stories imagen",
+    "strli": "stories link imagen",
+    "strlv": "stories link video",
+    "strv": "stories video",
+    "sb": "superleader board",
+    "telf": "teléfono",
+    "tpa": "tendencia patrocinada",
+    "txt": "text link",
+    "textlink": "textlink",
+    "tview": "top view",
+    "trv": "true view",
+    "twt": "tweet patrocinado",
+    "twtv": "tweet patrocinado video",
+    "vid": "video",
+    "vda": "video ad",
+    "vappc": "video app card",
+    "vdb": "video banner",
+    "vlnka": "video link ad",
+    "vdw": "videowall",
+    "vap": "voice app",
+    "widget": "widget"
+  },
+  "adsizes": {
+    "link": "Link",
+    "boton": "Botón",
+    "all": "no aplica/no definido",
+    "1x1": "   1x1",
+    "360x270": " 360x270",
+    "520x867": " 520x867",
+    "1200x1200": "1200x1200",
+    "1000x600": "1000x600",
+    "1080x1920": "1080x1920",
+    "1080x1080": "1080x1080",
+    "1200x627": "1200x627",
+    "970x90": " 970x90",
+    "970x250": " 970x250",
+    "740x250": " 740x250",
+    "728x90": " 728x90",
+    "500x250": " 500x250",
+    "468x60": " 468x60",
+    "336x280": " 336x280",
+    "320x50": " 320x50",
+    "320x480": " 320x480",
+    "320x100": " 320x100",
+    "300x600": " 300x600",
+    "300x250": " 300x250",
+    "300x100": " 300x100",
+    "256x334": " 256x334",
+    "250x250": " 250x250",
+    "210x282": " 210x282",
+    "1900x2579": "1900x2579",
+    "160x600": " 160x600",
+    "120x600": " 120x600",
+    "1200x628": "1200x628"
+  },
+  "segmentos": {
+    "pros": "Prospecting",
+    "all": "No aplica ninguna en concreto",
+    "lal": "Lookalike",
+    "rem": "Remarketing",
+    "fr": "Frecuencia",
+    "bt": "Behavioural",
+    "sd": "Socio-Demográfico",
+    "ip": "Geográfico",
+    "ct": "Contextual",
+    "rtg": "Retargeting",
+    "sma": "Social Media Audience",
+    "wl": "Whitelist",
+    "smi": "Social Media Interest"
+  },
+  "audiencias": {
+    "alta": "alta",
+    "all": "all",
+    "ap": "apps de carburante",
+    "bht": "behavioral retargeting",
+    "bprem": "base premium",
+    "clt": "clientes",
+    "compania": "compañia",
+    "comparar": "comparadores",
+    "contrata": "contrata",
+    "conv": "conversores",
+    "customintentahorro": "customintentahorro",
+    "customintentcomp": "customintentcomp",
+    "customintentlyg": "customintentlyg",
+    "customintentmarca": "customintentmarca",
+    "dual1": "dual1",
+    "dual2": "dual2",
+    "dual3": "dual3",
+    "dual4": "dual4",
+    "dual5 ": "dual5 ",
+    "dual6": "dual6",
+    "empresa": "empresa",
+    "eyg": "eyg",
+    "fact": "factura",
+    "inmarket": "inmarket",
+    "int": "intereses",
+    "kct": "keyword contextual",
+    "kw": "keyword",
+    "lalpag": "lalpag",
+    "lfs": "lifestyle retargeting",
+    "lifeevent": "lifeevent",
+    "longtail": "longtail",
+    "mail": "email",
+    "nrt": "not retargeted",
+    "open": "open",
+    "oth": "other retargeting",
+    "pixreyg": "pixreyg",
+    "pura": "pura",
+    "pxleyg": "pxleyg",
+    "pxlnd": "pxlnd",
+    "rtg": "retargeted ad",
+    "sim": "similar",
+    "slf": "remarketing solify",
+    "slm": "remarketing solmatch",
+    "sociodemo": "sociodemográfica",
+    "tarifa": "tarifa",
+    "tarifaplana": "tarifaplana"
+  },
+  "objetivos": {
+    "all": "no aplica",
+    "brd": "Branding/Awareness",
+    "drs": "Direct Response/Sales",
+    "eng": "Engagements",
+    "fan": "Social fan driving",
+    "lds": "Leads",
+    "sub": "Subscriptions",
+    "trf": "Traffic driving",
+    "vrl": "Viral/WOM driving"
+  },
+  "modelos": {
+    "all": "no aplica",
+    "ava": "Added Value (Sin Cargo)",
+    "cenv": "Coste por Envío",
+    "cf": "Coste Fijo",
+    "cpa": "Coste Por Actividad (adquisición, descarga pdf, botón callmeback…)",
+    "cpc": "Coste Por Click",
+    "cpd": "Coste Por Descarga",
+    "cpe": "Coste Por Engagement",
+    "cpf": "Coste Por Fan",
+    "cpl": "Coste Por Lead",
+    "cplc": "Coste Por Link Click (Facebook + Instagram)",
+    "cpm": "Coste Por Mil (impresiones)",
+    "cpmv": "Coste Por Mil Viewability",
+    "cpu": "Coste Por Usuario Único",
+    "cpv": "Coste Por View",
+    "cpvs": "Coste por Visita",
+    "cpvv": "Coste Por Views Viewability",
+    "cprv": "coste registro único verificado",
+    "dcenv": "dinamic Coste por Envío",
+    "dcpa": "dinamic Coste Por Actividad (adquisición, descarga pdf, botón callmeback…)",
+    "dcpc": "dinamic Coste Por Click",
+    "dcpd": "dinamic Coste Por Descarga",
+    "dcpe": "dinamic Coste Por Engagement",
+    "dcpf": "dinamic Coste Por Formulario",
+    "dcpl": "dinamic Coste Por Lead",
+    "dcpm": "dinamic Coste Por Mil (impresiones)",
+    "dcpv": "dinamic Coste Por View",
+    "dcre": "dinamic Coste Por Evento",
+    "rf": "Reach & Frecuency (Facebook + Instagram)"
+  },
+  "canal900": {
+    "wible": "Wible",
+    "mb": "Marca Blanca",
+    "correg": "Corregistros",
+    "afil": "Afiliación",
+    "micro": "Microcolectivos",
+    "nurturing": "Nurturing",
+    "colectrep": "Colectivos Repsol",
+    "bosch": "Call Blending de Bosch",
+    "majorel": "Call Blending de Majorel",
+    "delio": "Call Blending de Delio",
+    "contesta": "Call Blending de Contesta",
+    "mgm": "MGM",
+    "glp": "GLP"
+  },
+  "codigoCC": {
+    "01": "ICCS",
+    "02": "Contesta",
+    "04": "Bosch",
+    "03": "Majorel"
+  },
+  "trafico": {
+    "std": "Standard (regular display banners)",
+    "ssv": "Site-served (no ad server tracking)",
+    "pix": "Pixel",
+    "cc": "Click command",
+    "pcc": "Pixel and Click Command",
+    "rmv": "Rich Media Video",
+    "rme": "Rich Media Expand",
+    "rmo": "Rich Media Other",
+    "vas": "VAST-type Video Serving",
+    "vpd": "VPAID-type Video Serving",
+    "redirect": "Redirect",
+    "1x1": "1x1"
+  }
+}
