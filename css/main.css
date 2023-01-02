@@ -7,11 +7,18 @@
     src: url(../fonts/roboto/Roboto-Regular.ttf);
 }
 body {
+    margin: 0;
     font: 1rem/1.5 Roboto;
     color:#757575
 }
 .container {
-    width: 100%;
+    max-width: 100%;
+    padding: 0px;
+}
+.formulario{
+    max-width: 1000px;
+    padding: 0 .75rem;
+    margin:auto;
 }
 .header {
     padding: 1rem 1rem 0.9375rem;
@@ -21,6 +28,7 @@ body {
     border-bottom: 1px solid #ddd;
     transition: transform .2s ease;
     margin-bottom: 30px;
+    box-shadow: 0 0 1rem rgb(100 100 100 / 25%);
 }
 .header__logo img {
     height: 24px;

@@ -1,5 +1,4 @@
-import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
 
 export var currentUser;
@@ -14,7 +13,7 @@ $("#login-form").on("submit", async (e) => {
     $('#signinModal').modal('hide');
     $('#signinModal').trigger('reset');
     currentUser = userCredentials.user;
-    if (!userCredentials.user.displayName) {
+    if (!currentUser.displayName) {
       $('#updateModal').modal('show');
     }
   }

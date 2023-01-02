@@ -19,6 +19,9 @@ window.enviar = function(){
 ;}
 
 const generar_url = function(){
+    if (!currentUser){
+        return
+    }
     if (!validar()){
         return
     }
