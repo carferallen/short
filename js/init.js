@@ -1,14 +1,15 @@
 import { get_campaigns } from "./firestore.js";
 
-let config = $.ajax({
-    url: 'data/config.json',
-    cache: false,
-    async: false,
-    dataType: 'json',
-}).responseText;
-config =  $.parseJSON(config);
+let config;
 
 export const inicializa = function() {
+    config = $.ajax({
+        url: 'data/config.json',
+        cache: false,
+        async: false,
+        dataType: 'json',
+    }).responseText;
+    config =  $.parseJSON(config);
     get_campaigns();
     get_tiposCampanas();
     get_agencias();
@@ -48,9 +49,23 @@ const init_events = function(){
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
     });
-    $('.header.wrap .header__logo').on("click", (e) => {
+    $('#logo').on("click", (e) => {
         if (e.ctrlKey) {
-          alert('sas')
+            console.log('asdasdsd')
+            e.preventDefault();
+            try {
+                var response = $.ajax({
+                    url: 'https://herramientas.repsol.com/cgi-bin/short/sync.py',
+                    cache: false,
+                    async: false,
+                    dataType: 'text',
+                }).responseText;
+                alert(response);
+                inicializa();
+                }
+            catch(error) {
+                alert('Algo fue mal...\n'+error);
+            }
         }
     });
 };
@@ -78,30 +93,35 @@ const get_fuentes = function(tipo_medio) {
 }
 
 const get_tiposCampanas = function() {
+    $('#tipo-de-campana').empty()
     $.each(ordena(config['tipos-de-campanas']), function(value, text) {
         $('#tipo-de-campana').append(new Option(text, value));
     });
 }
 
 const get_agencias = function() {
+    $('#agencia').empty()
     $.each(ordena(config['agencias']), function(value, text) {
         $('#agencia').append(new Option(text, value));
     });
 }
 
 const get_secciones = function() {
+    $('#seccion').empty()
     $.each(ordena(config['secciones']), function(value, text) {
         $('#seccion').append(new Option(text, value));
     });
 }
 
 const get_medios = function() {
+    $('#medio').empty()
     $.each(ordena(config['medios']), function(value, text) {
         $('#medio').append(new Option(text, value));
     });
 }
 
 const get_negocios = function() {
+    $('#area-negocio').empty()
     let list_areas = {};
     $.each(config["areas-negocios"], function(value, text) {
         list_areas[value]=text["nombre"];
@@ -112,12 +132,14 @@ const get_negocios = function() {
 }
 
 const get_formatos = function() {
+    $('#formato').empty()
     $.each(ordena(config['formatos']), function(value, text) {
         $('#formato').append(new Option(text, value));
     });
 }
 
 const get_adsizes = function() {
+    $('#adsize').empty()
     $.each(ordena(config['adsizes']), function(value, text) {
         $('#adsize').append(new Option(text, value));
     });
