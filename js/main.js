@@ -76,7 +76,8 @@ const generar_url = function(){
     $.each(urls, function(id_url,url){
         const linea = {
             userid: currentUser.uid,
-            user: currentUser.displayName + ' <' + currentUser.email + '>',
+            user: currentUser.displayName,
+            email: currentUser.email,
             fecha: url.fecha,
             nombre: url.nombre,
             descripcion: url.descripcion,

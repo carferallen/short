@@ -136,6 +136,11 @@ h3 {
     background-color: #00adc3;
 }
 
+.table {
+    font:0.8rem/1 Roboto;
+    text-align: center;
+}
+
 @media (min-width: 1024px) {
     .header {
         padding: 1.25rem 2rem 1.1875rem;
