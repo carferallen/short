@@ -165,7 +165,7 @@ const ordena = function(obj) {
         return [key, obj[key]];
     });
     items.sort(function(first, second) {
-        return (second[1]>first[1]?-1:second[1]<first[1]?1:0);
+        return (second[1].toLowerCase()>first[1].toLowerCase()?-1:second[1].toLowerCase()<first[1].toLowerCase()?1:0);
     });
     let sorted_obj={}
     $.each(items, function(k, v) {
