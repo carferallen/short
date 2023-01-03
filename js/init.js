@@ -100,7 +100,7 @@ const get_segmentos = function(area_negocio) {
 }
 
 const get_fuentes = function(tipo_medio) {
-    $('#fuente').empty().append('<option selected disabled value="">Fuente '+ tipo_medio +'*</option>')
+    $('#fuente').empty().append('<option selected disabled value="">Fuente '+ tipo_medio +' *</option>')
     $.each(ordena(config["fuentes-"+tipo_medio]), function(value, text) {
         $('#fuente').append(new Option(text, value));
     });
@@ -108,35 +108,35 @@ const get_fuentes = function(tipo_medio) {
 }
 
 const get_tiposCampanas = function() {
-    $('#tipo-de-campana').empty()
+    $('#tipo-de-campana').empty().append('<option selected disabled value="">Tipo de campaña *</option>');
     $.each(ordena(config['tipos-de-campanas']), function(value, text) {
         $('#tipo-de-campana').append(new Option(text, value));
     });
 }
 
 const get_agencias = function() {
-    $('#agencia').empty()
+    $('#agencia').empty().append('<option selected disabled value="">Agencia *</option>');
     $.each(ordena(config['agencias']), function(value, text) {
         $('#agencia').append(new Option(text, value));
     });
 }
 
 const get_secciones = function() {
-    $('#seccion').empty()
+    $('#seccion').empty().append('<option selected disabled value="all">Sección (all)</option>');
     $.each(ordena(config['secciones']), function(value, text) {
         $('#seccion').append(new Option(text, value));
     });
 }
 
 const get_medios = function() {
-    $('#medio').empty()
+    $('#medio').empty().append('<option selected disabled value="">Medio *</option>');
     $.each(ordena(config['medios']), function(value, text) {
         $('#medio').append(new Option(text, value));
     });
 }
 
 const get_negocios = function() {
-    $('#area-negocio').empty()
+    $('#area-negocio').empty().append('<option selected disabled value="">Área / Negocio *</option>');
     let list_areas = {};
     $.each(config["areas-negocios"], function(value, text) {
         list_areas[value]=text["nombre"];
