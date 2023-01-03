@@ -1,5 +1,6 @@
 import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
+import { alert } from "./init.js";
 
 export var currentUser;
 
@@ -19,9 +20,9 @@ $("#login-form").on("submit", async (e) => {
   }
   catch (error) {
     if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
-      alert("Usuario o contraseña incorrectos")
+      alert("Usuario o contraseña incorrectos", "danger", "#signinModal #Alertas")
     } else {
-      alert("Algo salió mal...\n", error)
+      alert("Algo salió mal...\n"+error, "danger","#signinModal #Alertas")
     }
   }
 });
@@ -33,7 +34,7 @@ $('#update-form').on("submit", async (e) => {
   const NewPasswordCheck = $('#update-form #newPasswordCheck').val();
 
   if (NewPasswordCheck != newPassword) {
-    alert("las contraseñas no coinciden");
+    alert("Las contraseñas no coinciden", "danger", "#updateModal #Alertas");
     return;
   }
 
@@ -45,7 +46,7 @@ $('#update-form').on("submit", async (e) => {
     $('#updateModal').trigger('reset');
     }
   catch (error) {
-    alert("Algo salió mal... \n" + error)
+    alert("Algo salió mal... \n" + error, "danger", "#updateModal #Alertas")
     };
 });
 

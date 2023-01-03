@@ -34,6 +34,19 @@ body {
     height: 24px;
 }
 
+@keyframes spin3D {
+    from { transform: rotateY(0deg) }
+    to { transform: rotateY(360deg) }
+}
+
+.spinhov3D {
+    animation-name: spin3D;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+}
+
 .header__name {
     text-align: center;
 }

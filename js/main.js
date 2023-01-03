@@ -1,14 +1,14 @@
 import { get_campaigns, put_campaign } from "./firestore.js";
-import { inicializa } from "./init.js";
+import { inicializa, alert } from "./init.js";
 import { currentUser } from "./login.js";
 
 const validar = function(){
     if(/^[a-zA-Z0-9-,-,ñ,á,é,í,ó,ú]*$/.test($('#nombre').val()) == false){
-        alert("El nombre de campaña no puede contener espacios ni caracteres especiales, excepto '-'");
+        alert("El nombre de campaña no puede contener espacios ni caracteres especiales, excepto '-'","warning");
         return false;
     }
     if ($('#nombre').val().length+$('#area-negocio').val().length+$('#segmento').val().length > 38) {
-        alert("El nombre de campaña, junto con el negocio y la fecha, no pueden contener más de 40 caracteres");
+        alert("El nombre de campaña, junto con el negocio y la fecha, no pueden contener más de 40 caracteres", "warning");
         return false;
     }
     return true

@@ -25,7 +25,18 @@ export const inicializa = function() {
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     });
-}
+};
+
+export const alert = (message, type, placement='#AlertasPrincipales') => {
+    const wrapper = document.createElement('div')
+    wrapper.innerHTML = [
+    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+    ].join('');
+    $(placement).append(wrapper)
+};
 
 const init_events = function(){
     $('#tipo-de-campana').on('change', function() {
@@ -53,17 +64,22 @@ const init_events = function(){
         if (e.ctrlKey) {
             e.preventDefault();
             try {
+                $('#logo img').addClass('spinhov3D');
                 var response = $.ajax({
                     url: 'https://herramientas.repsol.com/cgi-bin/short/sync.py',
                     cache: false,
                     async: false,
                     dataType: 'text',
                 }).responseText;
-                alert(response);
-                inicializa();
-                }
+                $('#logo img').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
+                    $(this).removeClass('spinhov3D');
+                    alert(response,'success');
+                    inicializa();
+                });
+            }
             catch(error) {
-                alert('Algo fue mal...\n'+error);
+                $('#logo img').removeClass('spinhov3D');
+                alert('Algo fue mal en la sincronización...\n'+error, 'danger');
             }
         }
     });
