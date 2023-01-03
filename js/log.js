@@ -1,3 +1,5 @@
+import { currentUser } from "./login.js";
+import { alert } from "./init.js";
 import { get_campaigns_details } from "./firestore.js";
 
 $(document).ready(async function(){
