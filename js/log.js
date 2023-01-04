@@ -4,7 +4,7 @@ import { get_log } from "./firestore.js";
 import { } from "./login.js";
 
 const carga_log = async function() {
-    listado = await get_log();       
+    let listado = await get_log();       
     $('#listado').hide()
     $('#listado table>tbody').empty();
         listado.forEach(campana => {
