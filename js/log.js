@@ -1,9 +1,7 @@
-import { currentUser } from "./login.js";
-import { alert } from "./init.js";
-import { get_campaigns_details } from "./firestore.js";
+import { get_log } from "./firestore.js";
 
 $(document).ready(async function(){
-    const listado = await get_campaigns_details();       
+    const listado = await get_log();       
     $('#listado').hide()
     $('#listado table>tbody').empty();
         listado.forEach(campana => {

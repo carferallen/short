@@ -1,5 +1,6 @@
 import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
+import { get_campaigns } from "./firestore.js";
 import { alert } from "./init.js";
 
 export var currentUser;
@@ -54,6 +55,9 @@ onAuthStateChanged(auth, async (user) => {
   if (user) {
     if (user.displayName) {
       $('#logged_name').html(`Hola, ${user.displayName}`);
+      if ($('#formulario #nombre')) {
+        get_campaigns();
+      }
     }
   } else {
     $('#logged_name').html("");
