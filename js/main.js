@@ -1,4 +1,4 @@
-import { get_campaigns, put_campaign } from "./firestore.js";
+import { get_campaigns, put_log } from "./firestore.js";
 import { inicializa, alert } from "./init.js";
 import { currentUser } from "./login.js";
 
@@ -87,7 +87,7 @@ const generar_url = function(){
             utm_content: url.utm_content,
             url:url.url,
         };
-        put_campaign(linea);
+        put_log(linea);
     });
     get_campaigns();
 
@@ -124,5 +124,5 @@ const autocompletar = function(){
 
 $(document).ready(function() {
     inicializa();
-    //autocompletar();
+    autocompletar();
 });
