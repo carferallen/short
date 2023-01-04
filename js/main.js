@@ -1,5 +1,5 @@
 import { get_campaigns, put_log } from "./firestore.js";
-import { inicializa, alert } from "./init.js";
+import { inicializa, alert, set_autocomplete } from "./init.js";
 import { currentUser } from "./login.js";
 
 const validar = function(){
@@ -89,8 +89,7 @@ const generar_url = function(){
         };
         put_log(linea);
     });
-    get_campaigns();
-
+    set_autocomplete();
 };
 
 window.copiar = function() {

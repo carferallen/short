@@ -1,6 +1,5 @@
 import { db } from "./firebase.js";
 import { collection, doc, addDoc, setDoc, getDocs, query, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-firestore.js"
-import { ac } from "./init.js";
 
 export const get_campaigns = async function(){
     let campanas = [];
@@ -9,7 +8,7 @@ export const get_campaigns = async function(){
         listado.forEach(campana => {
             campanas.push({label:campana.id, value:(campana.data().descripcion?' ('+campana.data().descripcion+')':'')})
         });
-        ac.setData(campanas);
+        return campanas;
     } catch (error) {
         throw new Error(error);
     }

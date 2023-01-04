@@ -1,4 +1,5 @@
 import { Autocomplete } from "./autocomplete.js";
+import { get_campaigns } from "./firestore.js";
 
 let config;
 
@@ -10,6 +11,7 @@ export const inicializa = function() {
         dataType: 'json',
     }).responseText;
     config =  $.parseJSON(config);
+    set_autocomplete();
     get_tiposCampanas();
     get_agencias();
     get_secciones();
@@ -37,7 +39,12 @@ export const alert = (message, type, placement='#AlertasPrincipales') => {
     $(placement).append(wrapper)
 };
 
-export const ac = new Autocomplete(document.getElementById('nombre'), {
+export const set_autocomplete = async function(){
+    let campanas = await get_campaigns();
+    ac.setData(campanas)
+}
+
+const ac = new Autocomplete(document.getElementById('nombre'), {
     data: null,
     showValue: true,
     onSelectItem: ({label, value}) => {
