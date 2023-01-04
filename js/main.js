@@ -1,6 +1,11 @@
-import { get_campaigns, put_log } from "./firestore.js";
-import { inicializa, alert, set_autocomplete } from "./init.js";
-import { currentUser } from "./login.js";
+import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { auth } from "./firebase.js";
+import { } from "./login.js";
+import { Autocomplete } from "./autocomplete.js";
+import { put_log, get_campaigns } from "./firestore.js";
+import { inicializa, alert } from "./init.js";
+
+var currentUser;
 
 const validar = function(){
     if(/^[a-zA-Z0-9-,-,ñ,á,é,í,ó,ú]*$/.test($('#nombre').val()) == false){
@@ -13,6 +18,21 @@ const validar = function(){
     }
     return true
 }
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      if (user.displayName) {
+        $('#logged_name').html(`Hola, ${user.displayName}`);
+        if ($('#formulario #nombre')) {
+          set_autocomplete();
+        }
+      }
+    } else {
+      $('#logged_name').html("");
+      $('#signinModal').modal('show');
+    }
+    currentUser = user;
+});
 
 window.enviar = function(){
     generar_url()
@@ -107,6 +127,22 @@ const get_shortURL = function(url){
     }).responseText;
     return shortURL
 };
+
+const ac = new Autocomplete(document.getElementById('nombre'), {
+    data: null,
+    showValue: true,
+    onSelectItem: ({label, value}) => {
+        $('#nombre_descriptivo').val('');
+        if (value) {
+            $('#nombre_descriptivo').val(value.replace(' (','').replace(')',''));
+        }
+    }
+});
+
+export const set_autocomplete = async function(){
+    let campanas = await get_campaigns();
+    ac.setData(campanas)
+}
 
 const autocompletar = function(){
     $('#tipo-de-campana').val('corporativa');
