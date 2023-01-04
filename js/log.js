@@ -1,7 +1,10 @@
+import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { auth } from "./firebase.js";
 import { get_log } from "./firestore.js";
+import { } from "./login.js";
 
-$(document).ready(async function(){
-    const listado = await get_log();       
+const carga_log = async function() {
+    listado = await get_log();       
     $('#listado').hide()
     $('#listado table>tbody').empty();
         listado.forEach(campana => {
@@ -21,4 +24,20 @@ $(document).ready(async function(){
         $('#listado table>tbody').append(html);
     });
     $('#listado').show()
+};
+
+$(document).ready(async function(){
+    carga_log();
+});
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      if (user.displayName) {
+        $('#logged_name').html(`Hola, ${user.displayName}`);
+        carga_log();
+      }
+    } else {
+      $('#logged_name').html("");
+      $('#signinModal').modal('show');
+    }
 });

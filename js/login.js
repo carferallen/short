@@ -1,6 +1,5 @@
-import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
+import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
-import { get_campaigns } from "./firestore.js";
 import { alert } from "./init.js";
 
 export var currentUser;
@@ -49,21 +48,6 @@ $('#update-form').on("submit", async (e) => {
   catch (error) {
     alert("Algo salió mal... \n" + error, "danger", "#updateModal #Alertas")
     };
-});
-
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-    if (user.displayName) {
-      $('#logged_name').html(`Hola, ${user.displayName}`);
-      if ($('#formulario #nombre')) {
-        get_campaigns();
-      }
-    }
-  } else {
-    $('#logged_name').html("");
-    $('#signinModal').modal('show');
-  }
-  currentUser = user;
 });
 
 $('#logout').on("click", async (e) => {
