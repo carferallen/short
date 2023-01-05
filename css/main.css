@@ -141,6 +141,31 @@ h3 {
     text-align: center;
 }
 
+div.pager {
+    text-align: center; 
+}
+
+div.pager span {
+    display: inline-block;
+    width: 1.8em;
+    height: 1.8em;
+    line-height: 1.8;
+    text-align: center;
+    cursor: pointer;
+    background: #00adc3;
+    border-color: #00adc3;
+    border-radius:10%;
+    color: #ddd;
+    margin-right: 0.5em;
+}
+
+div.pager span.active {
+    background: #016a7f;
+    color:#ddd;
+    font-weight:bold;
+    text-align:center;
+}
+
 @media (min-width: 1024px) {
     .header {
         padding: 1.25rem 2rem 1.1875rem;

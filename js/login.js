@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword, updatePassword, updateProfile, signOut} fro
 import { auth } from "./firebase.js";
 import { alert } from "./init.js";
 
-export var currentUser;
+var currentUser;
 
 $("#login-form").on("submit", async (e) => {
   e.preventDefault();
