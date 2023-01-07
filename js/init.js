@@ -17,7 +17,6 @@ export const inicializa = function() {
     get_negocios();
     get_formatos();
     get_adsizes();
-    init_events();
     init_multiple('#formato','Ad formats');
     init_multiple('#adsize','Ad sizes');
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
@@ -27,17 +26,15 @@ export const inicializa = function() {
 };
 
 export const alert = (message, type, placement='#AlertasPrincipales') => {
-    const wrapper = document.createElement('div')
-    wrapper.innerHTML = [
-    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-    `   <div>${message}</div>`,
-    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-    '</div>'
-    ].join('');
-    $(placement).append(wrapper)
+    let html = 
+    `<div id="alerta" class="alert alert-${type} alert-dismissible" role="alert">
+       <div>${message}</div>
+       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>`
+    $(placement).html(html);
 };
 
-const init_events = function(){
+export const init_events = function(){
     $('#tipo-de-campana').on('change', function() {
         let opt = $(this).val()
         if ($.inArray(opt,['promocional','comercial'])!=-1) {
@@ -59,25 +56,24 @@ const init_events = function(){
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
     });
-    $('#logo').on("click", (e) => {
+    $('.header__logo').on("click", (e) => {
         if (e.ctrlKey) {
-            e.preventDefault();
             try {
-                $('#logo img').addClass('spinhov3D');
-                var response = $.ajax({
+                $('.header__logo img').addClass('spinhov3D');
+                var response =  $.ajax({
                     url: 'https://herramientas.repsol.com/cgi-bin/short/sync.py',
                     cache: false,
                     async: false,
                     dataType: 'text',
                 }).responseText;
-                $('#logo img').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
+                $('.header__logo img').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
                     $(this).removeClass('spinhov3D');
-                    alert(response,'success');
                     inicializa();
+                    alert(response,'success');
                 });
             }
             catch(error) {
-                $('#logo img').removeClass('spinhov3D');
+                $('.header__logo img').removeClass('spinhov3D');
                 alert('Algo fue mal en la sincronización...\n'+error, 'danger');
             }
         }

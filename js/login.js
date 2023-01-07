@@ -61,6 +61,7 @@ $('#logout').on("click", async (e) => {
 
 $('#logged_name').on("click", (e) => {
   if (e.ctrlKey) {
+    e.preventDefault();
     $('#updateModal').modal('show')
   }
 });

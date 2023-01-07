@@ -3,7 +3,7 @@ import { auth } from "./firebase.js";
 import { } from "./login.js";
 import { Autocomplete } from "./autocomplete.js";
 import { put_log, get_campaigns } from "./firestore.js";
-import { inicializa, alert } from "./init.js";
+import { inicializa, init_events, alert } from "./init.js";
 
 var currentUser;
 
@@ -144,9 +144,9 @@ export const set_autocomplete = async function(){
     ac.setData(campanas)
 }
 
-const autocompletar = function(){
+const autocompletar = async function(){
     $('#tipo-de-campana').val('corporativa');
-    $('#medio_1').prop('checked', true).trigger("change");
+    await $('#medio_1').prop('checked', true).trigger("change");
     $('#fuente').val('rrss');
     $('#medio').val('cpc');
     $('#nombre').val('promodisney');
@@ -159,9 +159,10 @@ const autocompletar = function(){
 
 $(document).ready(function() {
     inicializa();
+    init_events();
     if (GetURLParameter('a')==1) {
         autocompletar();
-    }
+    };
 });
 
 
