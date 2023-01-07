@@ -137,34 +137,50 @@ h3 {
 }
 
 .table {
-    font:0.8rem/1 Roboto;
-    text-align: center;
+    font: 0.7rem/1 Roboto;
+    color: #757575;
+    text-align: center;    
 }
 
-div.pager {
-    text-align: center; 
+.table a, .table a:visited {
+    color: #016a7f;
 }
 
-div.pager span {
-    display: inline-block;
-    width: 1.8em;
-    height: 1.8em;
-    line-height: 1.8;
-    text-align: center;
-    cursor: pointer;
-    background: #00adc3;
+.table a:hover {
+    color: #00adc3;
+}
+
+.dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
+    font: 0.7rem/1 Roboto;
+}
+
+div.dataTables_wrapper div.dataTables_length select, div.dataTables_wrapper div.dataTables_filter input {
+    font: 0.7rem/1 Roboto;
+}
+
+.page-item .page-link {
+    background-color: #00adc3;
     border-color: #00adc3;
-    border-radius:10%;
-    color: #ddd;
-    margin-right: 0.5em;
+    color: #fff;
 }
 
-div.pager span.active {
-    background: #016a7f;
-    color:#ddd;
-    font-weight:bold;
-    text-align:center;
+.page-item.active .page-link {
+    color: #ddd;
+    background-color: #016a7f;
+    border-color: #016a7f;
 }
+
+.page-link:focus {
+    box-shadow: none;
+}
+
+/*.page-item.active {
+    background-color: #00adc3;
+    border-color: #00adc3;
+    color: #fff;
+}
+
+*/
 
 @media (min-width: 1024px) {
     .header {
