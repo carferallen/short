@@ -180,6 +180,10 @@ const autocompletar = async function(){
 $(document).ready(function() {
     inicializa();
     init_events();
+    let page = GetURLParameter('page');
+    if (page) {
+        $('#url').val(page);
+    };
     if (GetURLParameter('a')==1) {
         autocompletar();
     };
