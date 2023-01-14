@@ -65,3 +65,11 @@ $('#logged_name').on("click", (e) => {
     $('#updateModal').modal('show')
   }
 });
+
+$('#signinModal').on('shown.bs.modal', function () {
+  $('#login-email').focus();
+}) 
+
+$('#updateModal').on('shown.bs.modal', function () {
+  $('#displayName').focus();
+}) 
