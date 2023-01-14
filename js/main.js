@@ -45,7 +45,7 @@ window.search = async function(){
     let html;
     tabla.empty();
     $.each(campanas, function(id, campana) {
-        html += `<tr><td class="col-xs-4">${campana.label}</td><td class="col-xs-8">${campana.value.replace(' (','').replace(')','')}</td></tr>`;
+        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion?campana.descripcion:''}</td></tr>`;
     });
     tabla.html(html);
     $('#searchModal').modal('show');
@@ -156,7 +156,12 @@ const ac = new Autocomplete(document.getElementById('nombre'), {
 
 export const set_autocomplete = async function(){
     let campanas = await get_campaigns();
-    ac.setData(campanas)
+    let listado = [];
+    $.each(campanas, function(id, campana){
+        
+        listado.push({label:campana.nombre, value:campana.descripcion?' ('+campana.descripcion+')':''});
+    })
+    ac.setData(listado)
 }
 
 const autocompletar = async function(){
