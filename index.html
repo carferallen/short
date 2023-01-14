@@ -27,7 +27,9 @@
                 <div class="form-group mb-2 row">
                     <label for="tipo-de-campana" class="col-md-6 col-form-label">
                         ¿Qué tipo de campaña vas a realizar? 
-                        <span data-toggle="tooltip" data-placement="top" title="Texto de ayuda"><i class="bi bi-info-square"></i></span>
+                        <span data-toggle="tooltip" data-placement="top" title="En función del tipo de campaña, se solicitarán más o menos campos">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
                     </label>
                     <div class="col-md-6">
                         <select class="form-select custom-select" id="tipo-de-campana" required></select>
@@ -62,7 +64,10 @@
                 <div class="form-group mb-2 row">
                     <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña</label>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
+                            <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
+                        </div>
                     </div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Nombre descriptivo *" required>
@@ -193,6 +198,30 @@
                             <input type="password" id="newPasswordCheck" class="form-control mb-3" placeholder="Contraseña*" required>
                             <button type="submit" class="btn btn-primary w-100 mb-4">Enviar</button>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="searchModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>Campañas</h3>
+                    </div>
+                    <div class="modal-body well">
+                        <table class="table table-scroll table-striped" id="listadoCampañas">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     </div>
                 </div>
             </div>

@@ -136,6 +136,50 @@ h3 {
     background-color: #00adc3;
 }
 
+.well {
+    background: none;
+    height: 320px;
+    margin-right: 10px;
+}
+
+.input-group-text {
+    cursor: pointer;
+}
+
+.table-scroll {
+    font: 0.8rem/1 Roboto !important; 
+    text-align: left !important;
+}
+
+.table-scroll th {
+    background: #016a7f;
+    color: #fff;
+    font-size: 1rem !important;
+}
+
+.table-scroll tr:hover {
+    background: #ddd;
+    font-size: 0.9rem !important;
+}
+
+.table-scroll tbody {
+    position: absolute;
+    overflow-y: scroll;
+    height: 250px;
+    cursor: pointer;
+}
+
+.table-scroll tr {
+    width: 100%;
+    table-layout: fixed;
+    display: inline-table;
+}
+
+.table-scroll thead > tr > th , .table-scroll td{
+    border: 0px solid;
+    padding: 5px;
+}
+
 .table {
     font: 0.7rem/1 Roboto;
     color: #757575;

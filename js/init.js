@@ -60,16 +60,18 @@ export const init_events = function(){
         if (e.ctrlKey) {
             try {
                 $('.header__logo img').addClass('spinhov3D');
-                var response =  $.ajax({
-                    url: 'https://herramientas.repsol.com/cgi-bin/short/sync.py',
-                    cache: false,
-                    async: false,
-                    dataType: 'text',
-                }).responseText;
-                $('.header__logo img').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
-                    $(this).removeClass('spinhov3D');
-                    inicializa();
-                    alert(response,'success');
+                $('.header__logo img').on('animationstart webkitAnimationStart MSAnimationStart oAnimationStart', function(e) {
+                    var response = $.ajax({
+                        url: 'https://herramientas.repsol.com/cgi-bin/short/sync.py',
+                        cache: false,
+                        async: false,
+                        dataType: 'text',
+                    }).responseText;
+                    $('.header__logo img').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
+                        $(this).removeClass('spinhov3D');
+                        inicializa();
+                        alert(response,'success');
+                    });
                 });
             }
             catch(error) {
@@ -77,6 +79,11 @@ export const init_events = function(){
                 alert('Algo fue mal en la sincronización...\n'+error, 'danger');
             }
         }
+    });
+    $('#listadoCampañas').on('click', 'tr', function() {
+        $('#nombre').val($(this).children('td:nth(0)').html());
+        $('#nombre_descriptivo').val($(this).children('td:nth(1)').html());
+        $('#searchModal').modal('hide')
     });
 };
 

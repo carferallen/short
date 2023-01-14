@@ -26,6 +26,7 @@ const carga_log = async function() {
     await $('#listado table>tbody').append(html);
     $('#listado table').dataTable({
         destroy: true,
+        order: [[0, 'desc']],
         language: {
             url: 'js/datatables.es.json'
         }

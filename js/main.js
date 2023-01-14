@@ -38,6 +38,19 @@ window.enviar = function(){
     generar_url()
 ;}
 
+window.search = async function(){
+    let campanas = await get_campaigns();
+    let tabla = $('table>tbody','#searchModal');
+
+    let html;
+    tabla.empty();
+    $.each(campanas, function(id, campana) {
+        html += `<tr><td class="col-xs-4">${campana.label}</td><td class="col-xs-8">${campana.value.replace(' (','').replace(')','')}</td></tr>`;
+    });
+    tabla.html(html);
+    $('#searchModal').modal('show');
+}
+
 const generar_url = function(){
     if (!currentUser){
         return
@@ -63,9 +76,11 @@ const generar_url = function(){
         urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','url':url})
     }
     else {
-        $.each($.merge(['all'],$('#formato').val()), function(f,v_f) {
-            $.each($.merge(['all'],$('#adsize').val()), function(s,v_s) {
-                let utm_content = v_f+'-'+v_s;
+        $.each($.merge(['all'],$('#formato').val()), function(formatoId, formato) {
+            $.each($.merge(['all'],$('#adsize').val()), function(adsizeId, adsize) {
+                
+                let utm_content = formato+'-'+adsize;
+
                 urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':utm_content,
                 'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content});
             });
@@ -118,7 +133,7 @@ window.copiar = function() {
 };
 
 const get_shortURL = function(url){
-    let enc_url = encodeURIComponent(url)
+    let enc_url = encodeURIComponent(url);
     var shortURL = $.ajax({
         url: 'https://herramientas.repsol.com/cgi-bin/short/short.py?destino=' + enc_url,
         cache: false,
