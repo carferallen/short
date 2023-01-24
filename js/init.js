@@ -15,10 +15,7 @@ export const inicializa = function() {
     get_secciones();
     get_medios();
     get_negocios();
-    get_formatos();
-    get_adsizes();
-    init_multiple('#formato','Ad formats');
-    init_multiple('#adsize','Ad sizes');
+    get_detalles();
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -35,23 +32,29 @@ export const alert = (message, type, placement='#AlertasPrincipales') => {
 };
 
 export const init_events = function(){
-    $('#tipo-de-campana').on('change', function() {
-        let opt = $(this).val()
-        if ($.inArray(opt,['promocional','comercial'])!=-1) {
-            $('#otros-detalles').show();
+    $('.multiple').on('change', function(){       
+        if (is_multi()) {
             $('#acortar').prop('checked',false);
             $('#acortar').prop('disabled', true)
         }
         else {
-            $('#otros-detalles').hide()
             $('#acortar').prop('disabled', false)
+        }
+    });
+    $('#tipo-de-campana').on('change', function() {
+        let opt = $(this).val()
+        if ($.inArray(opt,['promocional','comercial'])!=-1) {
+            $('#otros-detalles').show();
+        }
+        else {
+            $('#otros-detalles').hide()
         }
     });
     $('#tipo-medio').on('change', function() {
         get_fuentes($('input[name=medio]:checked', this).val());
     });
     $('#area-negocio').on('change', function() {
-        get_segmentos($(this).val());
+        get_productos($(this).val());
     });
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
@@ -87,18 +90,29 @@ export const init_events = function(){
     });
 };
 
-const get_segmentos = function(area_negocio) {
-    $('#segmento').empty()
+const is_multi = function() {
+    let multi = false;
+    $('.multiple').each( function(){
+        if ($(this).val().length > 1) {
+            multi = true;
+            return multi;
+        }
+    });
+    return multi;
+};
+
+const get_productos = function(area_negocio) {
+    $('#producto').empty()
     if (Object.keys(config["areas-negocios"][area_negocio]["segmentos"]).length==0){
-        $('#segmento').append('<option selected value="all">Genérico</option>')
+        $('#producto').append('<option selected value="all">Genérico</option>')
     }
-    $('#segmento').append(new Option("Genérico", "all"));
+    $('#producto').append(new Option("Genérico", "all"));
     $.each(ordena(config["areas-negocios"][area_negocio]["segmentos"]), function(value, text) {
         if (value!='all'){
-            $('#segmento').append(new Option(text, value));
+            $('#producto').append(new Option(text, value));
         }
     })
-    $('#segmento').removeAttr("disabled")
+    $('#producto').removeAttr("disabled")
 }
 
 const get_fuentes = function(tipo_medio) {
@@ -148,18 +162,26 @@ const get_negocios = function() {
     });
 }
 
-const get_formatos = function() {
-    $('#formato').empty()
-    $.each(ordena(config['formatos']), function(value, text) {
-        $('#formato').append(new Option(text, value));
-    });
+const get_detalles = function() {
+    get_datos('formatos','#formato','Ad formats');
+    get_datos('adsizes','#adsize', 'Ad sizes');
+    get_datos('segmentos','#segmentacion','Segmentación');
+    get_datos('audiencias','#audiencia','Audiencia');
+    get_datos('devices','#device','Dispositivo');
+    get_datos('objetivos','#objetivo','Objetivo');
+    get_datos('modelos','#modelo','Modelo de compra');
+    get_datos('canal900','#canal900','Abreviatura canal 900');
+    get_datos('codigoCC','#codigoCC','Código CC');
+    get_datos('trafico','#trafico','Tráfico');
+
 }
 
-const get_adsizes = function() {
-    $('#adsize').empty()
-    $.each(ordena(config['adsizes']), function(value, text) {
-        $('#adsize').append(new Option(text, value));
+const get_datos = function(data, element, label) {
+    $(element).empty()
+    $.each(ordena(config[data]), function(value, text) {
+        $(element).append(new Option(text, value));
     });
+    init_multiple(element,label);
 }
 
 const ordena = function(obj) {
@@ -188,6 +210,8 @@ const init_multiple = function(id,label){
         includeSelectAllDivider: true,
         selectAllText: 'Seleccionar todo',
         allSelectedText: 'Todo',
+        numberDisplayed: 1,
+        nSelectedText: 'seleccionadas',
         maxHeight: 400,
     });
 };

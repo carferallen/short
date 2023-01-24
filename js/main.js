@@ -12,7 +12,7 @@ const validar = function(){
         alert("El nombre de campaña no puede contener espacios ni caracteres especiales, excepto '-'","warning");
         return false;
     }
-    if ($('#nombre').val().length+$('#area-negocio').val().length+$('#segmento').val().length > 38) {
+    if ($('#nombre').val().length+$('#area-negocio').val().length+$('#producto').val().length > 38) {
         alert("El nombre de campaña, junto con el negocio y la fecha, no pueden contener más de 40 caracteres", "warning");
         return false;
     }
@@ -41,11 +41,10 @@ window.enviar = function(){
 window.search = async function(){
     let campanas = await get_campaigns();
     let tabla = $('table>tbody','#searchModal');
-
     let html;
     tabla.empty();
     $.each(campanas, function(id, campana) {
-        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion?campana.descripcion:''}</td></tr>`;
+        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion}</td></tr>`;
     });
     tabla.html(html);
     $('#searchModal').modal('show');
@@ -63,7 +62,7 @@ const generar_url = function(){
     let fecha_split = fecha.split('-');
     let nombre = $('#nombre').val().toLowerCase();
     let description = $('#nombre_descriptivo').val();
-    let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + $('#area-negocio option:selected').val() + '-' + $('#segmento option:selected').val();
+    let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + $('#area-negocio option:selected').val() + '-' + $('#producto option:selected').val();
     let utm_source = $('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
     let utm_medium = $('#medio option:selected').val();
 
@@ -76,14 +75,21 @@ const generar_url = function(){
         urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','url':url})
     }
     else {
-        $.each($.merge(['all'],$('#formato').val()), function(formatoId, formato) {
-            $.each($.merge(['all'],$('#adsize').val()), function(adsizeId, adsize) {
-                
-                let utm_content = formato+'-'+adsize;
-
-                urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':utm_content,
+        let m = [
+            $('#device').val(),
+            $('#formato').val(),
+            $('#adsize').val(),
+            $('#segmentacion').val(),
+            $('#audiencia').val(),
+            $('#objetivo').val(),
+            $('#modelo').val(),
+            $('#canal900').val(),
+            $('#codigoCC').val(),
+            $('#trafico').val()
+    ];
+        $.each(getCombn(m), function(id, utm_content){
+            urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':utm_content,
                 'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content});
-            });
         });
     };
 
@@ -91,21 +97,38 @@ const generar_url = function(){
         url = ''
         $.each(urls, function(i,u) {
             url+=u['url']+'\n'
-        })
+        });
+        let blob = new Blob(['url\n'+url], {type: "text/csv"});
+        $('#CSV-link').attr('href', window.URL.createObjectURL(blob));
+        $('#CSV-link').attr('download', utm_campaign+'.csv');
+        $('#CSV').removeClass('collapse')
         $('#qr').removeAttr('src');
         $('#codigo_qr').hide();
     }
     else{
+        $('#CSV').addClass('collapse')
         url = urls[0]['url']
         if ($('#acortar').is(":checked")){
             url = get_shortURL(url)
         }
-        $('#qr').attr("src","https://chart.googleapis.com/chart?cht=qr&chs=250x250&chl="+url);
-        $('#codigo_qr').show();
+        $.ajax({
+            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+url,
+            xhrFields:{
+                responseType: 'blob'
+            },
+            success: function(data){            
+                var blobData = data;
+                var url = window.URL || window.webkitURL;
+                var src = url.createObjectURL(data);
+                $('#qr').attr("src", src);
+                $('#qr-link').attr("href", src);
+                $('#qr-link').attr('download', utm_campaign+'.png');
+                $('#codigo_qr').show();
+            }
+        });
     }
 
-    $('#url-final').val(url)
-
+    $('#url-final').val(url);
     $('#resultado').modal('show');
 
     $.each(urls, function(id_url,url){
@@ -156,16 +179,15 @@ const ac = new Autocomplete(document.getElementById('nombre'), {
 
 export const set_autocomplete = async function(){
     let campanas = await get_campaigns();
-    let listado = [];
+    let valores = [];
     $.each(campanas, function(id, campana){
-        
-        listado.push({label:campana.nombre, value:campana.descripcion?' ('+campana.descripcion+')':''});
-    })
-    ac.setData(listado)
+        valores.push({label:campana.nombre, value:' ('+campana.descripcion+')'})
+    });
+    ac.setData(valores)
 }
 
-const autocompletar = async function(){
-    $('#tipo-de-campana').val('corporativa');
+const autocompletar = async function(){ //Valores por defecto para pruebas
+    $('#tipo-de-campana').val('comunicacion');
     await $('#medio_1').prop('checked', true).trigger("change");
     $('#fuente').val('rrss');
     $('#medio').val('cpc');
@@ -180,10 +202,6 @@ const autocompletar = async function(){
 $(document).ready(function() {
     inicializa();
     init_events();
-    let page = GetURLParameter('page');
-    if (page) {
-        $('#url').val(page);
-    };
     if (GetURLParameter('a')==1) {
         autocompletar();
     };
@@ -201,5 +219,21 @@ function GetURLParameter(sParam)
         {
             return sParameterName[1];
         }
+    }
+}
+
+function getCombn(arr) {
+    arr[0]=arr[0].length==0?['all']:arr[0];
+    if (arr.length == 1) {
+        return (arr[0]);
+    } else {
+        var ans = [];
+        var otherCases = getCombn(arr.slice(1));
+        for (var i = 0; i < otherCases.length; i++) {
+            for (var j = 0; j < arr[0].length; j++) {
+                ans.push(arr[0][j]+'-'+otherCases[i]);
+            }
+        }
+        return ans;
     }
 }

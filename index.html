@@ -95,7 +95,7 @@
                         <select class="form-select" id="area-negocio" required></select>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-select" id="segmento" required disabled>
+                        <select class="form-select" id="producto" required disabled>
                             <option selected disabled value="">Producto / Temática *</option>
                         </select>
                     </div>
@@ -103,12 +103,46 @@
                 <div id="otros-detalles" class="collapse">
                     <hr class="my-4" />
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-6 col-form-label">Otros detalles (format, size, etc.)</label>
+                        <label for="otros-todo" class="col-md-3 col-form-label">Otros detalles</label>
+                        <div class="col-md-3">
+                            <select class="form-select custom-select multiple" multiple id="device"></select>
+                        </div>
                         <div class="col-md-4">
                             <select class="form-select custom-select multiple" multiple id="formato"></select>
                         </div>
                         <div class="col-md-2">
                             <select class="form-select custom-select multiple" multiple id="adsize"></select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-3">
+                            <select class="form-select custom-select multiple" multiple id="objetivo"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select custom-select multiple" multiple id="segmentacion"></select>
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-select custom-select multiple" multiple id="audiencia"></select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-5">
+                            <select class="form-select custom-select multiple" multiple id="modelo"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select custom-select multiple" multiple id="canal900"></select>
+                        </div>
+                        
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-5">
+                            <select class="form-select custom-select multiple" multiple id="trafico"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select custom-select multiple" multiple id="codigoCC"></select>
                         </div>
                     </div>
                 </div>
@@ -143,12 +177,16 @@
                                 <textarea class="form-control" id="url-final" rows="5"></textarea>
                                 <br>
                                 <button class="btn btn-primary" type="submit" onclick="copiar()">Copiar en el portapapeles</button>
+                                <div id="CSV" class="collapse">
+                                    <br><br>
+                                    <a id="CSV-link" class="btn btn-primary" type="submit" href="#">Descargar CSV</a>
+                                </div>
                             </div>
                             <div id="codigo_qr">
                                 <hr>
-                                <label for="qr" class="col-md-12 col-form-label">QR (click derecho para descargar):</label>
+                                <label for="qr" class="col-md-12 col-form-label">QR (click para descargar):</label>
                                 <div class="col-md-12 text-center">
-                                    <img id="qr" alt="Click derecho para descargar"></img>
+                                    <a id="qr-link"><img id="qr" alt="Click para descargar" width="250px"></img></a>
                                 </div>
                             </div>
                         </div>

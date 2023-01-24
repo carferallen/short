@@ -3,6 +3,11 @@ import { auth } from "./firebase.js";
 import { get_log } from "./firestore.js";
 import { } from "./login.js";
 
+window.abreURL = function(linea){
+    let destino = linea.getAttribute("destino");
+    window.open(destino);
+}
+
 const carga_log = async function() {
     let listado = await get_log();
     $('#listado').hide()
@@ -10,7 +15,7 @@ const carga_log = async function() {
     let html;
     listado.forEach(campana => {
         html += `
-            <tr>
+            <tr onclick="abreURL(this)" destino="${campana.data().url}">
                 <td>${campana.data().timestamp.toDate().toISOString()}</td>
                 <td>${campana.data().fecha}</td>
                 <td>${campana.data().nombre}</td>
@@ -19,7 +24,7 @@ const carga_log = async function() {
                 <td>${campana.data().utm_medium}</td>
                 <td>${campana.data().utm_campaign}</td>
                 <td>${campana.data().utm_content}</td>
-                <td><a href="mailto:${campana.data().email}">${campana.data().user}</a></td>
+                <td>${campana.data().user}</td>
             </tr>
         `
     });

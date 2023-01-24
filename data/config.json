@@ -514,7 +514,6 @@
   "adsizes": {
     "link": "Link",
     "boton": "Botón",
-    "all": "no aplica/no definido",
     "1x1": "   1x1",
     "360x270": " 360x270",
     "520x867": " 520x867",
@@ -546,7 +545,6 @@
   },
   "segmentos": {
     "pros": "Prospecting",
-    "all": "No aplica ninguna en concreto",
     "lal": "Lookalike",
     "rem": "Remarketing",
     "fr": "Frecuencia",
@@ -561,7 +559,6 @@
   },
   "audiencias": {
     "alta": "Alta",
-    "all": "All",
     "ap": "Apps de carburante",
     "bht": "Behavioral retargeting",
     "bprem": "Base premium",
@@ -608,7 +605,6 @@
     "tarifaplana": "Tarifaplana"
   },
   "objetivos": {
-    "all": "no aplica",
     "brd": "Branding/Awareness",
     "drs": "Direct Response/Sales",
     "eng": "Engagements",
@@ -619,7 +615,6 @@
     "vrl": "Viral/WOM driving"
   },
   "modelos": {
-    "all": "No aplica",
     "ava": "Added value (sin cargo)",
     "cenv": "Coste por envío",
     "cf": "Coste fijo",

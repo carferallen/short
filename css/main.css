@@ -193,6 +193,11 @@ h3 {
     color: #00adc3;
 }
 
+.table tr:hover {
+    background: #ddd;
+    cursor: pointer;
+}
+
 .dataTables_length, .dataTables_filter, .dataTables_info, .dataTables_paginate {
     font: 0.7rem/1 Roboto;
 }

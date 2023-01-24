@@ -6,7 +6,7 @@ export const get_campaigns = async function(){
     try {
         const listado = await getDocs(collection(db,"campañas"));
         listado.forEach(campana => {
-            campanas.push({nombre:campana.id, descripcion:campana.data().descripcion});
+            campanas.push({nombre:campana.id, descripcion:(campana.data().descripcion?campana.data().descripcion:'')})
         });
         return campanas;
     } catch (error) {
