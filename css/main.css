@@ -47,6 +47,12 @@ body {
     animation-timing-function: linear;
 }
 
+.tooltip-inner {
+    background-color: #016a7f;
+    box-shadow: 0px 0px 4px black;
+    opacity: .8 !important;
+}
+
 .header__name {
     text-align: center;
 }
