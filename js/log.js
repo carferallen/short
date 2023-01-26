@@ -9,8 +9,9 @@ window.abreURL = function(linea){
 }
 
 const carga_log = async function() {
-    let listado = await get_log();
-    $('#listado').hide()
+    let lineas = GetURLParameter('l') || '10';
+    let listado = await get_log(lineas);
+    $('#listado').hide();
     $('#listado table>tbody').empty();
     let html;
     listado.forEach(campana => {
@@ -34,7 +35,8 @@ const carga_log = async function() {
         order: [[0, 'desc']],
         language: {
             url: 'js/datatables.es.json'
-        }
+        },
+        pagingType: "simple_numbers"
     });
     $('#DataTables_Table_0_filter label>input').addClass('form-control');
     $('#listado').show()
@@ -51,3 +53,17 @@ onAuthStateChanged(auth, (user) => {
       $('#signinModal').modal('show');
     }
 });
+
+const GetURLParameter = function(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}

@@ -208,7 +208,7 @@ $(document).ready(function() {
 });
 
 
-function GetURLParameter(sParam)
+const GetURLParameter = function(sParam)
 {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -222,7 +222,7 @@ function GetURLParameter(sParam)
     }
 }
 
-function getCombn(arr) {
+const getCombn = function(arr) {
     arr[0]=arr[0].length==0?['all']:arr[0];
     if (arr.length == 1) {
         return (arr[0]);
