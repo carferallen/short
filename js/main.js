@@ -166,7 +166,7 @@ const get_shortURL = function(url){
     return shortURL
 };
 
-const ac = new Autocomplete(document.getElementById('nombre'), {
+const ac_nombredescripcion = new Autocomplete(document.getElementById('nombre'), {
     data: null,
     showValue: true,
     onSelectItem: ({label, value}) => {
@@ -177,13 +177,24 @@ const ac = new Autocomplete(document.getElementById('nombre'), {
     }
 });
 
+const ac_descripcion = new Autocomplete(document.getElementById('nombre_descriptivo'), {
+    data: null,
+    showValue: false,
+    onSelectItem: ({label, value}) => {
+        $('#nombre').val(value);
+    }
+});
+
 export const set_autocomplete = async function(){
     let campanas = await get_campaigns();
-    let valores = [];
+    let nombres_descripcion = [];
+    let descripciones = [];
     $.each(campanas, function(id, campana){
-        valores.push({label:campana.nombre, value:' ('+campana.descripcion+')'})
+        nombres_descripcion.push({label:campana.nombre, value:' ('+campana.descripcion+')'});
+        descripciones.push({label:campana.descripcion, value:campana.nombre})
     });
-    ac.setData(valores)
+    ac_nombredescripcion.setData(nombres_descripcion);
+    ac_descripcion.setData(descripciones);
 }
 
 const autocompletar = async function(){ //Valores por defecto para pruebas
