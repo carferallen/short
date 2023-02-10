@@ -195,6 +195,7 @@ export const set_autocomplete = async function(){
     });
     ac_nombredescripcion.setData(nombres_descripcion);
     ac_descripcion.setData(descripciones);
+    $('#tipo-de-campana').focus();
 }
 
 const autocompletar = async function(){ //Valores por defecto para pruebas
