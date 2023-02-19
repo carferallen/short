@@ -316,7 +316,7 @@
     "cartel": "Cartel",
     "formacion": "Formación"
   },
-  "secciones": {
+  "secciones-online": {
     "ampn": "Ampliación de noticias",
     "aun": "Audience network",
     "bsq": "Búsquedas",
@@ -334,7 +334,25 @@
     "serv": "Servicios",
     "str": "Stories"
   },
-  "medios": {
+  "secciones-offline": {
+    "ampn": "Ampliación de noticias",
+    "aun": "Audience network",
+    "bsq": "Búsquedas",
+    "cse": "Canal/sección estándar",
+    "csp": "Canal/sección premium",
+    "feed": "Feed",
+    "home": "Homepage",
+    "iar": "Instant articles",
+    "inst": "Instream",
+    "men": "Mensajes",
+    "post": "Post",
+    "roc": "Roc (Run of Channel)",
+    "ron": "Ron (Run of Network)",
+    "ros": "Ros (Run of Site)",
+    "serv": "Servicios",
+    "str": "Stories"
+  },
+  "medios-online": {
     "google_disc": "Google_disc",
     "native": "Native",
     "cpc": "CPC",
@@ -345,7 +363,24 @@
     "video": "Video",
     "900": "900",
     "sms": "SMS",
-    "mb": "mb",
+    "mb": "Mb",
+    "app": "App",
+    "push": "Push",
+    "social-paid": "Social Paid",
+    "social": "Social"
+  },
+  "medios-offline": {
+    "google_disc": "Google_disc",
+    "native": "Native",
+    "cpc": "CPC",
+    "email": "Email",
+    "referral": "Referral",
+    "display": "Display",
+    "direct": "Direct",
+    "video": "Video",
+    "900": "900",
+    "sms": "SMS",
+    "mb": "Mb",
     "app": "App",
     "push": "Push",
     "social-paid": "Social Paid",
@@ -368,7 +403,8 @@
     "gcn": "Game console",
     "mob": "Móvil",
     "dsk": "Desktop",
-    "tbt": "tablet"
+    "tbt": "tablet",
+    "": ""
   },
   "formatos": {
     "adsense": "Adsense",

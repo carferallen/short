@@ -1,10 +1,8 @@
-import { get_campaigns } from "./firestore.js";
-
 let config;
 
 export const inicializa = function() {
     config = $.ajax({
-        url: 'data/config.json',
+        url: ' data/config.json',
         cache: false,
         async: false,
         dataType: 'json',
@@ -12,8 +10,6 @@ export const inicializa = function() {
     config =  $.parseJSON(config);
     get_tiposCampanas();
     get_agencias();
-    get_secciones();
-    get_medios();
     get_negocios();
     get_detalles();
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
@@ -52,9 +48,39 @@ export const init_events = function(){
     });
     $('#tipo-medio').on('change', function() {
         get_fuentes($('input[name=medio]:checked', this).val());
+        get_secciones($('input[name=medio]:checked', this).val());
+        get_medios($('input[name=medio]:checked', this).val());
+    });
+    $('#medio').on('change', function() {
+        if ($(this).val()=='email'){
+            $('#sfmc').removeClass('collapse');
+            $('#sfmc').val('normal');
+        }
+        else {
+            $('#sfmc').addClass('collapse')
+        }
     });
     $('#area-negocio').on('change', function() {
         get_productos($(this).val());
+        let neg = $(this).val().split('-')[0];
+        if ($.inArray(neg,['reyg','solify','solmatch'])!=-1){
+            $('#check_eyg').removeClass('collapse')
+        }
+        else {
+            $('#check_eyg').addClass('collapse');
+            $('#sf_eyg').prop('checked',false);
+            $('#seccion-sf_eyg').hide();
+        }
+    });
+    $('#sf_eyg').on('change', function() {
+        if ($(this).is(":checked")) {
+            $('#seccion-sf_eyg').show();
+        }
+        else {
+            $('#seccion-sf_eyg').hide();
+            $('#origen').prop("selectedIndex", 0).val();
+            $('#sub-origen').prop("selectedIndex", 0).val();
+        }
     });
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
@@ -102,17 +128,17 @@ const is_multi = function() {
 };
 
 const get_productos = function(area_negocio) {
-    $('#producto').empty()
+    $('#producto').empty();
     if (Object.keys(config["areas-negocios"][area_negocio]["segmentos"]).length==0){
         $('#producto').append('<option selected value="all">Genérico</option>')
-    }
+    };
     $('#producto').append(new Option("Genérico", "all"));
     $.each(ordena(config["areas-negocios"][area_negocio]["segmentos"]), function(value, text) {
         if (value!='all'){
             $('#producto').append(new Option(text, value));
         }
-    })
-    $('#producto').removeAttr("disabled")
+    });
+    $('#producto').removeAttr("disabled");
 }
 
 const get_fuentes = function(tipo_medio) {
@@ -121,6 +147,22 @@ const get_fuentes = function(tipo_medio) {
         $('#fuente').append(new Option(text, value));
     });
     $('#fuente').removeAttr("disabled")
+}
+
+const get_medios = function(tipo_medio) {
+    $('#medio').empty().append('<option selected disabled value="">Medio '+ tipo_medio +' *</option>');
+    $.each(ordena(config['medios-'+tipo_medio]), function(value, text) {
+        $('#medio').append(new Option(text, value));
+    });
+    $('#medio').removeAttr("disabled")
+}
+
+const get_secciones = function(tipo_medio) {
+    $('#seccion').empty().append('<option selected value="all">Sección '+ tipo_medio +' (all)</option>');
+    $.each(ordena(config['secciones-'+tipo_medio]), function(value, text) {
+        $('#seccion').append(new Option(text, value));
+    });
+    $('#seccion').removeAttr("disabled")
 }
 
 const get_tiposCampanas = function() {
@@ -134,20 +176,6 @@ const get_agencias = function() {
     $('#agencia').empty().append('<option selected disabled value="">Agencia *</option>');
     $.each(ordena(config['agencias']), function(value, text) {
         $('#agencia').append(new Option(text, value));
-    });
-}
-
-const get_secciones = function() {
-    $('#seccion').empty().append('<option selected disabled value="all">Sección (all)</option>');
-    $.each(ordena(config['secciones']), function(value, text) {
-        $('#seccion').append(new Option(text, value));
-    });
-}
-
-const get_medios = function() {
-    $('#medio').empty().append('<option selected disabled value="">Medio *</option>');
-    $.each(ordena(config['medios']), function(value, text) {
-        $('#medio').append(new Option(text, value));
     });
 }
 

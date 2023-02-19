@@ -7,18 +7,6 @@ import { inicializa, init_events, alert } from "./init.js";
 
 var currentUser;
 
-const validar = function(){
-    if(/^[a-zA-Z0-9-,-,ñ,á,é,í,ó,ú]*$/.test($('#nombre').val()) == false){
-        alert("El nombre de campaña no puede contener espacios ni caracteres especiales, excepto '-'","warning");
-        return false;
-    }
-    if ($('#nombre').val().length+$('#area-negocio').val().length+$('#producto').val().length > 38) {
-        alert("El nombre de campaña, junto con el negocio y la fecha, no pueden contener más de 40 caracteres", "warning");
-        return false;
-    }
-    return true
-}
-
 onAuthStateChanged(auth, async (user) => {
     if (user) {
       if (user.displayName) {
@@ -34,20 +22,16 @@ onAuthStateChanged(auth, async (user) => {
     currentUser = user;
 });
 
-window.enviar = function(){
-    generar_url()
-;}
-
-window.search = async function(){
-    let campanas = await get_campaigns();
-    let tabla = $('table>tbody','#searchModal');
-    let html;
-    tabla.empty();
-    $.each(campanas, function(id, campana) {
-        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion}</td></tr>`;
-    });
-    tabla.html(html);
-    $('#searchModal').modal('show');
+const validar = function(){
+    if(/^[a-zA-Z0-9-,-,ñ,á,é,í,ó,ú]*$/.test($('#nombre').val()) == false){
+        alert("El nombre de campaña no puede contener espacios ni caracteres especiales, excepto '-'","warning");
+        return false;
+    }
+    if ($('#nombre').val().length+$('#area-negocio').val().length+$('#producto').val().length > 38) {
+        alert("El nombre de campaña, junto con el negocio y la fecha, no pueden contener más de 40 caracteres", "warning");
+        return false;
+    }
+    return true
 }
 
 const generar_url = function(){
@@ -88,17 +72,29 @@ const generar_url = function(){
             $('#trafico').val()
     ];
         $.each(getCombn(m), function(id, utm_content){
-            urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':utm_content,
+            urls.push({
+                'fecha':fecha,
+                'nombre':nombre,
+                'descripcion':description,
+                'utm_source':utm_source,
+                'utm_medium':utm_medium,
+                'utm_campaign':utm_campaign,
+                'utm_content':utm_content,
                 'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content});
         });
     };
 
     if (urls.length > 1){
-        url = ''
-        $.each(urls, function(i,u) {
+        url = 'url,utm_source,utm_medium,utm_campaign,utm_content,sf_reyg_source\n';
+
+        /*$.each(urls, function(i,u) {
             url+=u['url']+'\n'
         });
-        let blob = new Blob(['url\n'+url], {type: "text/csv"});
+        let blob = new Blob(['url\n'+url], {type: "text/csv"});*/
+        $.each(urls, function(i,u) {
+            url+=[u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content']].join(',')+'\n'
+        });
+        let blob = new Blob([url], {type: "text/csv"});
         $('#CSV-link').attr('href', window.URL.createObjectURL(blob));
         $('#CSV-link').attr('download', utm_campaign+'.csv');
         $('#CSV').removeClass('collapse')
@@ -150,11 +146,6 @@ const generar_url = function(){
     set_autocomplete();
 };
 
-window.copiar = function() {
-    $('#url-final').select();
-    document.execCommand("copy");
-};
-
 const get_shortURL = function(url){
     let enc_url = encodeURIComponent(url);
     var shortURL = $.ajax({
@@ -185,7 +176,7 @@ const ac_descripcion = new Autocomplete(document.getElementById('nombre_descript
     }
 });
 
-export const set_autocomplete = async function(){
+const set_autocomplete = async function(){
     let campanas = await get_campaigns();
     let nombres_descripcion = [];
     let descripciones = [];
@@ -198,7 +189,8 @@ export const set_autocomplete = async function(){
     $('#tipo-de-campana').focus();
 }
 
-const autocompletar = async function(){ //Valores por defecto para pruebas
+//Valores por defecto para pruebas------ELIMINAR
+const autocompletar = async function(){ 
     $('#tipo-de-campana').val('comunicacion');
     await $('#medio_1').prop('checked', true).trigger("change");
     $('#fuente').val('rrss');
@@ -210,12 +202,16 @@ const autocompletar = async function(){ //Valores por defecto para pruebas
     $('#url').val('https://repsol.com');
     $('#area-negocio').val('eess').trigger("change");
 }
+//FIN: Valores por defecto para pruebas------ELIMINAR
 
 $(document).ready(function() {
     inicializa();
     init_events();
     if (GetURLParameter('a')==1) {
         autocompletar();
+    };
+    if (GetURLParameter('page')) {
+        $('#url').val(GetURLParameter('page'));
     };
 });
 
@@ -249,3 +245,24 @@ const getCombn = function(arr) {
         return ans;
     }
 }
+
+window.search = async function(){
+    let campanas = await get_campaigns();
+    let tabla = $('table>tbody','#searchModal');
+    let html;
+    tabla.empty();
+    $.each(campanas, function(id, campana) {
+        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion}</td></tr>`;
+    });
+    tabla.html(html);
+    $('#searchModal').modal('show');
+}
+
+window.enviar = function(){
+    generar_url()
+;}
+
+window.copiar = function() {
+    $('#url-final').select();
+    document.execCommand("copy");
+};
