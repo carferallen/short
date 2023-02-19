@@ -24,13 +24,14 @@
             </header>
             <form id="formulario" class= "formulario" action="javascript:enviar()" class="m-auto" autocomplete="off">
                 <div id="AlertasPrincipales"></div>
-                <hr class="hr-text" data-content="Datos generales"/>
+                <div class="seccion">Datos generales
+                    <span data-toggle="tooltip" data-placement="top" title="En función del tipo de campaña, se solicitarán más o menos campos">
+                        <i class="bi bi-info-circle"></i>
+                    </span>
+                </div>
+                <!--hr class="hr-text" data-content="Datos generales"-->
                 <div class="form-group mb-2 row">
-                    <label for="tipo-de-campana" class="col-md-6 col-form-label">¿Qué tipo de campaña vas a realizar? 
-                        <span data-toggle="tooltip" data-placement="top" title="En función del tipo de campaña, se solicitarán más o menos campos">
-                            <i class="bi bi-info-circle"></i>
-                        </span>
-                    </label>
+                    <label for="tipo-de-campana" class="col-md-6 col-form-label">¿Qué tipo de campaña vas a realizar?</label>
                     <div class="col-md-3">
                         <select class="form-select custom-select" id="tipo-de-campana" required></select>
                     </div>
@@ -45,20 +46,20 @@
                         </div>
                     </div>
                 </div>
-                
                 <div class="form-group mb-2 row">
                     <label for="url" class="col-md-6 col-form-label">¿Cuál es la URL de la página de destino?</label>
                     <div class="col-md-6">
                         <input type="url" class="form-control" id="url" name="url" placeholder="URL de destino *" required>
                     </div>
                 </div>
-                <hr class="hr-text" data-content="Fuente (utm-source)"/>
+                <div class="seccion">Fuente (utm-source)
+                    <span data-toggle="tooltip" data-placement="top" title="El utm_source se compone a partir de estos campos: <fuente>_<sección>">
+                        <i class="bi bi-info-circle"></i>
+                    </span>
+                </div>
+                <!--hr class="hr-text" data-content="Fuente (utm-source)"/-->
                 <div class="form-group mb-2 row">
-                    <label for="fuente" class="col-md-6 col-form-label">¿Cuál será la fuente y la sección?
-                        <span data-toggle="tooltip" data-placement="top" title="El utm_source se compone a partir de estos campos: <fuente>_<sección>">
-                            <i class="bi bi-info-circle"></i>
-                        </span>
-                    </label>
+                    <label for="fuente" class="col-md-6 col-form-label">¿Cuál será la fuente y la sección?</label>
                     <div class="col-md-3">
                         <select class="form-select custom-select" id="fuente" required disabled></select>
                     </div>
@@ -66,13 +67,14 @@
                         <select class="form-select custom-select" id="seccion" disabled></select>
                     </div>
                 </div>
-                <hr class="hr-text" data-content="Medio (utm-medium)"/>
+                <!--hr class="hr-text" data-content="Medio (utm-medium)"/-->
+                <div class="seccion">Medio (utm-medium)
+                    <span data-toggle="tooltip" data-placement="top" title="El utm_source se compone a partir de este campo <medio>">
+                        <i class="bi bi-info-circle"></i>
+                    </span>
+                </div>
                 <div class="form-group mb-2 row">
-                    <label class="col-md-6 col-form-label">¿En qué medio se va a desarrollar?
-                        <span data-toggle="tooltip" data-placement="top" title="El utm_source se compone a partir de este campo <medio>">
-                            <i class="bi bi-info-circle"></i>
-                        </span>
-                    </label>
+                    <label class="col-md-6 col-form-label">¿En qué medio se va a desarrollar?</label>
                     <div class="col-md-3">
                         <select class="form-select custom-select" id="medio" required disabled></select>
                     </div>
@@ -84,13 +86,14 @@
                         </select>
                     </div>
                 </div>
-                <hr class="hr-text" data-content="Campaña (utm-campaign)"/>
+                <!--hr class="hr-text" data-content="Campaña (utm-campaign)"/-->
+                <div class="seccion">Campaña (utm-campaign)
+                    <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>_<nombre>_<fecha>_<area/negocio>-<producto/temática>">
+                        <i class="bi bi-info-circle"></i>
+                    </span>
+                </div>
                 <div class="form-group mb-2 row">
-                    <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña
-                        <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>_<nombre>_<fecha>_<area/negocio>-<producto/temática>">
-                            <i class="bi bi-info-circle"></i>
-                        </span>
-                    </label>
+                    <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña</label>
                     <div class="col-md-3">
                         <div class="input-group">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
@@ -135,13 +138,14 @@
                     <div class="col-md-3"></div>
                 </div>
                 <div id="seccion-sf_eyg" class="collapse">
-                    <hr class="hr-text" data-content="Salesforce source (sf_reyg_source)"/>
+                    <!--hr class="hr-text" data-content="Salesforce source (sf_reyg_source)"/-->
+                    <div class="seccion">Salesforce source (sf_reyg_source)
+                        <span data-toggle="tooltip" data-placement="top" title="El sf_reyg_source se compone a partir de estos campos: <origen>_<suborigen>">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
+                    </div>
                     <div class="form-group mb-2 row">
-                        <label class="col-md-6 col-form-label">Origen sub - origen
-                            <span data-toggle="tooltip" data-placement="top" title="El sf_reyg_source se compone a partir de estos campos: <origen>_<suborigen>">
-                                <i class="bi bi-info-circle"></i>
-                            </span>
-                        </label>
+                        <label class="col-md-6 col-form-label">Origen sub - origen</label>
                         <div class="col-md-3">
                             <select class="form-select custom-select" id="origen" required>
                                 <option selected>opcion 0</option>
@@ -157,14 +161,15 @@
                     </div>
                 </div>
                 <div id="otros-detalles" class="collapse">
-                    <hr class="hr-text" data-content="Content (utm-content)"/>
-                    <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label">Otros detalles
-                            <span data-toggle="tooltip" data-placement="top" title="El utm_content se compone a partir de estos campos:
+                    <!--hr class="hr-text" data-content="Content (utm-content)"/-->
+                    <div class="seccion">Content (utm-content)
+                        <span data-toggle="tooltip" data-placement="top" title="El utm_content se compone a partir de estos campos:
                             <device>_<formato>_<adsize>_<segmentacion>_<audiencia>_<objetivo>_<modelo>_<canal900>_<codigoCC>_<trafico>">
-                                <i class="bi bi-info-circle"></i>
-                            </span>
-                        </label>
+                            <i class="bi bi-info-circle"></i>
+                        </span>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label">Otros detalles</label>
                         <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="device"></select>
                         </div>
