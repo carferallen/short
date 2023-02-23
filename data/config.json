@@ -1,7 +1,7 @@
 {
   "etiquetado": {
     "simple": "Simple",
-    "complejo": "Complejo"
+    "complejo": "Completo"
   },
   "areas-negocios": {
     "accionistas": {
@@ -288,38 +288,88 @@
     }
   },
   "origenes-suborigenes": {
+    "8": {
+      "origen": "Waylet",
+      "suborigenes": {
+        "WA01": "appwaylet",
+        "WA02": "email",
+        "WA04": "web",
+        "WA03": "telf"
+      }
+    },
+    "9": {
+      "origen": "WebFlyer",
+      "suborigenes": {
+        "WF01": "webflyer"
+      }
+    },
+    "100": {
+      "origen": "Corregistros",
+      "suborigenes": {
+        "C17": "impacting",
+        "C19A": "antevenio",
+        "C19R": "registros",
+        "C01": "adclick",
+        "C02": "adsalsa",
+        "C03": "netsales",
+        "C04": "antevenio",
+        "C05": "cajondigital",
+        "C06": "adsalsasimple",
+        "C07": "leadsglobal",
+        "C08": "roi&co",
+        "C10": "base&co",
+        "C11": "responseconcepts",
+        "C12": "webrivage",
+        "C13": "adgo",
+        "C14": "webpilots",
+        "C15": "natexo",
+        "C16": "iahorro",
+        "C20": "adviceme",
+        "C21": "egentic",
+        "C22": "kataisa",
+        "C23": "tagada",
+        "C34": "digitalarm",
+        "C35": "reflexcash",
+        "C36": "luzes",
+        "C37": "move4media",
+        "C38": "move4media",
+        "C39": "inkamarketing",
+        "C40": "preciocom",
+        "C41": "vertigomedia",
+        "C42": "dolead",
+        "C43": "mvf",
+        "C44": "feebbo",
+        "C45": "impacting",
+        "C46": "vitolamk",
+        "C99": "cb",
+        "C09": "com",
+        "C47": "premiosecreto"
+      }
+    },
     "101": {
       "origen": "Accionista",
       "suborigenes": {
-        "NW01": "newsletter",
+        "nw01": "newsletter",
         "AC01": "accionistas",
         "AC02": "telf"
       }
     },
-    "144": {
-      "origen": "Acuerdos Comerciales",
+    "102": {
+      "origen": "Clientes ECI",
       "suborigenes": {
-        "MB36": "premiumleads",
-        "AC41": "habitissimo",
-        "AC46": "preahorro",
-        "AC47": "preciocom",
-        "AC57": "tiendeo",
-        "AC58": "rankia",
-        "AC59": "roams",
-        "AC60": "rastreator",
-        "AC61": "watiofy",
-        "AC62": "kolondoo",
-        "AC63": "elpais",
-        "AC69": "Kunmedia",
-        "AC64": "kubikdata",
-        "AC65": "elconfidencial",
-        "AC66": "kelisto",
-        "AC67": "beemy",
-        "AC68": "contrataronline",
-        "DIN02": "privalia",
-        "DIN03": "veepee",
-        "REP01": "guiarepsol",
-        "COL01": "colegiosanviator"
+        "EC02": "telf"
+      }
+    },
+    "103": {
+      "origen": "Empleados",
+      "suborigenes": {
+        "EM02": "telf"
+      }
+    },
+    "104": {
+      "origen": "Empleados ECI",
+      "suborigenes": {
+        "EE02": "telf"
       }
     },
     "105": {
@@ -400,124 +450,21 @@
         "OOL2": "vivit"
       }
     },
-    "153": {
-      "origen": "Athletic Digital",
-      "suborigenes": {
-        "RC04": "email",
-        "RC01": "eess",
-        "CO53": "hph",
-        "CO54": "addor",
-        "CO55": "deia",
-        "CO56": "webathbi",
-        "RC11": "whatsapp",
-        "RC15": "qr"
-      }
-    },
-    "102": {
-      "origen": "Clientes ECI",
-      "suborigenes": {
-        "EC02": "telf"
-      }
-    },
-    "166": {
-      "origen": "Colectivos Solmatch",
-      "suborigenes": {
-        "CS01": "elcondado",
-        "CS03": "inspiringbenefits",
-        "CS99": "cb",
-        "CS02": "ccvv",
-        "MC09": "boxrepsol"
-      }
-    },
-    "124": {
-      "origen": "Comparadores",
-      "suborigenes": {
-        "CM01": "kelisto"
-      }
-    },
-    "121": {
-      "origen": "Comunicacion",
-      "suborigenes": {
-        "RC01": "eess",
-        "RC02": "radio",
-        "RC03": "email",
-        "RC05": "prensa",
-        "RC06": "oficina",
-        "RC07": "exterior",
-        "RC08": "sms",
-        "RC10": "move",
-        "RC11": "whatsapp",
-        "RC12": "intranet",
-        "RC13": "television",
-        "RC16": "sporting",
-        "CO10": "larazon",
-        "CO11": "eleconomista",
-        "RC09": "feria",
-        "CO14": "elmundo",
-        "CO67": "merca2",
-        "RO09": "feria",
-        "RC14": "alsa"
-      }
-    },
-    "100": {
-      "origen": "Corregistros",
-      "suborigenes": {
-        "C17": "impacting",
-        "C19A": "antevenio",
-        "C19R": "registros",
-        "C01": "adclick",
-        "C02": "adsalsa",
-        "C03": "netsales",
-        "C04": "antevenio",
-        "C05": "cajondigital",
-        "C06": "adsalsasimple",
-        "C07": "leadsglobal",
-        "C08": "roi&co",
-        "C10": "base&co",
-        "C11": "responseconcepts",
-        "C12": "webrivage",
-        "C13": "adgo",
-        "C14": "webpilots",
-        "C15": "natexo",
-        "C16": "iahorro",
-        "C20": "adviceme",
-        "C21": "egentic",
-        "C22": "kataisa",
-        "C23": "tagada",
-        "C34": "digitalarm",
-        "C35": "reflexcash",
-        "C36": "luzes",
-        "C37": "move4media",
-        "C38": "move4media",
-        "C39": "inkamarketing",
-        "C40": "preciocom",
-        "C41": "vertigomedia",
-        "C42": "dolead",
-        "C43": "mvf",
-        "C44": "feebbo",
-        "C45": "impacting",
-        "C46": "vitolamk",
-        "C99": "cb",
-        "C09": "com",
-        "C47": "premiosecreto"
-      }
-    },
-    "147": {
-      "origen": "Digital Indirecto",
-      "suborigenes": {
-        "DIN01": "selectra"
-      }
-    },
     "108": {
       "origen": "Directo",
       "suborigenes": {
         "DV01": "devoluciondelio"
       }
     },
-    "110": {
-      "origen": "Directo",
+    "109": {
+      "origen": "Gmail Ads",
       "suborigenes": {
-        "DV01": "devoluciondelio",
+        "GA01": "gmail"
+      }
+    },
+    "110": {
+      "origen": "Inbound",
+      "suborigenes": {
         "PT01": "telf",
         "ME04": "movilidadradio",
         "ME01": "movilidadwaylet",
@@ -527,50 +474,12 @@
         "CO01": "corp",
         "TI01": "geografico",
         "CO02": "prensa",
+        "DV01": "devoluciondelio",
         "IN05": "delio",
         "IN01": "emailprop",
         "IN02": "contesta",
         "IN03": "majorel",
         "IN04": "bosch"
-      }
-    },
-    "103": {
-      "origen": "Empleados",
-      "suborigenes": {
-        "EM02": "telf"
-      }
-    },
-    "104": {
-      "origen": "Empleados ECI",
-      "suborigenes": {
-        "EE02": "telf"
-      }
-    },
-    "160": {
-      "origen": "Fidelización",
-      "suborigenes": {
-        "FI01": "appfidelizacion",
-        "FI02": "webfidelizacion"
-      }
-    },
-    "128": {
-      "origen": "Friends and Family",
-      "suborigenes": {
-        "FA02": "telf"
-      }
-    },
-    "149": {
-      "origen": "GLP",
-      "suborigenes": {
-        "SF01": "moc",
-        "SF99": "cb",
-        "SF02": "comglp"
-      }
-    },
-    "109": {
-      "origen": "Gmail Ads",
-      "suborigenes": {
-        "GA01": "gmail"
       }
     },
     "111": {
@@ -584,56 +493,6 @@
         "SF05": "ppn"
       }
     },
-    "198": {
-      "origen": "Marca Blanca",
-      "suborigenes": {
-        "OP01": "telf"
-      }
-    },
-    "148": {
-      "origen": "Marca Blanca",
-      "suborigenes": {
-        "MB01": "igniumow (Ignium Opt-in Web)",
-        "MB02": "igniumdo (Ignium Doble Opt-in)",
-        "MB03": "dolead",
-        "MB04": "adgo",
-        "MB05": "luzes",
-        "MB06": "impacting",
-        "MB07": "feebbo",
-        "MB08": "preciocom",
-        "MB09": "cb",
-        "MB10": "vertigomedia",
-        "MB11": "luzescom",
-        "MB12": "gerodigital",
-        "MB13": "mbrepsol",
-        "MB14": "eligemejor",
-        "MB15": "vipresponse",
-        "MB16": "adstrategy",
-        "MB18": "reflexleads",
-        "MB19": "adservice",
-        "MB20": "hipto",
-        "MB21": "clickpoint",
-        "MB22": "actualsales",
-        "MB23": "smartlist",
-        "MB24": "demalia",
-        "MB25": "eligenio",
-        "MB26": "feebbo2",
-        "MB27": "tagada",
-        "MB28": "teahorro",
-        "MB29": "digitalarm",
-        "MB30": "tarifalo",
-        "MB31": "medialike",
-        "MB32": "tarifamasbarata",
-        "MB33": "eligemejornooptin",
-        "MB36": "Kataisa",
-        "MB37": "Kunmedia",
-        "MB35": "Audienceserv",
-        "MB38": "Vipresponse",
-        "MB40": "addsales",
-        "MB39": "adviceme",
-        "MB34": "todoluzygas"
-      }
-    },
     "112": {
       "origen": "MGM",
       "suborigenes": {
@@ -642,54 +501,6 @@
         "MGM03": "telf",
         "MGM99": "cb",
         "MGM05": "exterior"
-      }
-    },
-    "126": {
-      "origen": "Microcolectivos",
-      "suborigenes": {
-        "MC01": "guardiacivil",
-        "MC02": "indra",
-        "MC03": "corporate",
-        "MC04": "axa",
-        "MC05": "accenture",
-        "MC06": "evolutio",
-        "MC07": "santanderzone",
-        "MC08": "thermolympic",
-        "MC09": "boxrepsol",
-        "MC10": "deloitte",
-        "MC11": "directseguros",
-        "MC99": "cb",
-        "MC12": "bnp",
-        "MC13": "meetkar",
-        "MC14": "hesperia"
-      }
-    },
-    "155": {
-      "origen": "Mutua Madrileña",
-      "suborigenes": {
-        "RC04": "email"
-      }
-    },
-    "127": {
-      "origen": "Native",
-      "suborigenes": {
-        "CO01": "corp",
-        "NA01": "taboola",
-        "NA02": "verizon",
-        "NA03": "outbrain",
-        "CO06": "sunmedia",
-        "CO57": "verizon",
-        "NA06": "momentum",
-        "NA04": "sunmedia",
-        "NA05": "seedtag",
-        "NA07": "webads",
-        "NA08": "upday",
-        "NA09": "inlab",
-        "NA10": "acuity",
-        "CO03": "smartclip",
-        "CO05": "addoor",
-        "CO07": "outbrain",
-        "CO14": "elmundo"
       }
     },
     "114": {
@@ -713,12 +524,6 @@
         "J17": "limite3years",
         "J18": "altovalorni",
         "J19": "historiconi"
-      }
-    },
-    "193": {
-      "origen": "Openbank",
-      "suborigenes": {
-        "OP01": "web"
       }
     },
     "115": {
@@ -748,12 +553,6 @@
       "suborigenes": {
         "SE01": "google",
         "SE02": "bing"
-      }
-    },
-    "173": {
-      "origen": "PerformanceMax",
-      "suborigenes": {
-        "PM01": "google"
       }
     },
     "120": {
@@ -849,6 +648,30 @@
         "PR06": "discovery"
       }
     },
+    "121": {
+      "origen": "Comunicacion",
+      "suborigenes": {
+        "RC01": "eess",
+        "RC02": "radio",
+        "RC03": "email",
+        "RC05": "prensa",
+        "RC06": "oficina",
+        "RC07": "exterior",
+        "RC08": "sms",
+        "RC10": "move",
+        "RC11": "whatsapp",
+        "RC12": "intranet",
+        "RC13": "television",
+        "RC16": "sporting",
+        "CO10": "larazon",
+        "CO11": "eleconomista",
+        "RC09": "feria",
+        "CO14": "elmundo",
+        "CO67": "merca2",
+        "RO09": "feria",
+        "RC14": "alsa"
+      }
+    },
     "122": {
       "origen": "Referidos",
       "suborigenes": {
@@ -867,6 +690,60 @@
         "SO08": "youtube",
         "SO09": "tiktok",
         "SO02": "instagram"
+      }
+    },
+    "124": {
+      "origen": "Comparadores",
+      "suborigenes": {
+        "CM01": "kelisto"
+      }
+    },
+    "126": {
+      "origen": "Microcolectivos",
+      "suborigenes": {
+        "MC01": "guardiacivil",
+        "MC02": "indra",
+        "MC03": "corporate",
+        "MC04": "axa",
+        "MC05": "accenture",
+        "MC06": "evolutio",
+        "MC07": "santanderzone",
+        "MC08": "thermolympic",
+        "MC09": "boxrepsol",
+        "MC10": "deloitte",
+        "MC11": "directseguros",
+        "MC99": "cb",
+        "MC12": "bnp",
+        "MC13": "meetkar",
+        "MC14": "hesperia"
+      }
+    },
+    "127": {
+      "origen": "Native",
+      "suborigenes": {
+        "CO01": "corp",
+        "NA01": "taboola",
+        "NA02": "verizon",
+        "NA03": "outbrain",
+        "CO06": "sunmedia",
+        "CO57": "verizon",
+        "NA06": "momentum",
+        "NA04": "sunmedia",
+        "NA05": "seedtag",
+        "NA07": "webads",
+        "NA08": "upday",
+        "NA09": "inlab",
+        "NA10": "acuity",
+        "CO03": "smartclip",
+        "CO05": "addoor",
+        "CO07": "outbrain",
+        "CO14": "elmundo"
+      }
+    },
+    "128": {
+      "origen": "Friends and Family",
+      "suborigenes": {
+        "FA02": "telf"
       }
     },
     "130": {
@@ -891,25 +768,107 @@
         "S1": "solar360sm"
       }
     },
-    "8": {
-      "origen": "Waylet",
+    "144": {
+      "origen": "Acuerdos Comerciales",
       "suborigenes": {
-        "WA01": "appwaylet",
-        "WA02": "email",
-        "WA04": "web",
-        "WA03": "telf"
+        "MB36": "premiumleads",
+        "AC41": "habitissimo",
+        "AC46": "preahorro",
+        "AC47": "preciocom",
+        "AC57": "tiendeo",
+        "AC58": "rankia",
+        "AC59": "roams",
+        "AC60": "rastreator",
+        "AC61": "watiofy",
+        "AC62": "kolondoo",
+        "AC63": "elpais",
+        "AC69": "Kunmedia",
+        "AC64": "kubikdata",
+        "AC65": "elconfidencial",
+        "AC66": "kelisto",
+        "AC67": "beemy",
+        "AC68": "contrataronline",
+        "DIN02": "privalia",
+        "DIN03": "veepee",
+        "REP01": "guiarepsol",
+        "COL01": "colegiosanviator"
       }
     },
-    "9": {
-      "origen": "WebFlyer",
+    "147": {
+      "origen": "Digital Indirecto",
       "suborigenes": {
-        "WF01": "webflyer"
+        "DIN01": "selectra"
       }
     },
-    "180": {
-      "origen": "whatsapp",
+    "148": {
+      "origen": "Marca Blanca",
       "suborigenes": {
-        "WH01": "whatsapp"
+        "MB01": "igniumow (Ignium Opt-in Web)",
+        "MB02": "igniumdo (Ignium Doble Opt-in)",
+        "MB03": "dolead",
+        "MB04": "adgo",
+        "MB05": "luzes",
+        "MB06": "impacting",
+        "MB07": "feebbo",
+        "MB08": "preciocom",
+        "MB09": "cb",
+        "MB10": "vertigomedia",
+        "MB11": "luzescom",
+        "MB12": "gerodigital",
+        "MB13": "mbrepsol",
+        "MB14": "eligemejor",
+        "MB15": "vipresponse",
+        "MB16": "adstrategy",
+        "MB18": "reflexleads",
+        "MB19": "adservice",
+        "MB20": "hipto",
+        "MB21": "clickpoint",
+        "MB22": "actualsales",
+        "MB23": "smartlist",
+        "MB24": "demalia",
+        "MB25": "eligenio",
+        "MB26": "feebbo2",
+        "MB27": "tagada",
+        "MB28": "teahorro",
+        "MB29": "digitalarm",
+        "MB30": "tarifalo",
+        "MB31": "medialike",
+        "MB32": "tarifamasbarata",
+        "MB33": "eligemejornooptin",
+        "MB36": "kataisa",
+        "MB37": "kunmedia",
+        "MB35": "audienceserv",
+        "MB38": "vipresponse",
+        "MB40": "addsales",
+        "MB39": "adviceme",
+        "MB34": "todoluzygas"
+      }
+    },
+    "149": {
+      "origen": "GLP",
+      "suborigenes": {
+        "SF01": "moc",
+        "SF99": "cb",
+        "SF02": "comglp"
+      }
+    },
+    "153": {
+      "origen": "Athletic Digital",
+      "suborigenes": {
+        "RC04": "email",
+        "RC01": "eess",
+        "CO53": "hph",
+        "CO54": "addor",
+        "CO55": "deia",
+        "CO56": "webathbi",
+        "RC11": "whatsapp",
+        "RC15": "qr"
+      }
+    },
+    "155": {
+      "origen": "Mutua Madrileña",
+      "suborigenes": {
+        "RC04": "email"
       }
     },
     "159": {
@@ -921,6 +880,47 @@
         "WI04": "web",
         "WI05": "rrss",
         "WI99": "cb"
+      }
+    },
+    "160": {
+      "origen": "Fidelización",
+      "suborigenes": {
+        "FI01": "appfidelizacion",
+        "FI02": "webfidelizacion"
+      }
+    },
+    "166": {
+      "origen": "Colectivos Solmatch",
+      "suborigenes": {
+        "CS01": "elcondado",
+        "CS03": "inspiringbenefits",
+        "CS99": "cb",
+        "CS02": "ccvv",
+        "MC09": "boxrepsol"
+      }
+    },
+    "173": {
+      "origen": "PerformanceMax",
+      "suborigenes": {
+        "PM01": "google"
+      }
+    },
+    "180": {
+      "origen": "whatsapp",
+      "suborigenes": {
+        "WH01": "whatsapp"
+      }
+    },
+    "193": {
+      "origen": "Openbank",
+      "suborigenes": {
+        "OP01": "web"
+      }
+    },
+    "198": {
+      "origen": "Marca Blanca",
+      "suborigenes": {
+        "OP01": "telf"
       }
     }
   },
