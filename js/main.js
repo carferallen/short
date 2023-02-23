@@ -47,16 +47,15 @@ const generar_url = function(){
     let nombre = $('#nombre').val().toLowerCase();
     let description = $('#nombre_descriptivo').val();
     let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + $('#area-negocio option:selected').val() + '-' + $('#producto option:selected').val();
-    let utm_source = $('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
+    let utm_source = $('#sfmc').val()=='sfmc_repsol'?'sfmc':$('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
     let utm_medium = $('#medio option:selected').val();
-
+    let sf_eyg_source = $('#sf_eyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text():''
     let urls = [];
 
     url += url.indexOf('?') == -1 ? '?' : '&'
-
-    if ($.inArray($('#tipo-de-campana').val(),['promocional','comercial'])==-1) {
-        url += 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign;
-        urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','url':url})
+    if ($('#etiquetado').val()=='simple') {
+        url += 'utm_source=' + (sf_eyg_source!=''?sf_eyg_source:utm_source) + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + (sf_eyg_source!=''?'&sf_eyg_source='+sf_eyg_source:'');
+        urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':(sf_eyg_source!=''?sf_eyg_source:utm_source),'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','sf_eyg_source':sf_eyg_source,'url':url})
     }
     else {
         let m = [
@@ -70,9 +69,10 @@ const generar_url = function(){
             $('#canal900').val(),
             $('#codigoCC').val(),
             $('#trafico').val()
-    ];
+        ];
+        let new_url = {};
         $.each(getCombn(m), function(id, utm_content){
-            urls.push({
+            new_url = {
                 'fecha':fecha,
                 'nombre':nombre,
                 'descripcion':description,
@@ -80,21 +80,20 @@ const generar_url = function(){
                 'utm_medium':utm_medium,
                 'utm_campaign':utm_campaign,
                 'utm_content':utm_content,
-                'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content});
+                'sf_eyg_source':sf_eyg_source,
+                'url':url + 'utm_source=' + (sf_eyg_source!=''?sf_eyg_source:utm_source) + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content + (sf_eyg_source!=''?'&sf_eyg_source='+sf_eyg_source:'')};
+            urls.push(new_url);
         });
     };
 
     if (urls.length > 1){
-        url = 'url,utm_source,utm_medium,utm_campaign,utm_content,sf_reyg_source\n';
-
-        /*$.each(urls, function(i,u) {
-            url+=u['url']+'\n'
-        });
-        let blob = new Blob(['url\n'+url], {type: "text/csv"});*/
+        let file_content = 'url,utm_source,utm_medium,utm_campaign,utm_content,sf_reyg_source\n';
+        url = ''
         $.each(urls, function(i,u) {
-            url+=[u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content']].join(',')+'\n'
+            url += u['url']+'\n'
+            file_content += [u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content'],u['sf_eyg_source']].join(',')+'\n'
         });
-        let blob = new Blob([url], {type: "text/csv"});
+        let blob = new Blob([file_content], {type: "text/csv"});
         $('#CSV-link').attr('href', window.URL.createObjectURL(blob));
         $('#CSV-link').attr('download', utm_campaign+'.csv');
         $('#CSV').removeClass('collapse')
@@ -112,7 +111,7 @@ const generar_url = function(){
             xhrFields:{
                 responseType: 'blob'
             },
-            success: function(data){            
+            success: function(data){
                 var blobData = data;
                 var url = window.URL || window.webkitURL;
                 var src = url.createObjectURL(data);
@@ -139,6 +138,7 @@ const generar_url = function(){
             utm_medium: url.utm_medium,
             utm_campaign: url.utm_campaign,
             utm_content: url.utm_content,
+            sf_eyg_source: url.sf_eyg_source,
             url:url.url,
         };
         put_log(linea);
@@ -191,7 +191,7 @@ const set_autocomplete = async function(){
 
 //Valores por defecto para pruebas------ELIMINAR
 const autocompletar = async function(){ 
-    $('#tipo-de-campana').val('comunicacion');
+    $('#etiquetado').val('simple');
     await $('#medio_1').prop('checked', true).trigger("change");
     $('#fuente').val('rrss');
     $('#medio').val('cpc');
@@ -204,9 +204,9 @@ const autocompletar = async function(){
 }
 //FIN: Valores por defecto para pruebas------ELIMINAR
 
-$(document).ready(function() {
-    inicializa();
-    init_events();
+$(document).ready(async function() {
+    await inicializa();
+    await init_events();
     if (GetURLParameter('a')==1) {
         autocompletar();
     };

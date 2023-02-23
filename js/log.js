@@ -20,11 +20,11 @@ const carga_log = async function() {
                 <td>${campana.data().timestamp.toDate().toISOString()}</td>
                 <td>${campana.data().fecha}</td>
                 <td>${campana.data().nombre}</td>
-                <td>${campana.data().descripcion}</td>
                 <td>${campana.data().utm_source}</td>
                 <td>${campana.data().utm_medium}</td>
                 <td>${campana.data().utm_campaign}</td>
                 <td>${campana.data().utm_content}</td>
+                <td>${campana.data().sf_eyg_source}</td>
                 <td>${campana.data().user}</td>
             </tr>
         `

@@ -12,6 +12,7 @@ export const inicializa = function() {
     get_agencias();
     get_negocios();
     get_detalles();
+    get_origenes();
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -19,7 +20,7 @@ export const inicializa = function() {
 };
 
 export const alert = (message, type, placement='#AlertasPrincipales') => {
-    let html = 
+    let html =
     `<div id="alerta" class="alert alert-${type} alert-dismissible" role="alert">
        <div>${message}</div>
        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -28,7 +29,7 @@ export const alert = (message, type, placement='#AlertasPrincipales') => {
 };
 
 export const init_events = function(){
-    $('.multiple').on('change', function(){       
+    $('.multiple').on('change', function(){
         if (is_multi()) {
             $('#acortar').prop('checked',false);
             $('#acortar').prop('disabled', true)
@@ -37,9 +38,9 @@ export const init_events = function(){
             $('#acortar').prop('disabled', false)
         }
     });
-    $('#tipo-de-campana').on('change', function() {
+    $('#etiquetado').on('change', function() {
         let opt = $(this).val()
-        if ($.inArray(opt,['promocional','comercial'])!=-1) {
+        if (opt =='complejo') {
             $('#otros-detalles').show();
         }
         else {
@@ -72,14 +73,22 @@ export const init_events = function(){
             $('#seccion-sf_eyg').hide();
         }
     });
+    $('#origen').on('change', function() {
+        get_suborigenes($(this).val());
+    });
     $('#sf_eyg').on('change', function() {
         if ($(this).is(":checked")) {
             $('#seccion-sf_eyg').show();
+            $('#origen').prop('required',true);
+            $('#suborigen').prop('required',true);
         }
         else {
             $('#seccion-sf_eyg').hide();
             $('#origen').prop("selectedIndex", 0).val();
-            $('#sub-origen').prop("selectedIndex", 0).val();
+            $('#suborigen').prop("selectedIndex", 0).val();
+            $('#suborigen').prop("disabled", true);
+            $('#origen').prop('required',false);
+            $('#suborigen').prop('required',false);
         }
     });
     $('#campanas-anteriores').on('change', function() {
@@ -114,6 +123,9 @@ export const init_events = function(){
         $('#nombre_descriptivo').val($(this).children('td:nth(1)').html());
         $('#searchModal').modal('hide')
     });
+    $('.header__title').on('click', 'i', function() {
+        $('#ayudaModal').modal('show')
+    });
 };
 
 const is_multi = function() {
@@ -141,6 +153,16 @@ const get_productos = function(area_negocio) {
     $('#producto').removeAttr("disabled");
 }
 
+const get_suborigenes = function(origen) {
+    $('#suborigen').empty().append('<option selected disabled value="">Suborigen *</option>');
+    $.each(ordena(config["origenes-suborigenes"][origen]["suborigenes"]), function(value, text) {
+        if (value!='all'){
+            $('#suborigen').append(new Option(text, value));
+        }
+    });
+    $('#suborigen').removeAttr("disabled");
+}
+
 const get_fuentes = function(tipo_medio) {
     $('#fuente').empty().append('<option selected disabled value="">Fuente '+ tipo_medio +' *</option>')
     $.each(ordena(config["fuentes-"+tipo_medio]), function(value, text) {
@@ -166,9 +188,9 @@ const get_secciones = function(tipo_medio) {
 }
 
 const get_tiposCampanas = function() {
-    $('#tipo-de-campana').empty().append('<option selected disabled value="">Tipo de campaña *</option>');
-    $.each(ordena(config['tipos-de-campanas']), function(value, text) {
-        $('#tipo-de-campana').append(new Option(text, value));
+    $('#etiquetado').empty().append('<option selected disabled value="">Tipo de etiquetado *</option>');
+    $.each(config['etiquetado'], function(value, text) {
+        $('#etiquetado').append(new Option(text, value));
     });
 }
 
@@ -187,6 +209,20 @@ const get_negocios = function() {
     });
     $.each(ordena(list_areas), function(value, text) {
         $('#area-negocio').append(new Option(text, value));
+    });
+}
+
+const get_origenes = function() {
+    $('#origen').empty().append('<option selected disabled value="">Origen *</option>');
+    let list_origenes = {};
+    $.each(config["origenes-suborigenes"], function(value, text) {
+        list_origenes[text.origen]=value;
+    });
+    let ordenada = Object.entries(list_origenes).sort((a,b) => b[0].toLowerCase()>a[0].toLowerCase()?-1:b[0].toLowerCase()<a[0].toLowerCase()?1:0);    
+    list_origenes = Object.fromEntries(ordenada)
+    console.log(ordena(list_origenes))
+    $.each(list_origenes, function(key, value) {
+        $('#origen').append(new Option(key, value));
     });
 }
 
