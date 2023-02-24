@@ -64,7 +64,7 @@ export const init_events = function(){
     $('#area-negocio').on('change', function() {
         get_productos($(this).val());
         let neg = $(this).val().split('-')[0];
-        if ($.inArray(neg,['reyg','solify','solmatch'])!=-1){
+        if ($.inArray(neg,['movelectrica','reyg','solify','solmatch'])!=-1){
             $('#check_eyg').removeClass('collapse')
         }
         else {
