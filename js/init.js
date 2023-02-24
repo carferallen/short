@@ -12,7 +12,6 @@ export const inicializa = function() {
     get_agencias();
     get_negocios();
     get_detalles();
-    get_origenes();
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-toggle="tooltip"]'));
     var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
@@ -63,8 +62,9 @@ export const init_events = function(){
     });
     $('#area-negocio').on('change', function() {
         get_productos($(this).val());
+        get_origenes($(this).val());
         let neg = $(this).val().split('-')[0];
-        if ($.inArray(neg,['movelectrica','reyg','solify','solmatch'])!=-1){
+        if ($.inArray(neg,Object.keys(config['origenes-suborigenes']))!=-1){
             $('#check_eyg').removeClass('collapse')
         }
         else {
@@ -74,7 +74,7 @@ export const init_events = function(){
         }
     });
     $('#origen').on('change', function() {
-        get_suborigenes($(this).val());
+        get_suborigenes(config['origenes-suborigenes'][$('#area-negocio').val()][$(this).val()]);
     });
     $('#sf_eyg').on('change', function() {
         if ($(this).is(":checked")) {
@@ -153,9 +153,9 @@ const get_productos = function(area_negocio) {
     $('#producto').removeAttr("disabled");
 }
 
-const get_suborigenes = function(origen) {
+const get_suborigenes = function(origenes) {
     $('#suborigen').empty().append('<option selected disabled value="">Suborigen *</option>');
-    $.each(ordena(config["origenes-suborigenes"][origen]["suborigenes"]), function(value, text) {
+    $.each(ordena(origenes["suborigenes"]), function(value, text) {
         if (value!='all'){
             $('#suborigen').append(new Option(text, value));
         }
@@ -212,15 +212,14 @@ const get_negocios = function() {
     });
 }
 
-const get_origenes = function() {
+const get_origenes = function(area_negocio) {
     $('#origen').empty().append('<option selected disabled value="">Origen *</option>');
     let list_origenes = {};
-    $.each(config["origenes-suborigenes"], function(value, text) {
+    $.each(config["origenes-suborigenes"][area_negocio], function(value, text) {
         list_origenes[text.origen]=value;
     });
     let ordenada = Object.entries(list_origenes).sort((a,b) => b[0].toLowerCase()>a[0].toLowerCase()?-1:b[0].toLowerCase()<a[0].toLowerCase()?1:0);    
     list_origenes = Object.fromEntries(ordenada)
-    console.log(ordena(list_origenes))
     $.each(list_origenes, function(key, value) {
         $('#origen').append(new Option(key, value));
     });
