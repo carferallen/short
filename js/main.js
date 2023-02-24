@@ -252,7 +252,7 @@ window.search = async function(){
     let html;
     tabla.empty();
     $.each(campanas, function(id, campana) {
-        html += `<tr><td class="col-xs-4">${campana.nombre}</td><td class="col-xs-8">${campana.descripcion}</td></tr>`;
+        html += `<tr><td class="w-25">${campana.nombre}</td><td>${campana.descripcion}</td></tr>`;
     });
     tabla.html(html);
     $('#searchModal').modal('show');

@@ -333,4 +333,7 @@ div.dataTables_wrapper div.dataTables_length select, div.dataTables_wrapper div.
         width: 50vw;
         text-align: right ;
     }
+    #searchModal .modal-dialog {
+        min-width: 700px;
+    }
 }
