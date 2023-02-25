@@ -81,6 +81,10 @@ export const init_events = function(){
             $('#seccion-sf_eyg').show();
             $('#origen').prop('required',true);
             $('#suborigen').prop('required',true);
+            $('#fuente').prop('required',false);
+            $('#fuente, #seccion').prop('disabled', true);
+            $('#fuente option').eq(0).prop('text','(no disponible)');
+            $('#seccion option').eq(0).prop('text','(no disponible)');
         }
         else {
             $('#seccion-sf_eyg').hide();
@@ -89,6 +93,10 @@ export const init_events = function(){
             $('#suborigen').prop("disabled", true);
             $('#origen').prop('required',false);
             $('#suborigen').prop('required',false);
+            $('#fuente').prop('required',true);
+            $('#fuente, #seccion').prop('disabled', false);
+            $('#fuente option').eq(0).prop('text','Fuente ' + $('input[name=medio]:checked', $('#tipo-medio')).val() + ' *');
+            $('#seccion option').eq(0).prop('text','Sección ' + $('input[name=medio]:checked', $('#tipo-medio')).val());
         }
     });
     $('#campanas-anteriores').on('change', function() {
