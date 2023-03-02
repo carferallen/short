@@ -53,7 +53,7 @@ const generar_url = function(){
     let urls = [];
 
     url += url.indexOf('?') == -1 ? '?' : '&'
-    if ($('#etiquetado').val()=='simple') {
+    if (!$('#etiquetado').is(":checked")) {
         url += 'utm_source=' + (sf_eyg_source!=''?sf_eyg_source:utm_source) + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + (sf_eyg_source!=''?'&sf_eyg_source='+sf_eyg_source:'');
         urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':(sf_eyg_source!=''?sf_eyg_source:utm_source),'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','sf_eyg_source':sf_eyg_source,'url':url})
     }
@@ -186,12 +186,11 @@ const set_autocomplete = async function(){
     });
     ac_nombredescripcion.setData(nombres_descripcion);
     ac_descripcion.setData(descripciones);
-    $('#tipo-de-campana').focus();
+    $('#url').focus();
 }
 
 //Valores por defecto para pruebas------ELIMINAR
 const autocompletar = async function(){ 
-    $('#etiquetado').val('simple');
     await $('#medio_1').prop('checked', true).trigger("change");
     $('#fuente').val('rrss');
     $('#medio').val('cpc');

@@ -16,7 +16,7 @@ const carga_log = async function() {
     let html;
     listado.forEach(campana => {
         html += `
-            <tr onclick="abreURL(this)" destino="${campana.data().url}">
+            <tr onclick="abreURL(this)" destino="${campana.data().url}" title="${campana.data().url}">
                 <td>${campana.data().timestamp.toDate().toISOString()}</td>
                 <td>${campana.data().fecha}</td>
                 <td>${campana.data().nombre}</td>

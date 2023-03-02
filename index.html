@@ -20,7 +20,7 @@
                     <div class="header__title">
                         <h1>
                             Etiquetado de campañas
-                            <i class="bi bi-info-circle"></i>
+                            <i class="bi bi-question-circle"></i>
                         </h1>
                     </div>
                     <div class="header__name">
@@ -37,19 +37,26 @@
                 </div>
                 <!--hr class="hr-text" data-content="Datos generales"-->
                 <div class="form-group mb-2 row">
-                    <label for="etiquetado" class="col-md-6 col-form-label">¿Qué tipo de campaña vas a realizar?</label>
-                    <div id="tipo-medio" class="col-md-3">
-                        <div class="form-check form-check-inline custom-control custom-radio">
-                            <input class="form-check-input custom-control-input" type="radio" name="medio" id="medio_1" value="online" required>
-                            <label class="form-check-label custom-control-label" for="medio_1">Online</label>
-                        </div>
-                        <div class="form-check form-check-inline custom-control custom-radio">
-                            <input class="form-check-input custom-control-input" type="radio" name="medio" id="medio_2" value="offline" required>
-                            <label class="form-check-label custom-control-label" for="medio_2">Offline</label>
+                    <label for="etiquetado" class="col-md-6 col-form-label">Tipo de campaña y de etiquetado</label>
+                    <div class="col-md-3">
+                        <div class="switcher">
+                            <label for="tipo-medio">
+                                <span>Online</span>
+                                <input type="checkbox" id="tipo-medio" data-no="online" data-yes="offline"/><span>
+                                <small></small></span>
+                                <span>Offline</span>
+                            </label>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <select class="form-select custom-select" id="etiquetado" required></select>
+                        <div class="switcher">
+                            <label for="etiquetado">
+                                <span>Simple</span>
+                                <input type="checkbox" id="etiquetado" data-no="simple" data-yes="completo"/>
+                                <span><small></small></span>
+                                <span>Completo</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
                 <div class="form-group mb-2 row">
@@ -135,11 +142,12 @@
                 </div>
                 <div class="mb-3 row collapse" id="check_eyg">
                     <div class="col-md-6"></div>
-                    <div class="col-md-3">
-                        <div class="form-check form-switch">
-                            <input class="form-check-input" type="checkbox" role="switch" id="sf_eyg" >  
-                            <label class="form-check-label" for="sf_eyg">Salesfoce EyG</label>
-                        </div>
+                    <div class="col-md-3 switcher" style="text-align: right;">
+                        <label for="sf_eyg">
+                            <input type="checkbox" id="sf_eyg"/>
+                            <span style="margin-left: 0px;"><small></small></span>
+                            <span>Salesfoce EyG</span>
+                        </label>
                     </div>
                     <div class="col-md-3"></div>
                 </div>
@@ -214,10 +222,13 @@
                     </div>
                 </div>
                 <hr class="my-4" />
-                <div class="mb-3 row justify-content-center">
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" role="switch" id="acortar" >  
-                        <label class="form-check-label" for="acortar">Acortar url</label>
+                <div class="mb-3 row">
+                    <div class="col-md-12 text-center switcher">
+                        <label for="acortar">
+                            <input type="checkbox" id="acortar"/>
+                            <span><small></small></span>
+                            <span class="ok">Acortar url</span>
+                        </label>
                     </div>
                 </div>
                 <hr class="my-4" />

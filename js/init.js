@@ -8,7 +8,9 @@ export const inicializa = function() {
         dataType: 'json',
     }).responseText;
     config =  $.parseJSON(config);
-    get_tiposCampanas();
+    get_fuentes('online');
+    get_secciones('online');
+    get_medios('online');
     get_agencias();
     get_negocios();
     get_detalles();
@@ -38,8 +40,7 @@ export const init_events = function(){
         }
     });
     $('#etiquetado').on('change', function() {
-        let opt = $(this).val()
-        if (opt =='complejo') {
+        if ($(this).is(":checked")) {
             $('#otros-detalles').show();
         }
         else {
@@ -47,9 +48,10 @@ export const init_events = function(){
         }
     });
     $('#tipo-medio').on('change', function() {
-        get_fuentes($('input[name=medio]:checked', this).val());
-        get_secciones($('input[name=medio]:checked', this).val());
-        get_medios($('input[name=medio]:checked', this).val());
+        let valor = $(this).is(":checked")?$(this).attr("data-yes"):$(this).attr("data-no")
+        get_fuentes(valor);
+        get_secciones(valor);
+        get_medios(valor);
     });
     $('#medio').on('change', function() {
         if ($(this).val()=='email'){
@@ -87,6 +89,7 @@ export const init_events = function(){
             $('#seccion option').eq(0).prop('text','(no disponible)');
         }
         else {
+            let tipo_medio = $('#tipo-medio').is(":checked")?$('#tipo-medio').attr("data-yes"):$('#tipo-medio').attr("data-no")
             $('#seccion-sf_eyg').hide();
             $('#origen').prop("selectedIndex", 0).val();
             $('#suborigen').prop("selectedIndex", 0).val();
@@ -95,8 +98,8 @@ export const init_events = function(){
             $('#suborigen').prop('required',false);
             $('#fuente').prop('required',true);
             $('#fuente, #seccion').prop('disabled', false);
-            $('#fuente option').eq(0).prop('text','Fuente ' + $('input[name=medio]:checked', $('#tipo-medio')).val() + ' *');
-            $('#seccion option').eq(0).prop('text','Sección ' + $('input[name=medio]:checked', $('#tipo-medio')).val());
+            $('#fuente option').eq(0).prop('text','Fuente ' + tipo_medio + ' *');
+            $('#seccion option').eq(0).prop('text','Sección ' + tipo_medio);
         }
     });
     $('#campanas-anteriores').on('change', function() {
@@ -193,13 +196,6 @@ const get_secciones = function(tipo_medio) {
         $('#seccion').append(new Option(text, value));
     });
     $('#seccion').removeAttr("disabled")
-}
-
-const get_tiposCampanas = function() {
-    $('#etiquetado').empty().append('<option selected disabled value="">Tipo de etiquetado *</option>');
-    $.each(config['etiquetado'], function(value, text) {
-        $('#etiquetado').append(new Option(text, value));
-    });
 }
 
 const get_agencias = function() {
