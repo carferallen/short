@@ -145,7 +145,7 @@ export const init_events = function(){
     $('.header__title').on('click', 'i', function() {
         $('#ayudaModal').modal('show')
     });
-    $('#accion,#subaccion,#creatividad,#subaudiencia').on('keydown', (e) => {
+    $('#nombre,#parametro,#accion,#subaccion,#creatividad,#subaudiencia').on('keydown', (e) => {
         var regex = new RegExp("^[a-zA-Z0-9,ñ,á,é,í,ó,ú]*$");
         if (!regex.test(e.key)) {
           e.preventDefault();
