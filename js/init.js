@@ -206,7 +206,7 @@ const get_medios = function(tipo_medio) {
 }
 
 const get_secciones = function(tipo_medio) {
-    $('#seccion').empty().append('<option selected value="all">Sección '+ tipo_medio +' (all)</option>');
+    $('#seccion').empty().append('<option selected value="all">Sección '+ tipo_medio +'</option>');
     $.each(ordena(config['secciones-'+tipo_medio]), function(value, text) {
         $('#seccion').append(new Option(text, value));
     });

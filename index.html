@@ -101,12 +101,12 @@
                 </div>
                 <!--hr class="hr-text" data-content="Campaña (utm-campaign)"/-->
                 <div class="seccion">Campaña (utm_campaign)
-                    <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>_<nombre>_<fecha>_<area/negocio>-<producto/temática>">
+                    <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>_<nombre>_<parámetro adicional>_<fecha>_<area/negocio>-<producto/temática>">
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
                 <div class="form-group mb-2 row">
-                    <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña</label>
+                    <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña y parámetro adicional</label>
                     <div class="col-md-3">
                         <div class="input-group">
                             <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
@@ -115,7 +115,15 @@
                     </div>
                     <div class="col-md-3">
                         <div class="input-group">
-                            <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Nombre descriptivo *" required>
+                            <input type="text" class="form-control" id="parametro" name="parametro" placeholder="Parámetro adicional">
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2 row">
+                    <label for="nombre" class="col-md-6 col-form-label">Descripción (no se incluye en el utm)</label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Descripción de la campaña *" required>
                             <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
                         </div>
                     </div>
