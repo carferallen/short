@@ -304,5 +304,7 @@ const init_multiple = function(id,label){
         numberDisplayed: 1,
         nSelectedText: 'seleccionadas',
         maxHeight: 400,
+        enableCaseInsensitiveFiltering: true,
+        filterPlaceholder: 'Buscar...'
     });
 };
