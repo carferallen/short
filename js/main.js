@@ -231,7 +231,7 @@ const getCombn = function(arr) {
         var otherCases = getCombn(arr.slice(1));
         for (var i = 0; i < otherCases.length; i++) {
             for (var j = 0; j < arr[0].length; j++) {
-                ans.push(arr[0][j]+'-'+otherCases[i]);
+                ans.push(arr[0][j]+'_'+otherCases[i]);
             }
         }
         return ans;
