@@ -46,7 +46,8 @@ const generar_url = function(){
     let fecha_split = fecha.split('-');
     let nombre = $('#nombre').val().toLowerCase();
     let description = $('#nombre_descriptivo').val();
-    let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + $('#area-negocio option:selected').val() + '-' + $('#producto option:selected').val();
+    let area_negocio = $('#area-negocio option:selected').val() + ($('#producto option:selected').val()!=='all'?'-' + $('#producto option:selected').val():'');
+    let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + area_negocio;
     let utm_source = $('#sfmc').val()=='sfmc_repsol'?'sfmc':$('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
     let utm_medium = $('#medio option:selected').val();
     let sf_eyg_source = $('#sf_eyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text():''
@@ -62,14 +63,20 @@ const generar_url = function(){
             $('#device').val(),
             $('#formato').val(),
             $('#adsize').val(),
+            $('#accion').val()!=""?[$('#accion').val()]:[],
+            $('#subaccion').val()!=""?[$('#subaccion').val()]:[],
+            $('#creatividad').val()!=""?[$('#creatividad').val()]:[],
+            $('#landing').val(),
             $('#segmentacion').val(),
             $('#audiencia').val(),
+            $('#subaudiencia').val()!=""?[$('#subaudiencia').val()]:[],
             $('#objetivo').val(),
             $('#modelo').val(),
-            $('#canal900').val(),
-            $('#codigoCC').val(),
             $('#trafico').val()
         ];
+        if ($('#medio').val()=='900') {
+            m = $.merge(m,[$('#canal900').val(),$('#codigoCC').val()])
+        }
         let new_url = {};
         $.each(getCombn(m), function(id, utm_content){
             new_url = {
@@ -93,7 +100,7 @@ const generar_url = function(){
             url += u['url']+'\n'
             file_content += [u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content'],u['sf_eyg_source']].join(',')+'\n'
         });
-        let blob = new Blob([file_content], {type: "text/csv"});
+        let blob = new Blob(["\uFEFF"+file_content], {type: "text/csv; charset=utf-8"});
         $('#CSV-link').attr('href', window.URL.createObjectURL(blob));
         $('#CSV-link').attr('download', utm_campaign+'.csv');
         $('#CSV').removeClass('collapse')
@@ -206,28 +213,14 @@ const autocompletar = async function(){
 $(document).ready(async function() {
     await inicializa();
     await init_events();
-    if (GetURLParameter('a')==1) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    if (urlParams.get('a')==1) {
         autocompletar();
     };
-    if (GetURLParameter('page')) {
-        $('#url').val(GetURLParameter('page'));
-    };
+    $('#url').val(urlParams.get('page')||'');
+    
 });
-
-
-const GetURLParameter = function(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}
 
 const getCombn = function(arr) {
     arr[0]=arr[0].length==0?['all']:arr[0];

@@ -61,6 +61,14 @@ export const init_events = function(){
         else {
             $('#sfmc').addClass('collapse')
         }
+        if ($(this).val()=='900'){
+            $('#seccion-canal-900').removeClass('collapse');
+            $('#canal900').eq(0).prop('selected', true);
+            $('#codigoCC').eq(0).prop('selected', true);
+        }
+        else {
+            $('#seccion-canal-900').addClass('collapse')
+        }
     });
     $('#area-negocio').on('change', function() {
         get_productos($(this).val());
@@ -137,6 +145,13 @@ export const init_events = function(){
     $('.header__title').on('click', 'i', function() {
         $('#ayudaModal').modal('show')
     });
+    $('#accion,#subaccion,#creatividad,#subaudiencia').on('keydown', (e) => {
+        var regex = new RegExp("^[a-zA-Z0-9,ñ,á,é,í,ó,ú]*$");
+        if (!regex.test(e.key)) {
+          e.preventDefault();
+          return;
+        }
+      })
 };
 
 const is_multi = function() {
@@ -229,6 +244,15 @@ const get_origenes = function(area_negocio) {
     });
 }
 
+const get_landings = function() {
+    let list_landings = Object.entries(config["landings"]).map(a => a.reverse()).sort((a,b) => b[0].toLowerCase()>a[0].toLowerCase()?-1:b[0].toLowerCase()<a[0].toLowerCase()?1:0);    
+    list_landings = Object.fromEntries(list_landings)
+    $.each(list_landings, function(key, value) {
+        $('#landing').append(new Option(key, value));
+    });
+    init_multiple('#landing','Landing');
+}
+
 const get_detalles = function() {
     get_datos('formatos','#formato','Ad formats');
     get_datos('adsizes','#adsize', 'Ad sizes');
@@ -240,7 +264,7 @@ const get_detalles = function() {
     get_datos('canal900','#canal900','Abreviatura canal 900');
     get_datos('codigoCC','#codigoCC','Código CC');
     get_datos('trafico','#trafico','Tráfico');
-
+    get_landings();
 }
 
 const get_datos = function(data, element, label) {

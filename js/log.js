@@ -9,7 +9,9 @@ window.abreURL = function(linea){
 }
 
 const carga_log = async function() {
-    let lineas = GetURLParameter('l') || '10';
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    let lineas = urlParams.get('l') || '10';
     let listado = await get_log(lineas);
     $('#listado').hide();
     $('#listado table>tbody').empty();
@@ -53,17 +55,3 @@ onAuthStateChanged(auth, (user) => {
       $('#signinModal').modal('show');
     }
 });
-
-const GetURLParameter = function(sParam)
-{
-    var sPageURL = window.location.search.substring(1);
-    var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++) 
-    {
-        var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam) 
-        {
-            return sParameterName[1];
-        }
-    }
-}
