@@ -45,9 +45,10 @@ const generar_url = function(){
     let fecha = $('#fecha').val();
     let fecha_split = fecha.split('-');
     let nombre = $('#nombre').val().toLowerCase();
+    let parametro = $('#parametro').val()!=""?$('#parametro').val().toLowerCase():'all';
     let description = $('#nombre_descriptivo').val();
     let area_negocio = $('#area-negocio option:selected').val() + ($('#producto option:selected').val()!=='all'?'-' + $('#producto option:selected').val():'');
-    let utm_campaign = $('#agencia').val().toLowerCase() + '_' + nombre + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + area_negocio;
+    let utm_campaign = $('#agencia').val().toLowerCase() + '-' + nombre + '-' + parametro + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + area_negocio;
     let utm_source = $('#sfmc').val()=='sfmc_repsol'?'sfmc':$('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
     let utm_medium = $('#medio option:selected').val();
     let sf_eyg_source = $('#sf_eyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text():''
@@ -63,13 +64,13 @@ const generar_url = function(){
             $('#device').val(),
             $('#formato').val(),
             $('#adsize').val(),
-            $('#accion').val()!=""?[$('#accion').val()]:[],
-            $('#subaccion').val()!=""?[$('#subaccion').val()]:[],
-            $('#creatividad').val()!=""?[$('#creatividad').val()]:[],
+            $('#accion').val()!=""?[$('#accion').val().toLowerCase()]:[],
+            $('#subaccion').val()!=""?[$('#subaccion').val().toLowerCase()]:[],
+            $('#creatividad').val()!=""?[$('#creatividad').val().toLowerCase()]:[],
             $('#landing').val(),
             $('#segmentacion').val(),
             $('#audiencia').val(),
-            $('#subaudiencia').val()!=""?[$('#subaudiencia').val()]:[],
+            $('#subaudiencia').val()!=""?[$('#subaudiencia').val().toLowerCase()]:[],
             $('#objetivo').val(),
             $('#modelo').val(),
             $('#trafico').val()
