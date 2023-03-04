@@ -42,17 +42,12 @@ class Autocomplete {
 
     if (field.id=='nombre') {
       field.addEventListener('keydown', (e) => {
-        var regex = new RegExp("^[a-zA-Z0-9-,-,ñ,á,é,í,ó,ú]*$");
         if (e.keyCode === 27) {
           this.dropdown.hide();
           return;
         }
         if (e.keyCode === 40) {
           this.dropdown._menu.children[0]?.focus();
-          return;
-        }
-        if (!regex.test(e.key)) {
-          e.preventDefault();
           return;
         }
       })
