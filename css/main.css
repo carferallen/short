@@ -204,6 +204,9 @@ h3 {
     background: #fff;
     border: 1px solid #016a7f;
 }
+.switcher label input:disabled + span + span {
+    color: #ced4da;
+}
 
 .caret {
     float: right;
