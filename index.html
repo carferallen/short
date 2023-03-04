@@ -41,10 +41,10 @@
                     <div class="col-md-3">
                         <div class="switcher">
                             <label for="tipo-medio">
-                                <span>Online</span>
-                                <input type="checkbox" id="tipo-medio" data-no="online" data-yes="offline"/><span>
-                                <small></small></span>
-                                <span>Offline</span>
+                                <span class="off">Online</span>
+                                <input type="checkbox" id="tipo-medio" data-no="online" data-yes="offline"/>
+                                <span><small></small></span>
+                                <span class="on">Offline</span>
                             </label>
                         </div>
                     </div>
@@ -173,7 +173,7 @@
                     <!--hr class="hr-text" data-content="Content (utm-content)"/-->
                     <div class="seccion">Content (utm_content)
                         <span data-toggle="tooltip" data-placement="top" title="El utm_content se compone a partir de estos campos:
-                            <device>_<formato>_<adsize>_<segmentacion>_<audiencia>_<objetivo>_<modelo>_<canal900>_<codigoCC>_<trafico>">
+                            <device>_<formato>_<adsize>_<accion>_<subaccion>_<creatividad>_<landing>_<segmentacion>_<audiencia>_<subaudiencia>_<objetivo>_<modelo>_<trafico>[_<canal900>_<codigoCC>]">
                             <i class="bi bi-info-circle"></i>
                         </span>
                     </div>
@@ -192,29 +192,49 @@
                     <div class="form-group mb-2 row">
                         <label for="otros-todo" class="col-md-3 col-form-label"></label>
                         <div class="col-md-3">
+                            <input type="text" class="form-control" id="accion" name="accion" placeholder="Acción">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="subaccion" name="subaccion" placeholder="Sub-acción">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="text" class="form-control" id="creatividad" name="creatividad" placeholder="Creatividad">
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-5">
+                            <select class="form-select custom-select multiple" multiple id="landing"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select custom-select multiple" multiple id="segmentacion"></select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-5">
+                            <select class="form-select custom-select multiple" multiple id="audiencia"></select>
+                        </div>
+                        <div class="col-md-4">
+                            <input type="text" class="form-control" id="subaudiencia" name="subaudiencia" placeholder="Sub-audiencia">
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row">
+                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="objetivo"></select>
                         </div>
                         <div class="col-md-3">
-                            <select class="form-select custom-select multiple" multiple id="segmentacion"></select>
-                        </div>
-                        <div class="col-md-3">
-                            <select class="form-select custom-select multiple" multiple id="audiencia"></select>
-                        </div>
-                    </div>
-                    <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
-                        <div class="col-md-5">
                             <select class="form-select custom-select multiple" multiple id="modelo"></select>
                         </div>
-                        <div class="col-md-4">
-                            <select class="form-select custom-select multiple" multiple id="canal900"></select>
-                        </div>
-                        
-                    </div>
-                    <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="trafico"></select>
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 row collapse" id="seccion-canal-900">
+                        <label for="otros-todo" class="col-md-3 col-form-label">Datos canal 900</label>
+                        <div class="col-md-5">
+                            <select class="form-select custom-select multiple" multiple id="canal900"></select>
                         </div>
                         <div class="col-md-4">
                             <select class="form-select custom-select multiple" multiple id="codigoCC"></select>
