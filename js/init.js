@@ -248,7 +248,7 @@ const get_landings = function() {
     let list_landings = Object.entries(config["landings"]).map(a => a.reverse()).sort((a,b) => b[0].toLowerCase()>a[0].toLowerCase()?-1:b[0].toLowerCase()<a[0].toLowerCase()?1:0);    
     list_landings = Object.fromEntries(list_landings)
     $.each(list_landings, function(key, value) {
-        $('#landing').append(new Option(key, value));
+        $('#landing').append(new Option(value.padStart(3, '0')+': '+key, value));
     });
     init_multiple('#landing','Landing');
 }
