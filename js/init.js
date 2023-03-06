@@ -79,16 +79,16 @@ export const init_events = function(){
         }
         else {
             $('#check_eyg').addClass('collapse');
-            $('#sf_eyg').prop('checked',false);
-            $('#seccion-sf_eyg').hide();
+            $('#sf_reyg').prop('checked',false);
+            $('#seccion-sf_reyg').hide();
         }
     });
     $('#origen').on('change', function() {
         get_suborigenes(config['origenes-suborigenes'][$('#area-negocio').val()][$(this).val()]);
     });
-    $('#sf_eyg').on('change', function() {
+    $('#sf_reyg').on('change', function() {
         if ($(this).is(":checked")) {
-            $('#seccion-sf_eyg').show();
+            $('#seccion-sf_reyg').show();
             $('#origen').prop('required',true);
             $('#suborigen').prop('required',true);
             $('#fuente').prop('required',false);
@@ -98,7 +98,7 @@ export const init_events = function(){
         }
         else {
             let tipo_medio = $('#tipo-medio').is(":checked")?$('#tipo-medio').attr("data-yes"):$('#tipo-medio').attr("data-no")
-            $('#seccion-sf_eyg').hide();
+            $('#seccion-sf_reyg').hide();
             $('#origen').prop("selectedIndex", 0).val();
             $('#suborigen').prop("selectedIndex", 0).val();
             $('#suborigen').prop("disabled", true);

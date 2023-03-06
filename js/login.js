@@ -4,6 +4,45 @@ import { alert } from "./init.js";
 
 var currentUser;
 
+const cargaModal = function(id,label,code) {
+  let html = `
+  <div class="modal fade" id="${id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h3>${label}</h3>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div id="Alertas"></div>
+          <div class="modal-body">
+          <form id="login-form">
+            ${code}    
+          </form>
+          </div>
+      </div>
+  </div>
+  </div>`
+  $('body').append(html);
+}
+
+let loginHTML = `
+  <label for="email">Email</label>
+  <input type="email" id="login-email" class="form-control mb-3" placeholder="email" required>
+  <label for="password">Contraseña:</label>
+  <input type="password" id="login-password" class="form-control mb-3" placeholder="Contraseña" required>
+  <button type="submit" class="btn btn-primary w-100 mb-4">Login</button>`
+let updateHTML = `
+  <label for="displayName">Nombre completo:</label>
+  <input type="text" id="displayName" class="form-control mb-3" placeholder="Nombre*" required>
+  <label for="newPassword">Nueva contraseña:</label>
+  <input type="password" id="newPassword" class="form-control mb-3" placeholder="Contraseña*" required>
+  <label for="newPasswordCheck">Repite la nueva contraseña:</label>
+  <input type="password" id="newPasswordCheck" class="form-control mb-3" placeholder="Contraseña*" required>
+  <button type="submit" class="btn btn-primary w-100 mb-4">Enviar</button>`
+
+cargaModal('signinModal','Identifícate',loginHTML)  
+cargaModal('updateModal','Actualiza tus datos',updateHTML)
+
 $("#login-form").on("submit", async (e) => {
   e.preventDefault();
   const email = $("#login-form #login-email").val();
