@@ -71,7 +71,7 @@ const generar_url = function(){
             comas2array($('#subaccion').val()),
             comas2array($('#creatividad').val()),
             $('#landing').val(),
-            $('#segmentacion').val(),
+            comas2array($('#segmentacion').val()),
             $('#audiencia').val(),
             comas2array($('#subaudiencia').val()),
             $('#objetivo').val(),
