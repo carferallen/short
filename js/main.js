@@ -67,16 +67,17 @@ const generar_url = function(){
             $('#device').val(),
             $('#formato').val(),
             $('#adsize').val(),
-            $('#accion').val()!=""?[$('#accion').val().toLowerCase()]:[],
-            $('#subaccion').val()!=""?[$('#subaccion').val().toLowerCase()]:[],
-            $('#creatividad').val()!=""?[$('#creatividad').val().toLowerCase()]:[],
+            comas2array($('#accion').val()),
+            comas2array($('#subaccion').val()),
+            comas2array($('#creatividad').val()),
             $('#landing').val(),
             $('#segmentacion').val(),
             $('#audiencia').val(),
-            $('#subaudiencia').val()!=""?[$('#subaudiencia').val().toLowerCase()]:[],
+            comas2array($('#subaudiencia').val()),
             $('#objetivo').val(),
             $('#modelo').val()
         ];
+
         if ($('#trafico').val().length>0){
             m = $.merge(m,[$('#trafico').val()])
         }
@@ -242,6 +243,12 @@ const getCombn = function(arr) {
         }
         return ans;
     }
+}
+
+const comas2array = function(text){
+    return text.split(',')
+    .filter(function(e) { return e !== '' })
+    .map(e => {if (e!='') {return e.toLowerCase()}})
 }
 
 window.search = async function(){

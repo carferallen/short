@@ -145,13 +145,21 @@ export const init_events = function(){
     $('.header__title').on('click', 'i', function() {
         $('#ayudaModal').modal('show')
     });
-    $('#nombre,#parametro,#accion,#subaccion,#creatividad,#subaudiencia').on('keydown', (e) => {
-        var regex = new RegExp("^[a-zA-Z0-9,ñ,á,é,í,ó,ú]*$");
+    $('#nombre,#parametro').on('keydown', (e) => {
+        var regex = new RegExp("^[a-zA-Z0-9ñáéíóú]*$");
         if (!regex.test(e.key)) {
           e.preventDefault();
           return;
         }
-      })
+    });
+    $('#accion,#subaccion,#creatividad,#subaudiencia,#segmentacion').on('keydown', (e) => {
+        var regex = new RegExp("^[a-zA-Z0-9,ñáéíóú]*$");
+        if (!regex.test(e.key)) {
+          e.preventDefault();
+          return;
+        }
+    })
+
 };
 
 const is_multi = function() {
@@ -256,7 +264,6 @@ const get_landings = function() {
 const get_detalles = function() {
     get_datos('formatos','#formato','Ad formats');
     get_datos('adsizes','#adsize', 'Ad sizes');
-    get_datos('segmentos','#segmentacion','Segmentación');
     get_datos('audiencias','#audiencia','Audiencia');
     get_datos('devices','#device','Dispositivo');
     get_datos('objetivos','#objetivo','Objetivo');
