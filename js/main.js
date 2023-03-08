@@ -121,7 +121,7 @@ const generar_url = function(){
             url = get_shortURL(url)
         }
         $.ajax({
-            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+url,
+            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+encodeURIComponent(url),
             xhrFields:{
                 responseType: 'blob'
             },
@@ -226,7 +226,6 @@ $(document).ready(async function() {
         autocompletar();
     };
     $('#url').val(urlParams.get('page')||'');
-    
 });
 
 const getCombn = function(arr) {
