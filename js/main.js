@@ -173,7 +173,7 @@ const get_shortURL = function(url){
 
 const ac_nombredescripcion = new Autocomplete(document.getElementById('nombre'), {
     data: null,
-    showValue: true,
+    showValue: false,
     onSelectItem: ({label, value}) => {
         $('#nombre_descriptivo').val('');
         if (value) {
@@ -195,7 +195,7 @@ const set_autocomplete = async function(){
     let nombres_descripcion = [];
     let descripciones = [];
     $.each(campanas, function(id, campana){
-        nombres_descripcion.push({label:campana.nombre, value:' ('+campana.descripcion+')'});
+        nombres_descripcion.push({label:campana.nombre + ' ('+campana.descripcion+')', value:campana.descripcion});
         descripciones.push({label:campana.descripcion, value:campana.nombre})
     });
     ac_nombredescripcion.setData(nombres_descripcion);

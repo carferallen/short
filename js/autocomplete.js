@@ -125,7 +125,8 @@ class Autocomplete {
         let dataLabel = e.currentTarget.getAttribute('data-label');
         let dataValue = e.currentTarget.getAttribute('data-value');
 
-        this.field.value = dataLabel;
+        console.log(this.field.id)
+        this.field.value = this.field.id=='nombre'?dataLabel.split(' ')[0]:dataLabel;
 
         if (this.options.onSelectItem) {
           this.options.onSelectItem({

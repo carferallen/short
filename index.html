@@ -35,7 +35,6 @@
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
-                <!--hr class="hr-text" data-content="Datos generales"-->
                 <div class="form-group mb-2 row">
                     <label for="etiquetado" class="col-md-6 col-form-label">Tipo de campaña y de etiquetado</label>
                     <div class="col-md-3">
@@ -106,21 +105,7 @@
                     </span>
                 </div>
                 <div class="form-group mb-2 row">
-                    <label for="nombre" class="col-md-6 col-form-label">Nombre de la campaña y parámetro adicional</label>
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
-                            <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="parametro" name="parametro" placeholder="Parámetro adicional (all)">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mb-2 row">
-                    <label for="nombre" class="col-md-6 col-form-label">Descripción (no se incluye en el utm)</label>
+                    <label class="col-md-6 col-form-label">Descripción de la campaña (no se incluye en el utm)</label>
                     <div class="col-md-6">
                         <div class="input-group">
                             <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Descripción de la campaña *" required>
@@ -129,16 +114,30 @@
                     </div>
                 </div>
                 <div class="form-group mb-2 row">
-                    <label for="fecha" class="col-md-6 col-form-label">¿Cuándo comienza la campaña y qué agencia la gestionará?</label>
-                    <div class="col-md-3">
-                        <input type="date" class="form-control" id="fecha" required>
-                    </div>
+                    <label class="col-md-6 col-form-label">Agencia y nombre de la campaña</label>
                     <div class="col-md-3">
                         <select class="form-select custom-select" id="agencia" required></select>
                     </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre corto *" required>
+                            <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group mb-2 row">
-                    <label for="area-negocio" class="col-md-6 col-form-label">Selecciona Unidad de Negocio o Área Corporativa</label>
+                    <label class="col-md-6 col-form-label">Parámetro adicional (opcional) y fecha de inicio</label>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="parametro" name="parametro" placeholder="Parámetro adicional (all)">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="date" class="form-control" id="fecha" required>
+                    </div>
+                </div>
+                <div class="form-group mb-2 row">
+                    <label class="col-md-6 col-form-label">Selecciona Unidad de Negocio o Área Corporativa</label>
                     <div class="col-md-3">
                         <select class="form-select" id="area-negocio" required></select>
                     </div>
@@ -178,7 +177,6 @@
                     </div>
                 </div>
                 <div id="otros-detalles" class="collapse">
-                    <!--hr class="hr-text" data-content="Content (utm-content)"/-->
                     <div class="seccion">Content (utm_content)
                         <span data-toggle="tooltip" data-placement="top" title="El utm_content se compone a partir de estos campos:
                             <device>_<formato>_<adsize>_<accion>_<subaccion>_<creatividad>_ <landing>_<segmentacion>_<audiencia>_<subaudiencia>_<objetivo>_ <modelo>_<trafico>[_<canal900>_<codigoCC>]">
@@ -186,7 +184,7 @@
                         </span>
                     </div>
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label">Otros detalles</label>
+                        <label class="col-md-3 col-form-label">Otros detalles</label>
                         <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="device"></select>
                         </div>
@@ -198,7 +196,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <label class="col-md-3 col-form-label"></label>
                         <div class="col-md-3">
                             <input type="text" class="form-control" id="accion" name="accion" placeholder="Acción">
                         </div>
@@ -210,7 +208,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <label class="col-md-3 col-form-label"></label>
                         <div class="col-md-6">
                             <select class="form-select custom-select multiple" multiple id="landing"></select>
                         </div>
@@ -220,7 +218,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <label class="col-md-3 col-form-label"></label>
                         <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="audiencia"></select>
                         </div>
@@ -232,7 +230,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
-                        <label for="otros-todo" class="col-md-3 col-form-label"></label>
+                        <label class="col-md-3 col-form-label"></label>
                         <div class="col-md-5">
                             <select class="form-select custom-select multiple" multiple id="modelo"></select>
                         </div>
@@ -241,7 +239,7 @@
                         </div>
                     </div>
                     <div class="form-group mb-2 row collapse" id="seccion-canal-900">
-                        <label for="otros-todo" class="col-md-3 col-form-label">Datos canal 900</label>
+                        <label class="col-md-3 col-form-label">Datos canal 900</label>
                         <div class="col-md-5">
                             <select class="form-select custom-select multiple" multiple id="canal900"></select>
                         </div>
@@ -340,7 +338,7 @@
                         <a class="btn btn-primary" type="submit" target="_blank" href="assets/GuiaEtiquetadoCampa%C3%B1asv2.0.pdf">Consultar guía de etiquetado</a>
                         <hr/>
                         <p>Si necesitas algún valor adicional para alguno de los campos, puedes solicitarlo enviando un correo con el detalle de la necesidad.</p>
-                        <a class="btn btn-primary" type="submit" target="_blank" href="mailto:analitica.ecommerce@repsol.com">Solicitar nuevos valores</a>
+                        <a class="btn btn-primary" type="submit" target="_blank" href="mailto://analitica.ecommerce@repsol.com?subject=Solicitud de etiquetas para campañas">Solicitar nuevos valores</a>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

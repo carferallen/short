@@ -10,6 +10,12 @@
         "all": "Genérico"
       }
     },
+    "areacg": {
+      "nombre": "Area cliente global",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
     "asf": {
       "nombre": "Asfaltos",
       "segmentos": {
@@ -290,7 +296,7 @@
   },
   "origenes-suborigenes": {
     "reyg": {
-      "8": {
+      "08": {
         "origen": "Waylet",
         "suborigenes": {
           "WA01": "Appwaylet",
@@ -531,6 +537,7 @@
       "118": {
         "origen": "Paid Search Corporativo",
         "suborigenes": {
+          "SE01": "Google",
           "SE02": "Bing"
         }
       },
@@ -801,7 +808,7 @@
       }
     },
     "multie": {
-      "8": {
+      "08": {
         "origen": "Waylet",
         "suborigenes": {
           "WA01": "Appwaylet",
@@ -810,7 +817,7 @@
           "WA04": "Web"
         }
       },
-      "9": {
+      "09": {
         "origen": "WebFlyer",
         "suborigenes": {
           "WF01": "Webflyer"
@@ -1438,7 +1445,7 @@
       }
     },
     "solmatch": {
-      "9": {
+      "09": {
         "origen": "WebFlyer",
         "suborigenes": {
           "WF01": "Webflyer"
@@ -1582,7 +1589,8 @@
       "118": {
         "origen": "Paid Search Corporativo",
         "suborigenes": {
-          "SE01": "Google"
+          "SE01": "Google",
+          "SE02": "Bing"
         }
       },
       "120": {
@@ -1959,6 +1967,7 @@
     "lemonleads": "Lemon leads",
     "libertaddigital": "Libertad digital",
     "linkedin": "Linkedin",
+    "loyalia": "Loyalia",
     "luzes": "Luzes",
     "luzescom": "Luzes com",
     "madzdigital": "Madz digital",
@@ -2058,7 +2067,8 @@
     "wemass": "Wemass",
     "wible": "Wible",
     "yahoo": "Yahoo",
-    "youtube": "Youtube"
+    "youtube": "Youtube",
+    "advocacy": "Advocacy"
   },
   "fuentes-offline": {
     "cartel": "Cartel",
