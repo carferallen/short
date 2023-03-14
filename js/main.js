@@ -51,6 +51,7 @@ const generar_url = function(){
     let utm_campaign = $('#agencia').val().toLowerCase() + '-' + nombre + '-' + parametro + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + area_negocio;
     let utm_source = $('#sfmc').val()=='sfmc_repsol'?'sfmc':$('#fuente option:selected').val() + '-' + $('#seccion option:selected').val();
     let utm_medium = $('#medio option:selected').val();
+    let utm_term = $('#term').val().toLowerCase();
     let sf_reyg_source = $('#sf_reyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text().toLowerCase():'';
     if (sf_reyg_source!=''){
         utm_source = sf_reyg_source;
@@ -59,8 +60,8 @@ const generar_url = function(){
 
     url += url.indexOf('?') == -1 ? '?' : '&'
     if (!$('#etiquetado').is(":checked")) {
-        url += 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + (sf_reyg_source!=''?'&sf_reyg_source='+sf_reyg_source:'');
-        urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_content':'','sf_reyg_source':sf_reyg_source,'url':url})
+        url += 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + (utm_term!=''?'&utm_term='+utm_term:'') + (sf_reyg_source!=''?'&sf_reyg_source='+sf_reyg_source:'');
+        urls.push({'fecha':fecha,'nombre':nombre,'descripcion':description,'utm_source':utm_source,'utm_medium':utm_medium,'utm_campaign':utm_campaign,'utm_term':utm_term,'utm_content':'','sf_reyg_source':sf_reyg_source,'url':url})
     }
     else {
         let m = [
@@ -70,7 +71,7 @@ const generar_url = function(){
             comas2array($('#accion').val()),
             comas2array($('#subaccion').val()),
             comas2array($('#creatividad').val()),
-            $('#landing').val(),
+            [$('#landing').val()],
             comas2array($('#segmentacion').val()),
             $('#audiencia').val(),
             comas2array($('#subaudiencia').val()),
@@ -94,18 +95,19 @@ const generar_url = function(){
                 'utm_medium':utm_medium,
                 'utm_campaign':utm_campaign,
                 'utm_content':utm_content,
+                'utm_term':utm_term,
                 'sf_reyg_source':sf_reyg_source,
-                'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content + (sf_reyg_source!=''?'&sf_reyg_source='+sf_reyg_source:'')};
+                'url':url + 'utm_source=' + utm_source + '&utm_medium=' + utm_medium + '&utm_campaign=' + utm_campaign + '&utm_content=' + utm_content + (utm_term!=''?'&utm_term='+utm_term:'') + (sf_reyg_source!=''?'&sf_reyg_source='+sf_reyg_source:'')};
             urls.push(new_url);
         });
     };
 
     if (urls.length > 1){
-        let file_content = 'url,utm_source,utm_medium,utm_campaign,utm_content,sf_reyg_source\n';
+        let file_content = 'url,utm_source,utm_medium,utm_campaign,utm_content,utm_term,sf_reyg_source\n';
         url = ''
         $.each(urls, function(i,u) {
             url += u['url']+'\n'
-            file_content += [u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content'],u['sf_reyg_source']].join(',')+'\n'
+            file_content += [u['url'],u['utm_source'],u['utm_medium'],u['utm_campaign'],u['utm_content'],u['utm_term'],u['sf_reyg_source']].join(',')+'\n'
         });
         let blob = new Blob(["\uFEFF"+file_content], {type: "text/csv; charset=utf-8"});
         $('#CSV-link').attr('href', window.URL.createObjectURL(blob));
@@ -117,11 +119,12 @@ const generar_url = function(){
     else{
         $('#CSV').addClass('collapse')
         url = urls[0]['url']
+        let encoded_url = encodeURIComponent(url);
         if ($('#acortar').is(":checked")){
             url = get_shortURL(url)
         }
         $.ajax({
-            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+encodeURIComponent(url),
+            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+encoded_url,
             xhrFields:{
                 responseType: 'blob'
             },
@@ -152,6 +155,7 @@ const generar_url = function(){
             utm_medium: url.utm_medium,
             utm_campaign: url.utm_campaign,
             utm_content: url.utm_content,
+            utm_term: url.utm_term,
             sf_reyg_source: url.sf_reyg_source,
             url:url.url,
         };

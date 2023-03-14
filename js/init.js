@@ -30,7 +30,7 @@ export const alert = (message, type, placement='#AlertasPrincipales') => {
 };
 
 export const init_events = function(){
-    $('.multiple').on('change', function(){
+    $('#otros-detalles').on('change', function(){
         if (is_multi()) {
             $('#acortar').prop('checked',false);
             $('#acortar').prop('disabled', true)
@@ -110,6 +110,16 @@ export const init_events = function(){
             $('#seccion option').eq(0).prop('text','Sección ' + tipo_medio);
         }
     });
+    $('#landing').on('change', function() {
+        let land = $("#landing option:selected").text().slice(0,-6);
+        if ($(this).val()!='all') {
+            $('#url').val(land);
+            $('#url').prop("disabled", true);
+        }
+        else {
+            $('#url').prop("disabled", false);
+        }
+    });
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
     });
@@ -145,7 +155,7 @@ export const init_events = function(){
     $('.header__title').on('click', 'i', function() {
         $('#ayudaModal').modal('show')
     });
-    $('#nombre,#parametro').on('keydown', (e) => {
+    $('#nombre,#parametro,#term').on('keydown', (e) => {
         var regex = new RegExp("^[a-zA-Z0-9ñáéíóú]*$");
         if (!regex.test(e.key)) {
           e.preventDefault();
@@ -159,7 +169,6 @@ export const init_events = function(){
           return;
         }
     })
-
 };
 
 const is_multi = function() {
@@ -170,8 +179,23 @@ const is_multi = function() {
             return multi;
         }
     });
+    let multiText = [
+        $('#accion').val(),
+        $('#subaccion').val(),
+        $('#creatividad').val(),
+        $('#segmentacion').val(),
+        $('#subaudiencia').val()
+    ]
+    multiText.forEach(e=>{if (comas2array(e).length>1) {multi = true; return multi} })
+    
     return multi;
 };
+
+const comas2array = function(text){
+    return text.split(',')
+    .filter(function(e) { return e !== '' })
+    .map(e => {if (e!='') {return e.toLowerCase()}})
+}
 
 const get_productos = function(area_negocio) {
     $('#producto').empty();
@@ -255,10 +279,10 @@ const get_origenes = function(area_negocio) {
 const get_landings = function() {
     let list_landings = Object.entries(config["landings"]).map(a => a.reverse()).sort((a,b) => b[0].toLowerCase()>a[0].toLowerCase()?-1:b[0].toLowerCase()<a[0].toLowerCase()?1:0);    
     list_landings = Object.fromEntries(list_landings)
+    $('#landing').empty().append('<option selected value="all">Landing</option>');
     $.each(list_landings, function(key, value) {
-        $('#landing').append(new Option(value.padStart(3, '0')+': '+key, value));
+        $('#landing').append(new Option(key + ' (' +value.padStart(3, '0')+')', value));
     });
-    init_multiple('#landing','Landing');
 }
 
 const get_detalles = function() {

@@ -69,9 +69,8 @@
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
-                <!--hr class="hr-text" data-content="Fuente (utm-source)"/-->
                 <div class="form-group mb-2 row">
-                    <label for="fuente" class="col-md-6 col-form-label">¿Cuál será la fuente y la sección?</label>
+                    <label class="col-md-6 col-form-label">¿Cuál será la fuente y la sección?</label>
                     <div class="col-md-3">
                         <select class="form-select custom-select" id="fuente" required disabled></select>
                     </div>
@@ -79,7 +78,6 @@
                         <select class="form-select custom-select" id="seccion" disabled></select>
                     </div>
                 </div>
-                <!--hr class="hr-text" data-content="Medio (utm-medium)"/-->
                 <div class="seccion">Medio (utm_medium)
                     <span data-toggle="tooltip" data-placement="top" title="El utm_source se compone a partir de este campo <medio>">
                         <i class="bi bi-info-circle"></i>
@@ -98,7 +96,6 @@
                         </select>
                     </div>
                 </div>
-                <!--hr class="hr-text" data-content="Campaña (utm-campaign)"/-->
                 <div class="seccion">Campaña (utm_campaign)
                     <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>-<nombre>-<parámetro>_<fecha>_<area/negocio>-<producto/temática>">
                         <i class="bi bi-info-circle"></i>
@@ -210,11 +207,10 @@
                     <div class="form-group mb-2 row">
                         <label class="col-md-3 col-form-label"></label>
                         <div class="col-md-6">
-                            <select class="form-select custom-select multiple" multiple id="landing"></select>
+                            <select class="form-select custom-select" id="landing"></select>
                         </div>
                         <div class="col-md-3">
                             <input type="text" class="form-control" id="segmentacion" name="segmentacion" placeholder="Segmentación">
-                            <!--select class="form-select custom-select multiple" multiple id="segmentacion"></select-->
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
@@ -248,6 +244,22 @@
                         </div>
                     </div>
                 </div>
+                <div id="seccion-utm_term">
+                    <div class="seccion">Term (utm_term)
+                        <span data-toggle="tooltip" data-placement="top" title="El campo utm_term es libre, sin caracteres especiales ni espacios">
+                            <i class="bi bi-info-circle"></i>
+                        </span>
+                    </div>
+                    <div class="form-group mb-2 row" id="seccion-canal-900">
+                        <label class="col-md-6 col-form-label">Términos para identicar la acción si fuera necesario</label>
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="term" name="term" placeholder="utm_term ">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <hr class="my-4" />
                 <div class="mb-3 row">
                     <div class="col-md-12 text-center switcher">
