@@ -26,7 +26,8 @@ const carga_log = async function() {
                 <td>${campana.data().utm_medium}</td>
                 <td>${campana.data().utm_campaign}</td>
                 <td>${campana.data().utm_content}</td>
-                <td>${campana.data().sf_eyg_source}</td>
+                <td>${campana.data().utm_term}</td>
+                <td>${campana.data().sf_reyg_source}</td>
                 <td>${campana.data().user}</td>
             </tr>
         `
