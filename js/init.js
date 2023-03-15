@@ -91,10 +91,6 @@ export const init_events = function(){
             $('#seccion-sf_reyg').show();
             $('#origen').prop('required',true);
             $('#suborigen').prop('required',true);
-            $('#fuente').prop('required',false);
-            $('#fuente, #seccion').prop('disabled', true);
-            $('#fuente option').eq(0).prop('text','(no disponible)');
-            $('#seccion option').eq(0).prop('text','(no disponible)');
         }
         else {
             let tipo_medio = $('#tipo-medio').is(":checked")?$('#tipo-medio').attr("data-yes"):$('#tipo-medio').attr("data-no")
@@ -104,10 +100,6 @@ export const init_events = function(){
             $('#suborigen').prop("disabled", true);
             $('#origen').prop('required',false);
             $('#suborigen').prop('required',false);
-            $('#fuente').prop('required',true);
-            $('#fuente, #seccion').prop('disabled', false);
-            $('#fuente option').eq(0).prop('text','Fuente ' + tipo_medio + ' *');
-            $('#seccion option').eq(0).prop('text','Sección ' + tipo_medio);
         }
     });
     $('#landing').on('change', function() {
