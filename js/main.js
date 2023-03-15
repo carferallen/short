@@ -53,9 +53,9 @@ const generar_url = function(){
     let utm_medium = $('#medio option:selected').val();
     let utm_term = $('#term').val().toLowerCase();
     let sf_reyg_source = $('#sf_reyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text().toLowerCase():'';
-    if (sf_reyg_source!=''){
+    /*if (sf_reyg_source!=''){
         utm_source = sf_reyg_source;
-    };
+    };*/
     let urls = [];
 
     url += url.indexOf('?') == -1 ? '?' : '&'
