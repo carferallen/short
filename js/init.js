@@ -147,6 +147,13 @@ export const init_events = function(){
     $('.header__title').on('click', 'i', function() {
         $('#ayudaModal').modal('show')
     });
+    $('#nombre_descriptivo').on('keydown', (e) => {
+        var regex = new RegExp("[^()]+");
+        if (!regex.test(e.key)) {
+          e.preventDefault();
+          return;
+        }
+    });
     $('#nombre,#parametro,#term').on('keydown', (e) => {
         var regex = new RegExp("^[a-zA-Z0-9ñáéíóú]*$");
         if (!regex.test(e.key)) {
