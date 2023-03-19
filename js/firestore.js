@@ -17,7 +17,23 @@ export const get_campaigns = async function(){
 export const get_log = async function(number_of_lines){
     try {
         const q = query(collection(db,"log"), orderBy("timestamp", "desc"), limit(number_of_lines));
-        const listado = await getDocs(q);
+        const campanas = await getDocs(q);
+        const listado = [];
+        campanas.forEach(campana => {
+            listado.push([
+                campana.data().timestamp.toDate().toISOString(),
+                campana.data().fecha,
+                campana.data().nombre,
+                campana.data().url,
+                campana.data().utm_source,
+                campana.data().utm_medium,
+                campana.data().utm_campaign,
+                campana.data().utm_content || '',
+                campana.data().utm_term || '',
+                campana.data().sf_reyg_source || '',
+                campana.data().user
+            ])
+        })
         return listado;
     } catch (error) {
         throw new Error(error);

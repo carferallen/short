@@ -15,30 +15,32 @@ const carga_log = async function() {
     let listado = await get_log(lineas);
     $('#listado').hide();
     $('#listado table>tbody').empty();
-    let html;
-    listado.forEach(campana => {
-        html += `
-            <tr onclick="abreURL(this)" destino="${campana.data().url}" title="${campana.data().url}">
-                <td>${campana.data().timestamp.toDate().toISOString()}</td>
-                <td>${campana.data().fecha}</td>
-                <td>${campana.data().nombre}</td>
-                <td>${campana.data().utm_source}</td>
-                <td>${campana.data().utm_medium}</td>
-                <td>${campana.data().utm_campaign}</td>
-                <td>${campana.data().utm_content}</td>
-                <td>${campana.data().utm_term}</td>
-                <td>${campana.data().sf_reyg_source}</td>
-                <td>${campana.data().user}</td>
-            </tr>
-        `
-    });
-    await $('#listado table>tbody').append(html);
     $('#listado table').dataTable({
+        aaData: listado,
         destroy: true,
         order: [[0, 'desc']],
         language: {
             url: 'js/datatables.es.json'
         },
+        columnDefs: [
+            {
+                target: 3,
+                visible: false,
+                searchable: false,
+            }
+        ],
+        dom: "<'row'<'col-md-6'l><'col-md-6'Bf>>" +
+                "<'row'<'col-md-12'rt>>" +
+                "<'row'<'col-md-6'i><'col-md-6'p>>",
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                text: '<i class="bi bi-file-earmark-excel-fill"></i>',
+                title: 'Exportación_GestordeCampañas',
+                download: 'open',
+                orientation:'landscape',    
+                className: 'btn btn-primary btn-excel', 
+            }],
         pagingType: "simple_numbers"
     });
     $('#DataTables_Table_0_filter label>input').addClass('form-control');
