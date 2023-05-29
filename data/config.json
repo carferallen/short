@@ -92,7 +92,8 @@
     "corp": {
       "nombre": "Corporación",
       "segmentos": {
-        "all": "Genérico"
+        "all": "Genérico",
+        "combren": "Combustibles renovables"
       }
     },
     "eess": {
@@ -124,6 +125,12 @@
         "all": "Genérico",
         "cabl": "Cable",
         "cauch": "Caucho"
+      }
+    },
+    "fide": {
+      "nombre": "Fidelización ",
+      "segmentos": {
+        "all": "Genérico"
       }
     },
     "fund": {
@@ -272,6 +279,12 @@
         "all": "Genérico"
       }
     },
+    "tienda": {
+      "nombre": "Tienda Online repsol es",
+      "segmentos": {
+        "all": "Genérico"
+      }
+    },
     "vvdd": {
       "nombre": "Ventas Directas",
       "segmentos": {
@@ -291,6 +304,12 @@
       "nombre": "Waylet",
       "segmentos": {
         "all": "Genérico"
+      }
+    },
+    "vivit": {
+      "nombre": "Vivit App reyg",
+      "segmentos": {
+        "all": "Vivit App"
       }
     }
   },
@@ -514,9 +533,17 @@
           "J12": "Calientes",
           "J13": "Whatsapp",
           "J14": "Diezcts",
+          "J16": "Solmatch",
           "J17": "Limite3Years",
           "J18": "Altovalorni",
-          "J19": "Historiconi"
+          "J19": "Historiconi",
+          "J22": "athbilbao",
+          "J27": "gpt",
+          "J26": "historico",
+          "J25": "vueltas",
+          "J24": "domingos",
+          "J23": "2residencias",
+          "J21": "planesahorrar"
         }
       },
       "115": {
@@ -579,7 +606,8 @@
           "CO47": "Lavanguardiamoveo",
           "CO48": "Gruponoticias",
           "CO49": "Aracat",
-          "CO50": "Okdiario"
+          "CO50": "Okdiario",
+          "CO12": "As"
         }
       },
       "121": {
@@ -640,6 +668,7 @@
           "MC12": "Bnp",
           "MC13": "Meetkar",
           "MC14": "Hesperia",
+          "MC15": "collescastelleresctalunya",
           "MC99": "Cb"
         }
       },
@@ -688,6 +717,8 @@
           "AC67": "Beemy",
           "AC68": "Contrataronline",
           "AC69": "Kunmedia",
+          "AC70": "fcporto",
+          "AC71": "sporting",
           "COL01": "Colegiosanviator",
           "DIN02": "Privalia",
           "DIN03": "Veepee"
@@ -779,7 +810,8 @@
         "origen": "Fidelización",
         "suborigenes": {
           "FI01": "Appfidelizacion",
-          "FI02": "Webfidelizacion"
+          "FI02": "Webfidelizacion",
+          "FI03": "Areacg"
         }
       },
       "173": {
@@ -1043,7 +1075,14 @@
           "J16": "Solmatch",
           "J17": "Limite3Years",
           "J18": "Altovalorni",
-          "J19": "Historiconi"
+          "J19": "Historiconi",
+          "J22": "athbilbao",
+          "J27": "gpt",
+          "J26": "historico",
+          "J25": "vueltas",
+          "J24": "domingos",
+          "J23": "2residencias",
+          "J21": "planesahorrar"
         }
       },
       "115": {
@@ -1235,6 +1274,7 @@
           "MC12": "Bnp",
           "MC13": "Meetkar",
           "MC14": "Hesperia",
+          "MC15": "collescastelleresctalunya",
           "MC99": "Cb"
         }
       },
@@ -1307,6 +1347,8 @@
           "AC67": "Beemy",
           "AC68": "Contrataronline",
           "AC69": "Kunmedia",
+          "AC70": "fcporto",
+          "AC71": "sporting",
           "COL01": "Colegiosanviator",
           "DIN02": "Privalia",
           "DIN03": "Veepee",
@@ -1406,7 +1448,8 @@
         "origen": "Fidelización",
         "suborigenes": {
           "FI01": "Appfidelizacion",
-          "FI02": "Webfidelizacion"
+          "FI02": "Webfidelizacion",
+          "FI03": "Areacg"
         }
       },
       "166": {
@@ -1462,12 +1505,6 @@
         "origen": "MGM",
         "suborigenes": {
           "MGM01": "Email"
-        }
-      },
-      "114": {
-        "origen": "Nurturing",
-        "suborigenes": {
-          "J16": "Solmatch"
         }
       },
       "120": {
@@ -1584,6 +1621,12 @@
           "IN01": "Emailprop",
           "IN02": "Contesta",
           "IN03": "Majorel"
+        }
+      },
+      "115": {
+        "origen": "Organic",
+        "suborigenes": {
+          "SE01": "Google"
         }
       },
       "118": {
@@ -1821,7 +1864,8 @@
     "160": "https://repsol.es/particulares/whatsapp",
     "161": "https://luzygas.ahorraconrepsol.com/oferta/articus",
     "162": "https://www.repsol.pt/landings1/sporting/",
-    "163": "https://luzygas.ahorraconrepsol.com/solmatch-comunidades/oferta-1centimo-kwh"
+    "163": "Pide tu bombona",
+    "164": "https://repsol.pt/landings1/fcporto"
   },
   "fuentes-online": {
     "20minutos": "20 minutos",
@@ -1844,7 +1888,7 @@
     "aklamio": "Aklamio",
     "antevenio": "Antevenio",
     "app": "Aplicación móvil",
-    "appfidelizacion": "APP fidelizacion",
+    "apprme": "APPrepsolmasenergias",
     "appwaylet": "APPwaylet",
     "appwible": "APPwible",
     "aracat": "Aracat",
@@ -1861,6 +1905,7 @@
     "beyup": "Beyup",
     "bing": "Bing",
     "binggle": "Binggle",
+    "biwenger": "Biwenger",
     "box": "Box Repsol",
     "buypremierleads": "Buy premier leads",
     "bysidecar": "Bysidecar",
@@ -2021,6 +2066,7 @@
     "santanderzone": "Santander zone",
     "seedtag": "Seedtag",
     "selectra": "Selectra",
+    "sfcrc": "Salesforce CRC",
     "sfmc": "Salesforce Marketing Cloud",
     "siteviesgo": "Siteviesgo",
     "smart4ads": "Smart4ads",
@@ -2068,7 +2114,32 @@
     "wible": "Wible",
     "yahoo": "Yahoo",
     "youtube": "Youtube",
-    "advocacy": "Advocacy"
+    "advocacy": "Advocacy",
+    "magento": "Magento",
+    "myrepsolnet": "Myrepsolnet",
+    "socialcare": "Social care",
+    "eltiempo": "El Tiempo",
+    "adconion": "Adconion",
+    "richaudience": "Rich Audience",
+    "vidoomy": "Vidoomy",
+    "newixmedia": "Newix Media",
+    "invibes": "Invibes",
+    "adsocy": "Adsocy",
+    "facebook+instagram": "Facebook + Instagram",
+    "diariosport": "Diario Sport",
+    "lainformaciones": "La información",
+    "elheraldo": "El Heraldo",
+    "elnacionalcat": "El Nacional",
+    "hispanidaddigital": "Hispanidad Digital",
+    "elperiodicodelaenergia": "El Periodico de la energía",
+    "ondacro": "Ondacro",
+    "fcporto": "FC Porto",
+    "branded": "Branded",
+    "repsolmove": "Repsol Move",
+    "sporting": "Sporting",
+    "journey": "Journey ",
+    "repsolcom": "Repsol.com",
+    "collescastellerescat": "Colles Castelleres de Catalunya"
   },
   "fuentes-offline": {
     "cartel": "Cartel",
@@ -2083,7 +2154,10 @@
     "plv": "PLV",
     "prensa": "Prensa",
     "radio": "Radio",
-    "valla": "Valla"
+    "valla": "Valla",
+    "fcporto": "FC Porto",
+    "sporting": "Sporting",
+    "agenciadis": "Agencia Distribuidora"
   },
   "secciones-online": {
     "ampn": "Ampliación de noticias",
@@ -2101,7 +2175,9 @@
     "ron": "Ron (Run of Network)",
     "ros": "Ros (Run of Site)",
     "serv": "Servicios",
-    "str": "Stories"
+    "str": "Stories",
+    "smartclip": "Smart clip",
+    "maps": "Maps "
   },
   "secciones-offline": {},
   "medios-online": {
@@ -2120,9 +2196,17 @@
     "push": "Push",
     "social-paid": "Social Paid",
     "social": "Social",
-    "online": "Online"
+    "online": "Online",
+    "perfil": "Perfil",
+    "post": "Post"
   },
   "medios-offline": {
+    "cartel": "Cartel",
+    "promotor": "Promotor",
+    "globo": "Globo",
+    "zonavip": "Zona VIP",
+    "tienda": "Tienda/Loja",
+    "folleto": "Folleto",
     "offline": "Offline"
   },
   "agencias": {
@@ -2168,7 +2252,7 @@
     "carr": "Carrusel",
     "cnl": "Cintillo",
     "codbarra": "Codigo de barras",
-    "qr": "Código QR",
+    "qr": "QR",
     "col": "Collection ad",
     "comp": "Comparador",
     "cad": "Conversational ad",
@@ -2289,7 +2373,7 @@
   "adsizes": {
     "link": "Link",
     "boton": "Botón",
-    "1x1": "   1x1",
+    "1x1": "1x1",
     "360x270": " 360x270",
     "520x867": " 520x867",
     "1200x1200": "1200x1200",
@@ -2314,9 +2398,30 @@
     "250x250": " 250x250",
     "210x282": " 210x282",
     "1900x2579": "1900x2579",
-    "160x600": " 160x600",
+    "160x600": "160x600",
     "120x600": " 120x600",
-    "1200x628": "1200x628"
+    "1200x628": "1200x628",
+    "422x900": "422x900",
+    "1200x250": "1200x250",
+    "421x900": "421x900",
+    "450x1000": "450x1000",
+    "1100x250": "1100x250",
+    "456x1000": "456x1000",
+    "990x250": "990x250",
+    "980x250": "980x250",
+    "1897x989": "1897x989",
+    "720x720": "720x720",
+    "720x1800": "720x1800",
+    "1680x1050": "1680x1050",
+    "1280x500": "1280x500",
+    "1650x1024": "1650x1024",
+    "576x1024": "576x1024",
+    "980x200": "980x200",
+    "600x360": "600x360",
+    "650x400": "650x400",
+    "640x480": "640x480",
+    "800x800": "800x800",
+    "640x640": "640x640"
   },
   "segmentos": {
     "pros": "Prospecting",
@@ -2378,7 +2483,10 @@
     "slm": "Remarketing Solmatch",
     "sociodemo": "Sociodemográfica",
     "tarifa": "Tarifa",
-    "tarifaplana": "Tarifaplana"
+    "tarifaplana": "Tarifaplana",
+    "corporacion": "Corporación",
+    "boxrepsol": "Box Repsol",
+    "guiarepsol": "Guía Repsol"
   },
   "objetivos": {
     "brd": "Branding/Awareness",
@@ -2415,7 +2523,7 @@
     "dcpe": "Dinamic coste por engagement",
     "dcpf": "Dinamic coste por formulario",
     "dcpl": "Dinamic coste por lead",
-    "dcpm": "Dinamic coste por mil (impresiones)",
+    "dcpm": "Coste por mil impresiones dinámico",
     "dcpv": "Dinamic coste por view",
     "dcre": "Dinamic coste por evento",
     "rf": "Reach & frecuency (facebook + instagram)"

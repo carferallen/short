@@ -59,7 +59,9 @@ export const init_events = function(){
             $('#sfmc').val('normal');
         }
         else {
-            $('#sfmc').addClass('collapse')
+            $('#sfmc').addClass('collapse');
+            $('#sfmc').prop("selectedIndex", 0).val();
+            $('#fuente').prop("disabled", false);
         }
         if ($(this).val()=='900'){
             $('#seccion-canal-900').removeClass('collapse');
@@ -70,12 +72,24 @@ export const init_events = function(){
             $('#seccion-canal-900').addClass('collapse')
         }
     });
+    $('#sfmc').on('change', function() {
+        if ($(this).val()=='sfmc_repsol'){
+            $('#fuente').val('sfmc');
+            $('#fuente').prop("disabled", true);
+        }
+        else {
+            $('#fuente').prop("disabled", false);
+            $("#fuente").prop("selectedIndex", 0);
+        }
+    });
     $('#area-negocio').on('change', function() {
         get_productos($(this).val());
         get_origenes($(this).val());
         let neg = $(this).val().split('-')[0];
         if ($.inArray(neg,Object.keys(config['origenes-suborigenes']))!=-1){
             $('#check_eyg').removeClass('collapse')
+            $('#sf_reyg').prop('checked',true);
+            $('#seccion-sf_reyg').show();
         }
         else {
             $('#check_eyg').addClass('collapse');
@@ -102,7 +116,18 @@ export const init_events = function(){
             $('#suborigen').prop('required',false);
         }
     });
-    $('#landing').on('change', function() {
+    $('#url').on('change', function() {
+        if (url.validity.valid) {
+            let id_landing = Object.keys(config['landings']).find(key => config['landings'][key] === $(this).val())
+            if (id_landing) {
+                $('#landing').val(id_landing)
+            }
+            else {
+                $('#landing').prop("selectedIndex", 0)
+            }
+          }
+    });
+    /*$('#landing').on('change', function() {
         let land = $("#landing option:selected").text().slice(0,-6);
         if ($(this).val()!='all') {
             $('#url').val(land);
@@ -111,7 +136,7 @@ export const init_events = function(){
         else {
             $('#url').prop("disabled", false);
         }
-    });
+    });*/
     $('#campanas-anteriores').on('change', function() {
         $('#nombre').val($(this).val());
     });
@@ -186,7 +211,7 @@ const is_multi = function() {
         $('#subaudiencia').val()
     ]
     multiText.forEach(e=>{if (comas2array(e).length>1) {multi = true; return multi} })
-    
+
     return multi;
 };
 
@@ -252,7 +277,7 @@ const get_agencias = function() {
 }
 
 const get_negocios = function() {
-    $('#area-negocio').empty().append('<option selected disabled value="">Área / Negocio *</option>');
+    $('#area-negocio').empty().append('<option selected disabled value="">Área/Negocio destino *</option>');
     let list_areas = {};
     $.each(config["areas-negocios"], function(value, text) {
         list_areas[value]=text["nombre"];
