@@ -31,7 +31,7 @@
             <form id="formulario" class= "formulario" action="javascript:enviar()" class="m-auto" autocomplete="off">
                 <div id="AlertasPrincipales"></div>
                 <div class="seccion">Datos generales
-                    <span data-toggle="tooltip" data-placement="top" title="En función del tipo de campaña, se solicitarán más o menos campos">
+                    <span data-toggle="tooltip" data-placement="top" title="Describe la campaña o selecciona una de las existentes. En función del tipo de campaña, se solicitarán más o menos campos">
                         <i class="bi bi-info-circle"></i>
                     </span>
                 </div>
@@ -55,6 +55,15 @@
                                 <span><small></small></span>
                                 <span>Completo</span>
                             </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mb-2 row">
+                    <label class="col-md-6 col-form-label">Descripción de la campaña <span style="font-size: smaller;">(ej. "Bienvenida Planes Energías 5cts./l")</span></label>
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Descripción de la campaña *" required>
+                            <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
                         </div>
                     </div>
                 </div>
@@ -100,15 +109,6 @@
                     <span data-toggle="tooltip" data-placement="top" title="El utm_campaign se compone a partir de estos campos: <agencia>-<nombre>-<parámetro>_<fecha>_<area/negocio>-<producto/temática>">
                         <i class="bi bi-info-circle"></i>
                     </span>
-                </div>
-                <div class="form-group mb-2 row">
-                    <label class="col-md-6 col-form-label">Descripción de la campaña (no se incluye en el utm)</label>
-                    <div class="col-md-6">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="nombre_descriptivo" name="nombre_descriptivo *" placeholder="Descripción de la campaña *" required>
-                            <span class="input-group-text" onclick="search()"><i class="bi bi-search"></i></span>
-                        </div>
-                    </div>
                 </div>
                 <div class="form-group mb-2 row">
                     <label class="col-md-6 col-form-label">Agencia y nombre de la campaña</label>
@@ -210,7 +210,7 @@
                             <select class="form-select custom-select" id="landing"></select>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="segmentacion" name="segmentacion" placeholder="Negocio origen">
+                            <select class="form-select custom-select" id="segmentacion" name="segmentacion"></select>
                         </div>
                     </div>
                     <div class="form-group mb-2 row">
@@ -219,7 +219,7 @@
                             <select class="form-select custom-select multiple" multiple id="audiencia"></select>
                         </div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="subaudiencia" name="subaudiencia" placeholder="Sub-audiencia">
+                            <input type="text" class="form-control" id="subaudiencia" name="subaudiencia" placeholder="Subaudiencia - ubicación">
                         </div>
                         <div class="col-md-3">
                             <select class="form-select custom-select multiple" multiple id="objetivo"></select>

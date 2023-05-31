@@ -277,13 +277,15 @@ const get_agencias = function() {
 }
 
 const get_negocios = function() {
-    $('#area-negocio').empty().append('<option selected disabled value="">Área/Negocio destino *</option>');
+    $('#area-negocio').empty().append('<option selected disabled value="">Área / Negocio *</option>');
+    $('#segmentacion').empty().append('<option selected value="">Negocio origen</option>');
     let list_areas = {};
     $.each(config["areas-negocios"], function(value, text) {
         list_areas[value]=text["nombre"];
     });
     $.each(ordena(list_areas), function(value, text) {
         $('#area-negocio').append(new Option(text, value));
+        $('#segmentacion').append(new Option(text, value));
     });
 }
 

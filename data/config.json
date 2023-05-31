@@ -311,6 +311,12 @@
       "segmentos": {
         "all": "Vivit App"
       }
+    },
+    "ups": {
+      "nombre": "Upstream",
+      "segmentos": {
+        "all": "Genérico"
+      }
     }
   },
   "origenes-suborigenes": {
