@@ -116,6 +116,7 @@ export const init_events = function(){
             $('#suborigen').prop('required',false);
         }
     });
+
     $('#url').on('change', function() {
         if (url.validity.valid) {
             let id_landing = Object.keys(config['landings']).find(key => config['landings'][key] === $(this).val())
@@ -123,10 +124,23 @@ export const init_events = function(){
                 $('#landing').val(id_landing)
             }
             else {
-                $('#landing').prop("selectedIndex", 0)
+                if ($('#url').val().startsWith('https://www.repsol.es/')) {
+                    console.log('es')
+                    $('#landing').val(100)
+                }
+                else {
+                    if ($('#url').val().startsWith('https://www.repsol.pt/')) {
+                        console.log('pt')
+                        $('#landing').val(150)
+                    }
+                    else {
+                        $('#landing').prop("selectedIndex", 0)
+                    }
+                }
             }
-          }
+        }
     });
+
     /*$('#landing').on('change', function() {
         let land = $("#landing option:selected").text().slice(0,-6);
         if ($(this).val()!='all') {

@@ -73,7 +73,7 @@ const generar_url = function(){
             comas2array($('#creatividad').val()),
             [$('#landing').val()],
             //$('#segmentacion option:selected').text(),
-            $('#segmentacion').val(),
+            comas2array($('#segmentacion').val()),
             $('#audiencia').val(),
             comas2array($('#subaudiencia').val()),
             $('#objetivo').val(),
@@ -122,10 +122,10 @@ const generar_url = function(){
         url = urls[0]['url']
         let encoded_url = encodeURIComponent(url);
         if ($('#acortar').is(":checked")){
-            url = get_shortURL(url)
+            url = get_shortURL(encoded_url)
         }
         $.ajax({
-            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+encoded_url,
+            url: 'https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='+($('#acortar').is(":checked")?url:encoded_url),
             xhrFields:{
                 responseType: 'blob'
             },
@@ -166,9 +166,8 @@ const generar_url = function(){
 };
 
 const get_shortURL = function(url){
-    let enc_url = encodeURIComponent(url);
     var shortURL = $.ajax({
-        url: 'https://herramientas.repsol.com/cgi-bin/short/short.py?destino=' + enc_url,
+        url: 'https://herramientas.repsol.com/cgi-bin/short/short.py?destino=' + url,
         cache: false,
         async: false,
         dataType: 'text',

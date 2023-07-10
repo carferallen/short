@@ -30,12 +30,6 @@
         "all": "Genérico"
       }
     },
-    "box": {
-      "nombre": "Box Repsol",
-      "segmentos": {
-        "all": "Genérico"
-      }
-    },
     "cliente": {
       "nombre": "Cliente",
       "segmentos": {
@@ -93,7 +87,27 @@
       "nombre": "Corporación",
       "segmentos": {
         "all": "Genérico",
-        "combren": "Combustibles renovables"
+        "combren": "Combustibles renovables",
+        "transener": "Transición Energética",
+        "hidroreno": "Hidrógeno Renovable\r",
+        "enerrenov": "Energías Renovables",
+        "reduemi": "Reducción de emisiones",
+        "movilidad": "Movilidad",
+        "enerhog": "Energía para el Hogar ",
+        "asesoener": "Asesoramiento Energético",
+        "enercomun": "Energía para Comunidades",
+        "experclien": "Experiencia Cliente",
+        "empresarenov": "Empresa Responsable",
+        "buentrabajar": "Buen lugar para trabajar",
+        "empleabilidad": "Empleabilidad",
+        "desaprofesio": "Desarrollo Profesional ",
+        "lideres": "Líderes",
+        "comprosoci": "Compromiso social",
+        "transindus": "Transformación Industrial",
+        "emprendimiento": "Emprendimiento",
+        "turismgastro": "Turismo y Gastronomía",
+        "fundarepsol": "Fundación Repsol",
+        "desaecon": "Desarrollo Económico"
       }
     },
     "eess": {
@@ -109,7 +123,7 @@
         "msto": "Motostop",
         "neo": "Neotech",
         "secup": "Security parking",
-        "tarjetas ": "Ofertas",
+        "tarjetas ": "Tarjetas",
         "tie": "Tienda"
       }
     },
@@ -157,12 +171,6 @@
         "ptbre": "Pide tu Bombona (registro)",
         "serv": "Sector Servicios",
         "so": "Servicio Oficial"
-      }
-    },
-    "guia": {
-      "nombre": "Guía Repsol",
-      "segmentos": {
-        "all": "Genérico"
       }
     },
     "inversores": {
@@ -316,6 +324,20 @@
       "nombre": "Upstream",
       "segmentos": {
         "all": "Genérico"
+      }
+    },
+    "guia": {
+      "nombre": "Guía Repsol",
+      "segmentos": {
+        "all": "Genérico",
+        "energcomu": "Energía para comunidades"
+      }
+    },
+    "box": {
+      "nombre": "Box Repsol",
+      "segmentos": {
+        "all": "Genérico",
+        "combren": "Combustibles renovables"
       }
     }
   },
@@ -544,6 +566,7 @@
           "J18": "Altovalorni",
           "J19": "Historiconi",
           "J22": "athbilbao",
+          "J28": "sunplanet",
           "J27": "gpt",
           "J26": "historico",
           "J25": "vueltas",
@@ -568,14 +591,14 @@
         }
       },
       "118": {
-        "origen": "Paid Search Corporativo",
+        "origen": "Paid Search Brand",
         "suborigenes": {
           "SE01": "Google",
           "SE02": "Bing"
         }
       },
       "119": {
-        "origen": "Paid Search Energía",
+        "origen": "Paid Search Unbrand",
         "suborigenes": {
           "SE01": "Google",
           "SE02": "Bing"
@@ -675,7 +698,8 @@
           "MC13": "Meetkar",
           "MC14": "Hesperia",
           "MC15": "collescastelleresctalunya",
-          "MC99": "Cb"
+          "MC99": "Cb",
+          "MC16": "Plusfresc"
         }
       },
       "127": {
@@ -1083,6 +1107,7 @@
           "J18": "Altovalorni",
           "J19": "Historiconi",
           "J22": "athbilbao",
+          "J28": "sunplanet",
           "J27": "gpt",
           "J26": "historico",
           "J25": "vueltas",
@@ -1107,14 +1132,14 @@
         }
       },
       "118": {
-        "origen": "Paid Search Corporativo",
+        "origen": "Paid Search Brand",
         "suborigenes": {
           "SE01": "Google",
           "SE02": "Bing"
         }
       },
       "119": {
-        "origen": "Paid Search Energía",
+        "origen": "Paid Search Unbrand",
         "suborigenes": {
           "SE01": "Google",
           "SE02": "Bing"
@@ -1134,7 +1159,6 @@
           "CO09": "Vocentonews",
           "CO10": "Larazon",
           "CO11": "Eleconomista",
-          "CO12": "As",
           "CO13": "Elpais",
           "CO14": "Elmundo",
           "CO15": "Marca",
@@ -1157,9 +1181,7 @@
           "CO32": "Nacionalcat",
           "CO33": "Elplural",
           "CO34": "Elsiglodeeuropa",
-          "CO35": "Europapress",
           "CO36": "Extraconfidencial",
-          "CO37": "Lacartadelabolsa",
           "CO38": "Lahispanidad",
           "CO39": "Periodistadigital",
           "CO40": "Prnoticias",
@@ -1176,14 +1198,12 @@
           "CO51": "Diarioes",
           "CO52": "Marcaextra",
           "CO53": "Hph",
-          "CO57": "Verizon",
           "CO58": "Ogury",
           "CO59": "Upday",
           "CO60": "Inlab",
           "CO61": "Acuity",
           "CO62": "Lainformacion",
           "CO63": "20Minutos",
-          "CO64": "Heraldo",
           "CO65": "Seedtag",
           "CO66": "Webads",
           "CO67": "Bing",
@@ -1210,7 +1230,12 @@
           "PR02": "Verizon",
           "PR03": "Dv360",
           "PR05": "Emotika",
-          "PR06": "Discovery"
+          "CO12": "As",
+          "PR06": "Discovery",
+          "CO35": "Europapress",
+          "CO37": "Lacartadelabolsa",
+          "CO64": "Heraldo",
+          "CO57": "Verizon"
         }
       },
       "121": {
@@ -1227,13 +1252,12 @@
           "RC06": "Oficina",
           "RC07": "Exterior",
           "RC08": "Sms",
-          "RC09": "Feria",
+          "RC09": "feria",
           "RC10": "Move",
           "RC11": "Whatsapp",
           "RC12": "Intranet",
           "RC13": "Television",
           "RC14": "Alsa",
-          "RC16": "Sporting",
           "RO09": "Feria"
         }
       },
@@ -1281,7 +1305,8 @@
           "MC13": "Meetkar",
           "MC14": "Hesperia",
           "MC15": "collescastelleresctalunya",
-          "MC99": "Cb"
+          "MC99": "Cb",
+          "MC16": "Plusfresc"
         }
       },
       "127": {
@@ -1525,20 +1550,15 @@
           "CO32": "Nacionalcat",
           "CO33": "Elplural",
           "CO34": "Elsiglodeeuropa",
-          "CO35": "Europapress",
           "CO36": "Extraconfidencial",
-          "CO37": "Lacartadelabolsa",
-          "CO50": "Okdiario",
           "CO51": "Diarioes",
           "CO52": "Marcaextra",
           "CO53": "Hph",
-          "CO57": "Verizon",
           "CO58": "Ogury",
           "CO59": "Upday",
           "CO60": "Inlab",
           "CO61": "Acuity",
           "CO62": "Lainformacion",
-          "CO64": "Heraldo",
           "CO65": "Seedtag",
           "CO66": "Webads",
           "CO67": "Bing",
@@ -1558,7 +1578,29 @@
           "DI04": "Discovery",
           "DI05": "Idealista",
           "DI06": "Teads",
-          "DI07": "Datmean"
+          "DI07": "Datmean",
+          "CO13": "Elpais",
+          "CO11": "Eleconomista",
+          "CO10": "Larazon",
+          "CO12": "As",
+          "CO14": "Elmundo",
+          "CO16": "Lavanguardia",
+          "CO35": "Europapress",
+          "CO37": "Lacartadelabolsa",
+          "CO22": "Elconfidencial",
+          "CO23": "Elespanol",
+          "CO15": "Marca",
+          "CO45": "Cincodias",
+          "CO17": "Mundodeportivo",
+          "CO18": "Prensaiberica",
+          "CO64": "Heraldo",
+          "CO49": "Aracat",
+          "CO20": "Grupojoly",
+          "CO21": "Libertaddigital",
+          "CO50": "Okdiario",
+          "CO63": "20Minutos",
+          "CO57": "Verizon",
+          "CO43": "Vozpopuli"
         }
       },
       "121": {
@@ -1636,7 +1678,7 @@
         }
       },
       "118": {
-        "origen": "Paid Search Corporativo",
+        "origen": "Paid Search Brand",
         "suborigenes": {
           "SE01": "Google",
           "SE02": "Bing"
@@ -1650,7 +1692,6 @@
           "CO09": "Vocentonews",
           "CO10": "Larazon",
           "CO11": "Eleconomista",
-          "CO12": "As",
           "CO13": "Elpais",
           "CO14": "Elmundo",
           "CO27": "Capitalnews",
@@ -1661,7 +1702,8 @@
           "PR02": "Verizon",
           "PR03": "Dv360",
           "PR05": "Emotika",
-          "PR06": "Discovery"
+          "PR06": "Discovery",
+          "CO12": "As"
         }
       },
       "121": {
@@ -1712,11 +1754,11 @@
         }
       }
     },
-    "solar360": {
+    "": {
       "121": {
         "origen": "Comunicacion",
         "suborigenes": {
-          "RC16": "Sporting"
+          "RC09": "feria"
         }
       }
     }
@@ -1742,11 +1784,11 @@
     "21": "https://luzygas.ahorraconrepsol.com/energia/dual | https://luzygas.ahorraconrepsol.com/energia_b/dual",
     "22": "https://luzygas.ahorraconrepsol.com/energia/promodual",
     "23": "https://tuenergia.repsol.com/familiaresyamigos",
-    "24": "http://luzygas.ahorraconrepsol.com/llevate_50_euros/dual",
+    "24": "https://luzygas.ahorraconrepsol.com/llevate_50_euros/dual",
     "25": "http://luzygas.ahorraconrepsol.com/llevate_50_euros/promodual",
     "26": "http://luzygas.ahorraconrepsol.com/tarifa-plana",
-    "27": "https://www.repsol.es/es/productos_y_servicios/luz_gas_natural/index.cshtml",
-    "28": "https://www.repsolluzygas.com/repsolsolify/",
+    "27": "https://repsol.es/es/productos_y_servicios/luz_gas_natural/index.cshtml",
+    "28": "https://repsolluzygas.com/repsolsolify/",
     "31": "https://luzygas.ahorraconrepsol.com/ahorra_150_euros/dual",
     "32": "https://luzygas.ahorraconrepsol.com/ahorra_150_euros/promodual",
     "33": "https://luzygas.ahorraconrepsol.com/ahorra_150_euros/promodual2",
@@ -1783,7 +1825,7 @@
     "66": "https://luzygas.ahorraconrepsol.com/oferta-100-euros/promodualtel",
     "67": "https://luzygas.ahorraconrepsol.com/oferta-100-euros/promodual2tel",
     "68": "https://luzygas.ahorraconrepsol.com/oferta-100-euros/dual-fotofactura",
-    "69": "https://www.contratarluzygas-repsol.com/",
+    "69": "https://contratarluzygas-repsol.com/",
     "70": "http://luzygas.ahorraconrepsol.com/tarifa-plana-1000/dual",
     "71": "https://solmatch.repsolluzygas.com/",
     "72": "http://luzygas.ahorraconrepsol.com/tarifa-familia/dual",
@@ -1793,8 +1835,8 @@
     "76": "http://luzygas.ahorraconrepsol.com/tarifa-familia/promodual2tel",
     "77": "https://tuenergia.repsol.com/guiarepsol",
     "78": "https://luzygas.ahorraconrepsol.com/solmatch/conecta-a-tus-amigos",
-    "79": "http://www.energiaathleticpetronor.com/nuestra-energia/es",
-    "80": "http://www.energiaathleticpetronor.com/nuestra-energia/eu",
+    "79": "http://energiaathleticpetronor.com/nuestra-energia/es",
+    "80": "http://energiaathleticpetronor.com/nuestra-energia/eu",
     "81": "https://luzygas.ahorraconrepsol.com/tarifa-domingos-gratis/dual",
     "82": "https://luzygas.ahorraconrepsol.com/tarifa-domingos-gratis/promodual",
     "83": "https://luzygas.ahorraconrepsol.com/tarifa-domingos-gratis/promodual2",
@@ -1811,7 +1853,7 @@
     "94": "https://unetealageneracionrenovable/energias-renovables/inicio",
     "95": "tuenergia.repsol.com/renovable",
     "96": "https://luzygas.ahorraconrepsol.com/oferta-100-euros/box-repsol",
-    "100": "www.repsol.es",
+    "100": "https://repsol.es",
     "103": "https://luzygas.ahorraconrepsol.com/tarifa-3horas-gratis/dual",
     "104": "https://luzygas.ahorraconrepsol.com/tarifa-3horas-gratis/promodual",
     "105": "https://luzygas.ahorraconrepsol.com/tarifa-3horas-gratis/promodual2",
@@ -1822,9 +1864,9 @@
     "110": "https://luzygas.ahorraconrepsol.com/tarifa-10horas-descuento/promodual2",
     "111": "https://luzygas.ahorraconrepsol.com/luzmadridfestival",
     "112": "https://tuenergia.repsol.com/miempresa",
-    "113": "https://tuenergia.repsol.com/elcondado/",
+    "113": "https://tuenergia.repsol.com/elcondado",
     "114": "https://luzygas.ahorraconrepsol.com/oferta-amigo",
-    "115": "https://www.todoluzygas.es/",
+    "115": "https://todoluzygas.es/",
     "116": "https://luzygas.ahorraconrepsol.com/oferta/dual",
     "117": "https://luzygas.ahorraconrepsol.com/oferta/promodual",
     "118": "https://luzygas.ahorraconrepsol.com/oferta/promodual2",
@@ -1845,8 +1887,8 @@
     "134": "https://tuenergia.repsol.com/elconfidencial",
     "135": "https://tuenergia.repsol.com/municipios",
     "136": "https://luzygas.ahorraconrepsol.com/oferta/fin-de-semana",
-    "137": "https://www.repsol.es/cotizador/con-factura/whatsapp",
-    "138": "https://www.eligenio.com",
+    "137": "https://repsol.es/cotizador/con-factura/whatsapp",
+    "138": "https://eligenio.com",
     "139": "https://luzygas.ahorraconrepsol.com/energia-solar",
     "140": "https://luzygas.ahorraconrepsol.com/solmatch-eess/oferta",
     "141": "https://luzygas.ahorraconrepsol.com/solmatch-eess/cartel",
@@ -1854,11 +1896,11 @@
     "143": "https://luzygas.ahorraconrepsol.com/oferta-recomendado",
     "144": "https://luzygas.ahorraconrepsol.com/oferta-waylet/dual",
     "145": "https://poupe.repsol.pt/vantagens/eletricidadeegas",
-    "146": "https://www.repsol.es/particulares/hogar/luz-y-gas/fotofactura/whatsapp",
-    "147": "https://www.repsol.es/landings1/openbank/",
-    "148": "repsol.pt/landings1/amigos",
-    "149": "repsol.pt/landings2/eletricidadeegas",
-    "150": "repsol.pt",
+    "146": "https://repsol.es/particulares/hogar/luz-y-gas/fotofactura/whatsapp",
+    "147": "https://repsol.es/landings1/openbank/",
+    "148": "https://repsol.pt/landings1/amigos",
+    "149": "https://repsol.pt/landings2/eletricidadeegas/",
+    "150": "https://repsol.pt/particulares/",
     "151": "https://luzygas.ahorraconrepsol.com/waylet/dual",
     "152": "https://luzygas.ahorraconrepsol.com/movilidad-electrica/plan-moves",
     "153": "https://luzygas.ahorraconrepsol.com/oferta-marc-marquez",
@@ -1866,11 +1908,11 @@
     "156": "https://luzygas.ahorraconrepsol.com/tarifa-solar/dual",
     "157": "https://luzygas.ahorraconrepsol.com/tarifa-solar/promodual",
     "158": "https://tuenergia.repsol.com/solmatch-box-repsol",
-    "159": "El rugimetro del Ath. Bilbao",
+    "159": "https://elrugimetrodelosleones.com/",
     "160": "https://repsol.es/particulares/whatsapp",
     "161": "https://luzygas.ahorraconrepsol.com/oferta/articus",
-    "162": "https://www.repsol.pt/landings1/sporting/",
-    "163": "Pide tu bombona",
+    "162": "https://repsol.pt/landings1/sporting/",
+    "163": "https://luzygas.ahorraconrepsol.com/solmatch-comunidades/oferta-1centimo-kwh",
     "164": "https://repsol.pt/landings1/fcporto"
   },
   "fuentes-online": {
@@ -2140,30 +2182,29 @@
     "elperiodicodelaenergia": "El Periodico de la energía",
     "ondacro": "Ondacro",
     "fcporto": "FC Porto",
-    "branded": "Branded",
     "repsolmove": "Repsol Move",
     "sporting": "Sporting",
     "journey": "Journey ",
-    "repsolcom": "Repsol.com",
-    "collescastellerescat": "Colles Castelleres de Catalunya"
+    "repsolcom": "repsol.com",
+    "collescastellerescat": "Colles Castelleres de Catalunya",
+    "oilandgas": "Oil & Gas",
+    "plusfresc": "Plusfresc supermercados",
+    "merca2": "Merca2"
   },
   "fuentes-offline": {
-    "cartel": "Cartel",
-    "catalogo": "Catálogo",
     "congreso": "Congreso",
     "enara": "Enara",
-    "factura": "Factura",
     "feria": "Feria",
-    "folleto": "Folleto",
     "formacion": "Formación",
     "mailing": "Mailing",
-    "plv": "PLV",
     "prensa": "Prensa",
     "radio": "Radio",
     "valla": "Valla",
-    "fcporto": "FC Porto",
-    "sporting": "Sporting",
-    "agenciadis": "Agencia Distribuidora"
+    "agenciadis": "Agencia Distribuidora",
+    "eess": "Estaciones de Servicio",
+    "nymagazine": "N & Y NAUTICA Y YATES MAGAZINE",
+    "skipper": "Skipper",
+    "bestsupymar": "THE BEST SUPERYATES Y MARINAS"
   },
   "secciones-online": {
     "ampn": "Ampliación de noticias",
@@ -2204,6 +2245,7 @@
     "social": "Social",
     "online": "Online",
     "perfil": "Perfil",
+    "prensa": "prensa",
     "post": "Post"
   },
   "medios-offline": {
@@ -2213,7 +2255,12 @@
     "zonavip": "Zona VIP",
     "tienda": "Tienda/Loja",
     "folleto": "Folleto",
-    "offline": "Offline"
+    "offline": "Offline",
+    "stopper": "Stopper",
+    "catalogo": "Catálogo",
+    "factura": "Factura",
+    "prensa": "prensa",
+    "plv": "PLV"
   },
   "agencias": {
     "ddb": "DDB",
@@ -2225,7 +2272,10 @@
     "101": "101",
     "enbs": "Enubes",
     "grh": "Ddibi",
-    "have": "Havas Ecommerce"
+    "have": "Havas Ecommerce",
+    "ori": "Orion",
+    "acc": "Accom",
+    "ltw": "La Torre Wallace"
   },
   "devices": {
     "va": "Virtual assistant",
@@ -2492,7 +2542,8 @@
     "tarifaplana": "Tarifaplana",
     "corporacion": "Corporación",
     "boxrepsol": "Box Repsol",
-    "guiarepsol": "Guía Repsol"
+    "guiarepsol": "Guía Repsol",
+    "miembros": "miembros de una asociacion"
   },
   "objetivos": {
     "brd": "Branding/Awareness",
