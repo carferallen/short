@@ -1067,7 +1067,6 @@
       "111": {
         "origen": "Mail",
         "suborigenes": {
-          "CO01": "Corp",
           "SF01": "Sfmc",
           "SF02": "Rmt",
           "SF03": "Mov",
@@ -1746,14 +1745,6 @@
         }
       }
     },
-    "waylet": {
-      "111": {
-        "origen": "Mail",
-        "suborigenes": {
-          "CO01": "Corp"
-        }
-      }
-    },
     "": {
       "121": {
         "origen": "Comunicacion",
@@ -2189,7 +2180,9 @@
     "collescastellerescat": "Colles Castelleres de Catalunya",
     "oilandgas": "Oil & Gas",
     "plusfresc": "Plusfresc supermercados",
-    "merca2": "Merca2"
+    "merca2": "Merca2",
+    "tradedesk": "The Trade Desk",
+    "geovision": "Geovision"
   },
   "fuentes-offline": {
     "congreso": "Congreso",
@@ -2275,7 +2268,9 @@
     "have": "Havas Ecommerce",
     "ori": "Orion",
     "acc": "Accom",
-    "ltw": "La Torre Wallace"
+    "ltw": "La Torre Wallace",
+    "rpr": "Reprise",
+    "wyp": "Wyperformance"
   },
   "devices": {
     "va": "Virtual assistant",
@@ -2477,7 +2472,8 @@
     "650x400": "650x400",
     "640x480": "640x480",
     "800x800": "800x800",
-    "640x640": "640x640"
+    "640x640": "640x640",
+    "1920x1000": "1920x1000"
   },
   "segmentos": {
     "pros": "Prospecting",
@@ -2533,7 +2529,7 @@
     "pura": "Pura",
     "pxleyg": "Pxleyg",
     "pxlnd": "Pxlnd",
-    "rtg": "Retargeted Ad",
+    "rtg": "Retargeting",
     "sim": "Similar",
     "slf": "Remarketing Solify",
     "slm": "Remarketing Solmatch",
@@ -2543,7 +2539,18 @@
     "corporacion": "Corporación",
     "boxrepsol": "Box Repsol",
     "guiarepsol": "Guía Repsol",
-    "miembros": "miembros de una asociacion"
+    "miembros": "miembros de una asociacion",
+    "rem": "Remarketing",
+    "fr": "Frecuencia",
+    "bt": "Behavioural",
+    "sd": "Socio-Demográfico",
+    "ip": "Geográfico",
+    "ct": "Contextual",
+    "sma": "Social Media Audience",
+    "wl": "Whitelist",
+    "smi": "Social Media Interest",
+    "pros": "Prospecting",
+    "lal": "Lookalike"
   },
   "objetivos": {
     "brd": "Branding/Awareness",
