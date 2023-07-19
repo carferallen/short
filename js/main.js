@@ -1,6 +1,6 @@
 import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
-import { } from "./login.js";
+import { } from "./saml_login.js";
 import { Autocomplete } from "./autocomplete.js";
 import { put_log, get_campaigns } from "./firestore.js";
 import { inicializa, init_events, alert } from "./init.js";
@@ -9,12 +9,15 @@ var currentUser;
 
 onAuthStateChanged(auth, async (user) => {
     if (user) {
-      if (user.displayName) {
-        $('#logged_name').html(`Hola, ${user.displayName}`);
-        if ($('#formulario #nombre')) {
-          set_autocomplete();
+        if (user.displayName) {
+            $('#logged_name').html(`Hola, ${user.displayName}`);
+            if ($('#formulario #nombre')) {
+                set_autocomplete();
+            }
         }
-      }
+        else{
+            $('#logged_name').html(`Hola, ${user.email}`);
+        }
     } else {
       $('#logged_name').html("");
       $('#signinModal').modal('show');

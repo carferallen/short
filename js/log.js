@@ -1,7 +1,7 @@
 import { onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.10.0/firebase-auth.js"
 import { auth } from "./firebase.js";
 import { get_log } from "./firestore.js";
-import { } from "./login.js";
+import { } from "./saml_login.js";
 
 window.abreURL = function(linea){
     let destino = linea.getAttribute("destino");
