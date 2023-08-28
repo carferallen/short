@@ -220,7 +220,8 @@
       "segmentos": {
         "all": "Genérico",
         "agro": "Agro",
-        "horeca": "Horeca"
+        "horeca": "Horeca",
+        "benf": "Beneficios"
       }
     },
     "prensa": {
@@ -565,6 +566,8 @@
           "J17": "Limite3Years",
           "J18": "Altovalorni",
           "J19": "Historiconi",
+          "J29": "energiasolar",
+          "J30": "mgm",
           "J22": "athbilbao",
           "J28": "sunplanet",
           "J27": "gpt",
@@ -748,7 +751,8 @@
           "AC68": "Contrataronline",
           "AC69": "Kunmedia",
           "AC70": "fcporto",
-          "AC71": "sporting",
+          "AC71": "Sporting",
+          "AC72": "Ageas",
           "COL01": "Colegiosanviator",
           "DIN02": "Privalia",
           "DIN03": "Veepee"
@@ -1105,6 +1109,8 @@
           "J17": "Limite3Years",
           "J18": "Altovalorni",
           "J19": "Historiconi",
+          "J29": "energiasolar",
+          "J30": "mgm",
           "J22": "athbilbao",
           "J28": "sunplanet",
           "J27": "gpt",
@@ -1378,7 +1384,8 @@
           "AC68": "Contrataronline",
           "AC69": "Kunmedia",
           "AC70": "fcporto",
-          "AC71": "sporting",
+          "AC71": "Sporting",
+          "AC72": "Ageas",
           "COL01": "Colegiosanviator",
           "DIN02": "Privalia",
           "DIN03": "Veepee",
@@ -1717,6 +1724,7 @@
         "suborigenes": {
           "SO06": "Twitter",
           "SO07": "Linkedin",
+          "SO01": "Facebook",
           "SO08": "Youtube",
           "SO09": "Tiktok"
         }
@@ -2182,23 +2190,25 @@
     "plusfresc": "Plusfresc supermercados",
     "merca2": "Merca2",
     "tradedesk": "The Trade Desk",
-    "geovision": "Geovision"
+    "geovision": "Geovision",
+    "egoi": "e-goi",
+    "the-objective": "The Objective ",
+    "ageas": "Ageas"
   },
   "fuentes-offline": {
     "congreso": "Congreso",
     "enara": "Enara",
     "feria": "Feria",
     "formacion": "Formación",
-    "mailing": "Mailing",
-    "prensa": "Prensa",
-    "radio": "Radio",
-    "valla": "Valla",
     "agenciadis": "Agencia Distribuidora",
     "eess": "Estaciones de Servicio",
     "nymagazine": "N & Y NAUTICA Y YATES MAGAZINE",
     "skipper": "Skipper",
     "bestsupymar": "THE BEST SUPERYATES Y MARINAS",
-    "pedidotienda": "Pedido tienda"
+    "pedidotienda": "Entrega de un pedido de tienda",
+    "establecimiento": "Establecimiento",
+    "sem2023": "SEM 2023",
+    "ageas": "Ageas"
   },
   "secciones-online": {
     "ampn": "Ampliación de noticias",
@@ -2239,22 +2249,22 @@
     "social": "Social",
     "online": "Online",
     "perfil": "Perfil",
-    "prensa": "prensa",
+    "prensa": "Prensa",
     "post": "Post"
   },
   "medios-offline": {
     "cartel": "Cartel",
     "promotor": "Promotor",
     "globo": "Globo",
-    "zonavip": "Zona VIP",
-    "tienda": "Tienda/Loja",
     "folleto": "Folleto",
-    "offline": "Offline",
     "stopper": "Stopper",
     "catalogo": "Catálogo",
     "factura": "Factura",
     "prensa": "prensa",
-    "plv": "PLV"
+    "plv": "PLV",
+    "bolsa": "Bolsa ",
+    "radio": "Radio",
+    "valla": "Valla"
   },
   "agencias": {
     "ddb": "DDB",
@@ -2551,7 +2561,10 @@
     "wl": "Whitelist",
     "smi": "Social Media Interest",
     "pros": "Prospecting",
-    "lal": "Lookalike"
+    "lal": "Lookalike",
+    "horeca": "Horeca",
+    "dis": "Distribuidores",
+    "instantarticles": "Instant Articles"
   },
   "objetivos": {
     "brd": "Branding/Awareness",

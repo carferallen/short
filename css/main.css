@@ -1,6 +1,7 @@
 @font-face {
     font-family: Repsol;
-    src: url(../fonts/repsol/OpenType/Repsol-Regular.otf);
+    src: url(../fonts/titillium/TitilliumWeb-Regular.ttf);
+    /*src: url(../fonts/repsol/OpenType/Repsol-Regular.otf);*/
 }
 @font-face {
     font-family: Roboto;
