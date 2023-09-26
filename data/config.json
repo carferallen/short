@@ -490,7 +490,9 @@
           "AF99": "Cb",
           "CM01": "Kelisto",
           "CM02": "Watiofy",
-          "CM03": "Fintonic"
+          "CM03": "Fintonic",
+          "AF64": "actsales",
+          "AF65": "futprime"
         }
       },
       "106": {
@@ -568,6 +570,7 @@
           "J19": "Historiconi",
           "J29": "energiasolar",
           "J30": "mgm",
+          "J31": "CUPS",
           "J22": "athbilbao",
           "J28": "sunplanet",
           "J27": "gpt",
@@ -575,7 +578,8 @@
           "J25": "vueltas",
           "J24": "domingos",
           "J23": "2residencias",
-          "J21": "planesahorrar"
+          "J21": "planesahorrar",
+          "J32": "Repsoldays"
         }
       },
       "115": {
@@ -674,7 +678,8 @@
           "SO04": "Facebookfeebo",
           "SO05": "Facebookantevenio",
           "SO06": "Twitter",
-          "SO08": "Youtube"
+          "SO08": "Youtube",
+          "SO09": "Tiktok"
         }
       },
       "124": {
@@ -1026,7 +1031,9 @@
           "AF99": "Cb",
           "CM01": "Kelisto",
           "CM02": "Watiofy",
-          "CM03": "Fintonic"
+          "CM03": "Fintonic",
+          "AF64": "actsales",
+          "AF65": "futprime"
         }
       },
       "106": {
@@ -1111,6 +1118,7 @@
           "J19": "Historiconi",
           "J29": "energiasolar",
           "J30": "mgm",
+          "J31": "CUPS",
           "J22": "athbilbao",
           "J28": "sunplanet",
           "J27": "gpt",
@@ -1118,7 +1126,8 @@
           "J25": "vueltas",
           "J24": "domingos",
           "J23": "2residencias",
-          "J21": "planesahorrar"
+          "J21": "planesahorrar",
+          "J32": "Repsoldays"
         }
       },
       "115": {
@@ -1751,6 +1760,12 @@
         "suborigenes": {
           "RC04": "Email"
         }
+      },
+      "119": {
+        "origen": "Paid Search Unbrand",
+        "suborigenes": {
+          "SE01": "Google"
+        }
       }
     },
     "": {
@@ -1912,7 +1927,23 @@
     "161": "https://luzygas.ahorraconrepsol.com/oferta/articus",
     "162": "https://repsol.pt/landings1/sporting/",
     "163": "https://luzygas.ahorraconrepsol.com/solmatch-comunidades/oferta-1centimo-kwh",
-    "164": "https://repsol.pt/landings1/fcporto"
+    "164": "https://repsol.pt/landings1/fcporto",
+    "165": "https://luzygas.ahorraconrepsol.com/oferta/dual-100-euros",
+    "166": "https://luzygas.ahorraconrepsol.com/oferta/dual-15centimos",
+    "167": "Marenostrum",
+    "168": "https://luzygas.ahorraconrepsol.com/contrata/luz-saldo-40",
+    "169": "https://luzygas.ahorraconrepsol.com/contrata/luz-saldo-10",
+    "170": "https://luzygas.ahorraconrepsol.com/contrata/luz-sva-6",
+    "171": "https://luzygas.ahorraconrepsol.com/contrata/luz-cupon-10",
+    "172": "https://luzygas.ahorraconrepsol.com/contrata/luz-travel-2000",
+    "173": "https://luzygas.ahorraconrepsol.com/contrata/solar-saldo-100",
+    "174": "https://luzygas.ahorraconrepsol.com/contrata/luz-saldo-40-segunda-residencia",
+    "175": "https://luzygas.ahorraconrepsol.com/contrata/luz-saldo-10-segunda-residencia",
+    "176": "https://www.repsol.pt/landings2/eletricidade-empresas/",
+    "177": "https://www.repsol.pt/landings2/tarifa-indexada/",
+    "178": "https://tuenergia.repsol.com/plusfresc",
+    "179": "https://luzygas.ahorraconrepsol.com/bateria-virtual",
+    "180": "https://www.repsol.pt/landings1/ageas/"
   },
   "fuentes-online": {
     "20minutos": "20 minutos",
@@ -2131,6 +2162,7 @@
     "theclicklab": "The click lab",
     "thermolympic": "Thermolympic",
     "tiendeo": "Tiendeo",
+    "tiktok": "TikTok",
     "todotransporte": "Todo transporte",
     "tradedoubler": "Trade doubler",
     "transcamion": "Transcamion",
@@ -2193,7 +2225,9 @@
     "geovision": "Geovision",
     "egoi": "e-goi",
     "the-objective": "The Objective ",
-    "ageas": "Ageas"
+    "ageas": "Ageas",
+    "actsales": "Actual Sales",
+    "futprime": "Future Prime"
   },
   "fuentes-offline": {
     "congreso": "Congreso",
