@@ -52,7 +52,11 @@ const generar_url = function(){
     let description = $('#nombre_descriptivo').val();
     let area_negocio = $('#area-negocio option:selected').val() + ($('#producto option:selected').val()!=='all'?'-' + $('#producto option:selected').val():'');
     let utm_campaign = $('#agencia').val().toLowerCase() + '-' + nombre + '-' + parametro + '_' + fecha_split[0].slice(-2) + fecha_split[1] + '_' + area_negocio;
-    let utm_source = $('#fuente option:selected').val() + ($('#fuente option:selected').val()!='sfmc'?'-' + $('#seccion option:selected').val():'');
+    let utm_seccion = '-' + $('#seccion option:selected').val();
+    if($('#fuente option:selected').val()=='sfmc' || ($('#fuente option:selected').val()=='google' && $('#seccion option:selected').val()=='all') ){
+        utm_seccion = "";
+    }
+    let utm_source = $('#fuente option:selected').val() + utm_seccion;
     let utm_medium = $('#medio option:selected').val();
     let utm_term = $('#term').val().toLowerCase();
     let sf_reyg_source = $('#sf_reyg').is(":checked")?'SF_'+$('#origen').val()+'_'+$('#suborigen').val()+'_'+$('#suborigen option:selected').text().toLowerCase():'';
