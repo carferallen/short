@@ -491,8 +491,9 @@
           "CM01": "Kelisto",
           "CM02": "Watiofy",
           "CM03": "Fintonic",
-          "AF64": "actsales",
-          "AF65": "futprime"
+          "CM04": "actsales",
+          "AF65": "futprime",
+          "AF64": "actsales"
         }
       },
       "106": {
@@ -810,7 +811,11 @@
           "MB37": "Kunmedia",
           "MB38": "Vipresponse",
           "MB39": "Adviceme",
-          "MB40": "Addsales"
+          "MB40": "Addsales",
+          "MB50": "procuravip",
+          "MB51": "energiaideal",
+          "MB52": "energiaconfiable",
+          "MB53": "luzpt"
         }
       },
       "149": {
@@ -1032,8 +1037,9 @@
           "CM01": "Kelisto",
           "CM02": "Watiofy",
           "CM03": "Fintonic",
-          "AF64": "actsales",
-          "AF65": "futprime"
+          "CM04": "actsales",
+          "AF65": "futprime",
+          "AF64": "actsales"
         }
       },
       "106": {
@@ -1449,7 +1455,11 @@
           "MB37": "Kunmedia",
           "MB38": "Vipresponse",
           "MB39": "Adviceme",
-          "MB40": "Addsales"
+          "MB40": "Addsales",
+          "MB50": "procuravip",
+          "MB51": "energiaideal",
+          "MB52": "energiaconfiable",
+          "MB53": "luzpt"
         }
       },
       "149": {
@@ -2227,10 +2237,15 @@
     "the-objective": "The Objective ",
     "ageas": "Ageas",
     "actsales": "Actual Sales",
-    "futprime": "Future Prime"
+    "futprime": "Future Prime",
+    "procuravip": "Procuravip",
+    "energiaideal": "Energia ideal",
+    "energiaconfiable": "Energia confiable",
+    "luzpt": "Luz PT"
   },
   "fuentes-offline": {
     "congreso": "Congreso",
+    "autobuses": "autobuses",
     "enara": "Enara",
     "feria": "Feria",
     "formacion": "Formación",
@@ -2315,7 +2330,9 @@
     "acc": "Accom",
     "ltw": "La Torre Wallace",
     "rpr": "Reprise",
-    "wyp": "Wyperformance"
+    "wyp": "Wyperformance",
+    "est": "Esta Pasando",
+    "mio": "Mio Group"
   },
   "devices": {
     "va": "Virtual assistant",
